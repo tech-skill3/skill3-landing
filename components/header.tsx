@@ -70,7 +70,7 @@ export default function Header() {
             For Teams
           </Link>
           <Link
-            href="#creator-hub"
+            href="/creator-hub"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Creator Hub
@@ -132,7 +132,7 @@ export default function Header() {
             <Link href="/for-teams" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               For Teams
             </Link>
-            <Link href="#creator-hub" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/creator-hub" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Creator Hub
             </Link>
             <Link href="#pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
