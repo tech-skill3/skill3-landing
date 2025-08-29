@@ -56,6 +56,11 @@ const config: Config = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+  				lineHeight: {
+			'1.8': '1.8',
+			'2': '2',
+			'3': '3'
+		},
   		keyframes: {
   			'accordion-down': {
   				from: {
@@ -77,7 +82,12 @@ const config: Config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+  		fontFamily: {
+  'heading': ['Poppins', 'sans-serif'],
+  'hero': ['var(--font-montserrat)', 'sans-serif'], 
+  'body': ['Inter', 'sans-serif'],
+},
   	}
   },
   plugins: [require("tailwindcss-animate")],

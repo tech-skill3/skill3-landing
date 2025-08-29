@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { ArrowLeft, Eye, EyeOff } from "lucide-react"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { ArrowLeft, Eye, EyeOff, Users, BookOpen } from "lucide-react"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -16,6 +17,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
+  const [showRoleDialog, setShowRoleDialog] = useState(false)
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -24,14 +26,22 @@ export default function LoginPage() {
 
     // 模拟登录验证
     if (username === "admin" && password === "123") {
-      // 登录成功，重定向到主页
-      setTimeout(() => {
-        router.push("/dashboard")
-      }, 500)
+      // 登录成功，显示角色选择弹窗
+      setLoading(false)
+      setShowRoleDialog(true)
     } else {
       setError("用户名或密码错误")
+      setLoading(false)
     }
-    setLoading(false)
+  }
+
+  const handleRoleSelect = (role: 'student' | 'creator') => {
+    setShowRoleDialog(false)
+    if (role === 'creator') {
+      router.push("/creator")
+    } else {
+      router.push("/dashboard")
+    }
   }
 
   return (
@@ -180,6 +190,36 @@ export default function LoginPage() {
           </Card>
         </div>
       </div>
+
+      {/* 角色选择弹窗 */}
+      <Dialog open={showRoleDialog} onOpenChange={setShowRoleDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-center text-xl font-bold">选择您的身份</DialogTitle>
+            <DialogDescription className="text-center">
+              请选择您要进入的系统
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid grid-cols-2 gap-4 py-4">
+            <Button
+              onClick={() => handleRoleSelect('student')}
+              variant="outline"
+              className="flex flex-col items-center gap-3 h-24 border-2 hover:border-blue-500 hover:bg-blue-50"
+            >
+              <Users className="h-8 w-8 text-blue-600" />
+              <span className="font-medium">学员</span>
+            </Button>
+            <Button
+              onClick={() => handleRoleSelect('creator')}
+              variant="outline"
+              className="flex flex-col items-center gap-3 h-24 border-2 hover:border-blue-500 hover:bg-blue-50"
+            >
+              <BookOpen className="h-8 w-8 text-blue-600" />
+              <span className="font-medium">创作者</span>
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }
