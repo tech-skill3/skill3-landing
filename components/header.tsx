@@ -99,7 +99,7 @@ export default function Header() {
           >
             Log in
           </Link>
-          <Button className="rounded-full">
+          <Button className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg">
             Get Started
             <ChevronRight className="ml-1 size-4" />
           </Button>
@@ -145,7 +145,7 @@ export default function Header() {
               <Link href="/login" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
                 Log in
               </Link>
-              <Button className="rounded-full">
+              <Button className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg">
                 Get Started
                 <ChevronRight className="ml-1 size-4" />
               </Button>
