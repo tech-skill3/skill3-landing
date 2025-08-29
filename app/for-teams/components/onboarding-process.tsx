@@ -9,7 +9,6 @@ import {
   Users,
   Settings,
   CheckCircle,
-  ArrowRight,
   Calendar,
   MessageSquare,
   Cog,

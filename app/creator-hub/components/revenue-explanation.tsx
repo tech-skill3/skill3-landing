@@ -10,7 +10,6 @@ import {
   CreditCard,
   BarChart3,
   Shield,
-  CheckCircle
 } from "lucide-react"
 
 export default function RevenueExplanation() {

@@ -328,29 +328,7 @@ console.log(fibonacci(10)); // 输出: 55`
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8">
-            <h3 className="text-2xl font-bold mb-4">立即开始编程之旅</h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              无需复杂配置，打开浏览器即可享受专业的编程开发环境。
-              从基础语法到算法竞赛，全方位提升编程技能。
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
-              >
-                <Code className="w-5 h-5 mr-2" />
-                进入编程环境
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-              >
-                <Zap className="w-5 h-5 mr-2" />
-                挑战算法题目
-              </Button>
-            </div>
-          </div>
+        
         </motion.div>
       </div>
     </section>

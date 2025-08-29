@@ -7,12 +7,10 @@ import { Badge } from "@/components/ui/badge"
 import {
   CheckCircle,
   Building2,
-  Users,
   Crown,
   Sparkles,
   Bot,
   Shield,
-  Zap,
   ArrowRight
 } from "lucide-react"
 

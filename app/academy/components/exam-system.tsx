@@ -10,11 +10,9 @@ import {
   Award, 
   BarChart3,
   CheckCircle,
-  AlertCircle,
   Target,
   Zap,
-  Brain,
-  Clock
+  Brain
 } from "lucide-react"
 
 export default function ExamSystem() {
@@ -286,39 +284,7 @@ export default function ExamSystem() {
           </motion.div>
         </div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-8 md:p-12 text-white text-center"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            准备好测试您的技能了吗？
-          </h3>
-          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-            选择适合您的考试类型，获得行业认可的技能认证证书，提升职业竞争力
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              variant="secondary"
-              className="bg-white text-blue-600 hover:bg-gray-100"
-            >
-              <Target className="w-5 h-5 mr-2" />
-              免费技能测试
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white/10"
-            >
-              <Award className="w-5 h-5 mr-2" />
-              查看认证证书
-            </Button>
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   )

@@ -8,7 +8,6 @@ import {
   Star, 
   Users, 
   Clock, 
-  DollarSign,
   Award,
   Play,
   Code,
@@ -138,7 +137,7 @@ export default function TopRecommendations() {
           viewport={{ once: true }}
           className="space-y-8"
         >
-          {featuredAgents.map((agent, index) => (
+          {featuredAgents.map((agent,) => (
             <motion.div key={agent.id} variants={itemVariants}>
               <Card className="overflow-hidden border-border/40 bg-gradient-to-br from-background to-muted/10 hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-0">

@@ -9,15 +9,12 @@ import {
   DollarSign,
   TrendingUp,
   ArrowUpRight,
-  ArrowDownRight,
   Calendar,
   Download,
   CreditCard,
   Gift,
   Trophy,
-  Users,
-  Eye,
-  BarChart3
+  Users
 } from "lucide-react"
 
 export default function AnalyticsPage() {

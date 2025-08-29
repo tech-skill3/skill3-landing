@@ -10,9 +10,7 @@ import {
   Bot,
   Zap,
   ArrowRight,
-  CheckCircle,
   Clock,
-  Star
 } from "lucide-react"
 
 export default function HeroSection() {

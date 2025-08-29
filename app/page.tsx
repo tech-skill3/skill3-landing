@@ -1,6 +1,5 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import {
@@ -280,7 +279,7 @@ export default function LandingPage() {
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Loved by Teams Worldwide</h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Don't just take our word for it. See what our customers have to say about their experience.
+                Don&apos;t just take our word for it. See what our customers have to say about their experience.
               </p>
             </motion.div>
 
@@ -380,7 +379,7 @@ export default function LandingPage() {
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Simple, Transparent Pricing</h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Choose the plan that's right for your business. All plans include a 14-day free trial.
+                Choose the plan that;s right for your business. All plans include a 14-day free trial.
               </p>
             </motion.div>
 

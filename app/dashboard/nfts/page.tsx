@@ -2,11 +2,10 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader} from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { 
   Trophy, 
-  Star,
   Calendar,
   DollarSign,
   Medal,
@@ -16,7 +15,7 @@ import {
 } from "lucide-react"
 
 export default function NFTBadgesPage() {
-  const [selectedCategory, setSelectedCategory] = useState("全部")
+  const [selectedCategory] = useState("全部")
 
   // 模拟NFT勋章数据
   const badges = [

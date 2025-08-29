@@ -1,22 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Search, Filter, ArrowRight, Star, Users, Bot, Zap } from "lucide-react"
-import { Input } from "@/components/ui/input"
+import { Bot,} from "lucide-react"
 
 export default function HeroSection() {
-  const stats = [
-    { number: "200+", label: "AI 技能代理", icon: <Bot className="w-5 h-5" /> },
-    { number: "50K+", label: "活跃用户", icon: <Users className="w-5 h-5" /> },
-    { number: "4.8", label: "平均评分", icon: <Star className="w-5 h-5" /> },
-    { number: "24/7", label: "智能服务", icon: <Zap className="w-5 h-5" /> }
-  ]
 
-  const categories = [
-    "全部分类", "AI销售", "数据分析", "编程开发", "设计创意", "营销推广", "客户服务", "项目管理"
-  ]
 
   return (
     <section className="w-full py-20 md:py-32 lg:py-20 overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-black dark:to-gray-900">

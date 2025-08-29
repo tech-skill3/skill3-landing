@@ -5,71 +5,17 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { 
-  CheckCircle, 
   Users, 
   Building2, 
-  Sparkles,
   Shield,
   Headphones,
   Clock,
-  Star,
-  Crown,
   Zap,
   Globe,
   Settings
 } from "lucide-react"
 
 export default function SubscriptionSection() {
-  const personalPlans = [
-    {
-      name: "基础版",
-      price: "¥29",
-      period: "/月",
-      description: "适合个人用户开始体验AI技能代理",
-      features: [
-        "访问20+基础技能代理",
-        "每月10小时使用时长",
-        "基础客服支持",
-        "学习进度跟踪",
-        "移动端访问"
-      ],
-      popular: false,
-      icon: <Sparkles className="w-6 h-6" />
-    },
-    {
-      name: "专业版",
-      price: "¥99",
-      period: "/月",
-      description: "适合专业人士和重度用户",
-      features: [
-        "访问全部200+技能代理",
-        "无限使用时长",
-        "优先客服支持",
-        "高级分析报告",
-        "自定义工作流",
-        "API访问权限",
-        "离线模式"
-      ],
-      popular: true,
-      icon: <Crown className="w-6 h-6" />
-    },
-    {
-      name: "团队版",
-      price: "¥199",
-      period: "/月",
-      description: "适合小团队协作使用",
-      features: [
-        "专业版全部功能",
-        "支持5个团队成员",
-        "团队协作工具",
-        "管理员控制面板",
-        "团队使用分析",
-        "专属客服经理"
-      ],
-      popular: false,
-      icon: <Users className="w-6 h-6" />
-    }
-  ]
 
   const enterpriseFeatures = [
     {
@@ -101,27 +47,6 @@ export default function SubscriptionSection() {
       icon: <Zap className="w-6 h-6" />,
       title: "高性能保障",
       description: "SLA 99.9%可用性保证，毫秒级响应"
-    }
-  ]
-
-  const useCases = [
-    {
-      title: "销售团队",
-      description: "使用AI销售代理提升转化率和客户满意度",
-      result: "平均提升35%销售业绩",
-      companies: ["腾讯", "阿里巴巴", "字节跳动"]
-    },
-    {
-      title: "客服中心",
-      description: "智能客服代理7x24小时处理客户咨询",
-      result: "减少60%人工客服工作量",
-      companies: ["美团", "滴滴", "京东"]
-    },
-    {
-      title: "研发团队",
-      description: "代码审查和技术文档生成AI助手",
-      result: "提升40%开发效率",
-      companies: ["华为", "小米", "百度"]
     }
   ]
 

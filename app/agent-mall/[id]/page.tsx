@@ -2,28 +2,17 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
+
 import { 
   Star, 
   Users, 
   Clock, 
-  DollarSign,
   Award,
   Play,
   Code,
-  BarChart3,
   CheckCircle,
-  ArrowLeft,
-  Share2,
-  Heart,
-  Download,
-  MessageCircle,
-  TrendingUp,
-  Shield,
-  Zap,
+
   Target,
-  BookOpen,
   ChevronDown,
   Globe,
   Calendar
@@ -194,7 +183,7 @@ export default function AgentDetailPage({ params }: { params: { id: string } }) 
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h3 className="text-xl font-semibold mb-4 text-white">What you'll learn</h3>
+              <h3 className="text-xl font-semibold mb-4 text-white">What you&apos;ll learn</h3>
               <div className="grid md:grid-cols-2 gap-3">
                 {[
                   "AI-powered customer analysis",
@@ -320,7 +309,7 @@ export default function AgentDetailPage({ params }: { params: { id: string } }) 
                     Enroll Now
                   </Button>
                   <div className="text-xs text-gray-400 mt-2">
-                    Included in your organization's learning program
+                    Included in your organization&apos;s learning program
                   </div>
                 </div>
 

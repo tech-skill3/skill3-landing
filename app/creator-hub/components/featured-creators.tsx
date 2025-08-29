@@ -9,7 +9,6 @@ import {
   TrendingUp,
   Users,
   Award,
-  ArrowRight,
   DollarSign
 } from "lucide-react"
 

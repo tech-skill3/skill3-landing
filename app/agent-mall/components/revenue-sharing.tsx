@@ -17,7 +17,6 @@ import {
   Zap,
   Shield,
   CheckCircle,
-  ArrowRight
 } from "lucide-react"
 
 export default function RevenueSharingSection() {
@@ -355,7 +354,7 @@ export default function RevenueSharingSection() {
                     </div>
 
                     <blockquote className="text-sm text-muted-foreground italic">
-                      "{story.testimonial}"
+                      &quot;{story.testimonial}&quot;
                     </blockquote>
                   </CardContent>
                 </Card>

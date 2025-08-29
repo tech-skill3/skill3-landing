@@ -11,9 +11,7 @@ import {
   ChevronRight,
   AlertCircle,
   Wrench,
-  BarChart3,
-  Trophy,
-  Award
+  BarChart3
 } from "lucide-react"
 
 export default function CreatorOverviewPage() {

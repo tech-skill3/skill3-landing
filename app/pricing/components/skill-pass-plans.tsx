@@ -5,17 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import {
-  CheckCircle,
-  BookOpen,
-  MessageSquare,
-  Target,
-  Award,
-  Briefcase,
-  Zap,
-  Star,
-  Check
-} from "lucide-react"
+import { CheckCircle, BookOpen, Briefcase, Zap, Star, Check } from "lucide-react"
 
 export default function SkillPassPlans() {
   const plans = [

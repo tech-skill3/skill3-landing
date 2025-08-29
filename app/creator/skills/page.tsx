@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { 
   Plus,
   Search,
@@ -233,9 +233,6 @@ export default function SkillsManagementPage() {
       {filteredSkills.length === 0 && (
         <Card className="bg-white border border-gray-200 shadow-sm">
           <CardContent className="p-12 text-center">
-            <div className="text-gray-400 mb-4">
-              <BookOpen className="size-12 mx-auto" />
-            </div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">暂无技能体</h3>
             <p className="text-gray-600 mb-4">
               {selectedStatus === "all" 

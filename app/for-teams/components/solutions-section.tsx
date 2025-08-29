@@ -7,9 +7,7 @@ import {
   Brain,
   Target,
   Database,
-  Users,
   Shield,
-  Zap,
   CheckCircle
 } from "lucide-react"
 

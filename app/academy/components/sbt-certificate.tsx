@@ -12,7 +12,6 @@ import {
   Share2,
   Verified,
   Globe,
-  Lock,
   Star,
   TrendingUp,
   CheckCircle,
@@ -342,56 +341,6 @@ export default function SbtCertificate() {
                 </Card>
               </motion.div>
             ))}
-          </div>
-        </motion.div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-8 md:p-12 text-white text-center"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            获得您的第一个SBT证书
-          </h3>
-          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-            完成学习课程，通过技能认证考试，即可获得永久存储在区块链上的数字技能证书。
-            这是您在Web3时代的专业身份证明。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              variant="secondary"
-              className="bg-white text-purple-600 hover:bg-gray-100"
-            >
-              <Award className="w-5 h-5 mr-2" />
-              开始认证之旅
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white/10"
-            >
-              <Eye className="w-5 h-5 mr-2" />
-              查看示例证书
-            </Button>
-          </div>
-          
-          <div className="mt-8 flex items-center justify-center gap-6 text-sm opacity-80">
-            <div className="flex items-center gap-2">
-              <Lock className="w-4 h-4" />
-              <span>永久存储</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4" />
-              <span>防伪认证</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Globe className="w-4 h-4" />
-              <span>全球认可</span>
-            </div>
           </div>
         </motion.div>
       </div>

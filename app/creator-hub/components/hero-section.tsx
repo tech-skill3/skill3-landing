@@ -6,10 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import {
   Sparkles,
   Palette,
-  TrendingUp,
   ArrowRight,
-  Users,
-  Zap
 } from "lucide-react"
 
 export default function HeroSection() {

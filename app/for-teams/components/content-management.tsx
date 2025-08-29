@@ -11,7 +11,6 @@ import {
   Upload,
   Shield,
   Users,
-  ArrowRight,
   Database,
   Globe
 } from "lucide-react"

@@ -260,7 +260,7 @@ export default function AiCoach() {
                   <span className="font-medium">学习者反馈</span>
                 </div>
                 <blockquote className="text-lg italic mb-4">
-                  "AI陪练就像有一个24小时在线的专业导师，随时为我解答问题，学习效率提升了300%！"
+                  &quot;AI陪练就像有一个24小时在线的专业导师，随时为我解答问题，学习效率提升了300%！&quot;
                 </blockquote>
                 <div className="flex items-center gap-2 text-sm opacity-90">
                   <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">

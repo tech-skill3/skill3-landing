@@ -62,8 +62,6 @@ export default function ValueAddedServices() {
     }
   ]
 
-  const categories = ["全部", "核心扩展", "交互增强", "全球化", "存储管理", "安全合规", "行业方案"]
-
   return (
     <section className="w-full py-20 md:py-32 lg:py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-black dark:to-gray-900">
       <div className="container px-4 md:px-6">

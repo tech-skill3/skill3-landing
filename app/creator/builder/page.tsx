@@ -13,8 +13,7 @@ import {
   Bot,
   GraduationCap,
   Settings,
-  Save,
-  Preview
+  Save
 } from "lucide-react"
 
 export default function SkillBuilderPage() {
@@ -351,7 +350,6 @@ export default function SkillBuilderPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               {steps.map((step) => {
-                const Icon = step.icon
                 const isActive = step.id === currentStep
                 const isCompleted = step.completed
 
@@ -435,10 +433,7 @@ export default function SkillBuilderPage() {
                 <Save className="size-4 mr-2" />
                 保存草稿
               </Button>
-              <Button variant="outline">
-                <Preview className="size-4 mr-2" />
-                预览
-              </Button>
+
               {currentStep < steps.length ? (
                 <Button 
                   className="bg-blue-600 hover:bg-blue-700 text-white"
