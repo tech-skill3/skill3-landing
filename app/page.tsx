@@ -141,7 +141,7 @@ export default function LandingPage() {
         </section>
 
         {/* Logos Section */}
-        <section className="w-full py-12 border-y bg-muted/30">
+        <section className="w-full py-20 md:py-32 lg:py-20 border-y bg-muted/30">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <p className="text-sm font-medium text-muted-foreground">Trusted by innovative companies worldwide</p>
@@ -162,7 +162,7 @@ export default function LandingPage() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="w-full py-20 md:py-32">
+        <section id="features" className="w-full py-20 md:py-32 lg:py-20">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -206,7 +206,7 @@ export default function LandingPage() {
         </section>
 
         {/* How It Works Section */}
-        <section className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden">
+        <section className="w-full py-20 md:py-32 lg:py-20 bg-muted/30 relative overflow-hidden">
           <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
 
           <div className="container px-4 md:px-6 relative">
@@ -266,7 +266,7 @@ export default function LandingPage() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="w-full py-20 md:py-32">
+        <section id="testimonials" className="w-full py-20 md:py-32 lg:py-20">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -364,7 +364,7 @@ export default function LandingPage() {
         </section>
 
         {/* Pricing Section */}
-        <section id="pricing" className="w-full py-20 md:py-32 bg-muted/30 relative overflow-hidden">
+        <section id="pricing" className="w-full py-20 md:py-32 lg:py-20 bg-muted/30 relative overflow-hidden">
           <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f1f1f_1px,transparent_1px),linear-gradient(to_bottom,#1f1f1f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_40%,transparent_100%)]"></div>
 
           <div className="container px-4 md:px-6 relative">
@@ -564,7 +564,7 @@ export default function LandingPage() {
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className="w-full py-20 md:py-32">
+        <section id="faq" className="w-full py-20 md:py-32 lg:py-20">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -637,7 +637,7 @@ export default function LandingPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-20 md:py-32 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground relative overflow-hidden">
+        <section className="w-full py-20 md:py-32 lg:py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
           <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>

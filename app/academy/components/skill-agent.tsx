@@ -80,7 +80,7 @@ export default function SkillAgent() {
   }
 
   return (
-    <section className="w-full py-20 md:py-32 bg-white dark:bg-gray-950">
+    <section className="w-full py-20 md:py-32 lg:py-20 bg-white dark:bg-gray-950">
       <div className="container px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
