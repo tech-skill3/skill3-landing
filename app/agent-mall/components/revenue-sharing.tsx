@@ -389,14 +389,6 @@ export default function RevenueSharingSection() {
                 <Target className="w-5 h-5 mr-2" />
                 成为创作者
               </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 rounded-full"
-              >
-                <Calculator className="w-5 h-5 mr-2" />
-                收益计算器
-              </Button>
             </div>
             
             <div className="mt-8 flex items-center justify-center gap-6 text-sm opacity-80">

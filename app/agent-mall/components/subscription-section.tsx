@@ -206,39 +206,6 @@ export default function SubscriptionSection() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">客户成功案例</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              看看其他企业如何通过我们的AI技能代理平台获得显著业务提升
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {useCases.map((useCase, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="p-6 border-border/40 bg-gradient-to-br from-background to-muted/10 hover:shadow-md transition-all">
-                  <CardContent className="p-0">
-                    <h4 className="text-lg font-semibold mb-3">{useCase.title}</h4>
-                    <p className="text-muted-foreground mb-4">{useCase.description}</p>
-                    <div className="mb-4">
-                      <Badge className="bg-green-100 text-green-700 text-sm">
-                        {useCase.result}
-                      </Badge>
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      客户包括：{useCase.companies.join('、')}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
 
         {/* CTA */}

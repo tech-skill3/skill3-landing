@@ -215,11 +215,13 @@ export default function TopRecommendations() {
                       {/* Action Buttons */}
                       <div className="flex gap-3 mt-auto">
                         <Button className="flex-1 rounded-full">
-                          Explore Skill Unit
+                          Enroll
                         </Button>
-                        <Button variant="outline" className="flex-1 rounded-full">
-                          View Details
-                        </Button>
+                        <Link href={`/agent-mall/${agent.id}`}>
+                          <Button variant="outline" className="flex-1 rounded-full">
+                            View Details
+                          </Button>
+                        </Link>
                       </div>
                     </div>
 
