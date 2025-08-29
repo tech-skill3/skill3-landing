@@ -58,7 +58,7 @@ export default function Header() {
             Academy
           </Link>
           <Link
-            href="#agent-mall"
+            href="/agent-mall"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Agent Mall
@@ -126,7 +126,7 @@ export default function Header() {
             <Link href="/academy" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Academy
             </Link>
-            <Link href="#agent-mall" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/agent-mall" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Agent Mall
             </Link>
             <Link href="#for-teams" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
