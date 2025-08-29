@@ -76,7 +76,7 @@ export default function Header() {
             Creator Hub
           </Link>
           <Link
-            href="#pricing"
+            href="/pricing"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             Pricing
@@ -135,7 +135,7 @@ export default function Header() {
             <Link href="/creator-hub" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Creator Hub
             </Link>
-            <Link href="#pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Pricing
             </Link>
             <Link href="#resources" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
