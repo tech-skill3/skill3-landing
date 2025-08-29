@@ -64,7 +64,7 @@ export default function Header() {
             Agent Mall
           </Link>
           <Link
-            href="#for-teams"
+            href="/for-teams"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             For Teams
@@ -129,7 +129,7 @@ export default function Header() {
             <Link href="/agent-mall" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Agent Mall
             </Link>
-            <Link href="#for-teams" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/for-teams" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               For Teams
             </Link>
             <Link href="#creator-hub" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>

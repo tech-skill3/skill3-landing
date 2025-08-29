@@ -1,0 +1,482 @@
+---
+alwaysApply: true
+---
+
+
+# Button Design Standards
+
+## 🎯 按钮样式规范
+
+我们统一使用以下按钮样式规范，确保整个网站的一致性和专业外观。
+
+### 📏 标准按钮样式
+
+#### 主CTA按钮（主要行动按钮）
+
+```tsx
+<Button
+  size="lg"
+  className="rounded-full h-14 px-8 text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+>
+  按钮文本
+  <ArrowRight className="ml-2 h-5 w-5" />
+</Button>
+```
+
+**样式说明：**
+- **高度**: `h-14` = 3.5rem = 56px
+- **字体大小**: `text-base` = 1rem = 16px
+- **圆角**: `rounded-full` = 完全圆角
+- **内边距**: `px-8` = 2rem = 32px 左右内边距
+- **背景**: 渐变色 (蓝色到靛蓝色)
+- **阴影**: `shadow-lg` = 大阴影
+- **图标**: 右侧箭头，尺寸 h-5 w-5，左边距 ml-2
+
+#### 次级CTA按钮（辅助行动按钮）
+
+```tsx
+<Button
+  size="lg"
+  variant="outline"
+  className="rounded-full h-14 px-8 text-base border-2 border-blue-200 hover:bg-blue-50"
+>
+  <Icon className="mr-2 h-5 w-5" />
+  按钮文本
+</Button>
+```
+
+**样式说明：**
+- **高度**: `h-14` = 3.5rem = 56px
+- **变体**: `variant="outline"` = 边框样式
+- **边框**: `border-2 border-blue-200` = 2px蓝色边框
+- **悬停**: `hover:bg-blue-50` = 浅蓝色背景
+- **图标**: 左侧图标，尺寸 h-5 w-5，右边距 mr-2
+
+### 🎨 设计原理
+
+#### 尺寸层级
+1. **主要按钮**: `h-14` - 用于最重要的行动号召
+2. **次级按钮**: `h-14` - 保持与主按钮一致的高度
+3. **小型按钮**: `h-10` 或 `h-12` - 用于次要功能
+
+#### 颜色系统
+- **主要**: 蓝色渐变 (`blue-600` → `indigo-600`)
+- **悬停**: 深蓝色渐变 (`blue-700` → `indigo-700`)
+- **辅助**: 边框样式，浅色悬停背景
+
+#### 图标规范
+- **尺寸**: 统一使用 `h-5 w-5` (20px)
+- **位置**: 主要按钮右侧，次级按钮左侧
+- **间距**: 与文字间距 `ml-2` 或 `mr-2` (8px)
+
+### 📱 响应式适配
+
+#### 移动端优化
+```tsx
+<div className="flex flex-col sm:flex-row gap-4">
+  <Button className="...">主要按钮</Button>
+  <Button variant="outline" className="...">次级按钮</Button>
+</div>
+```
+
+- **移动端**: 垂直排列 (`flex-col`)
+- **平板及以上**: 水平排列 (`sm:flex-row`)
+- **间距**: `gap-4` = 1rem = 16px
+
+### 📋 已应用页面
+
+#### ✅ Academy页面
+- **立即开始学习**: 主CTA按钮样式
+- **探索Skill Agent**: 次级CTA按钮样式
+
+#### ✅ For Teams页面
+- **立即预约演示**: 主CTA按钮样式（与Academy一致）
+- **了解详情**: 次级CTA按钮样式
+
+#### 🔄 Agent Mall页面（待更新）
+- **预约产品演示**: 使用了 `variant="secondary"`，建议迁移到标准样式
+- **联系销售顾问**: 使用了边框样式，基本符合规范
+
+### 🔧 实施细节
+
+#### 标准按钮组件结构
+```tsx
+import { Button } from "@/components/ui/button"
+import { ArrowRight, IconName } from "lucide-react"
+
+export default function Component() {
+  return (
+    <Button
+      size="lg"
+      className="rounded-full h-14 px-8 text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+    >
+      按钮文本
+      <ArrowRight className="ml-2 h-5 w-5" />
+    </Button>
+  )
+}
+```
+
+#### 按钮组布局
+```tsx
+<div className="flex flex-col sm:flex-row gap-4 justify-center">
+  <Button className="...">主要行动</Button>
+  <Button variant="outline" className="...">次要行动</Button>
+</div>
+```
+
+### 🚫 禁止使用
+
+- ❌ 不使用默认的 `size="default"` 按钮
+- ❌ 不使用 `py-4` 等自定义高度（应使用 `h-14`）
+- ❌ 不使用不一致的颜色系统
+- ❌ 不使用不一致的图标尺寸
+- ❌ 不省略必要的hover状态
+
+### 🔄 迁移指南
+
+#### 从旧样式迁移到新样式
+
+**旧样式（Agent Mall页面）：**
+```tsx
+<Button
+  size="lg"
+  variant="secondary"
+  className="bg-white text-blue-600 hover:bg-gray-100 rounded-full"
+>
+  预约产品演示
+</Button>
+```
+
+**新样式（标准规范）：**
+```tsx
+<Button
+  size="lg"
+  className="rounded-full h-14 px-8 text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+>
+  预约产品演示
+  <ArrowRight className="ml-2 h-5 w-5" />
+</Button>
+```
+
+#### 迁移步骤：
+1. 移除 `variant="secondary"`
+2. 添加标准样式类：`h-14 px-8 text-base`
+3. 替换背景色为渐变色
+4. 添加 `shadow-lg`
+5. 添加右侧箭头图标
+6. 调整悬停状态
+
+### 🎯 一致性检查清单
+
+#### 视觉一致性
+- [ ] 按钮高度是否为 `h-14`？
+- [ ] 是否使用了正确的渐变色？
+- [ ] 图标尺寸是否为 `h-5 w-5`？
+- [ ] 圆角是否为 `rounded-full`？
+
+#### 交互一致性
+- [ ] 是否有正确的hover状态？
+- [ ] 是否使用了 `shadow-lg`？
+- [ ] 移动端是否垂直排列？
+
+#### 内容一致性
+- [ ] 文字是否简洁明了？
+- [ ] 图标位置是否正确？
+- [ ] 按钮间距是否合适？
+
+### 🚀 未来扩展
+
+#### 新增按钮类型
+当需要新增按钮类型时，请：
+
+1. 在此文档中定义新的样式规范
+2. 更新所有相关页面的按钮
+3. 确保与现有按钮的视觉一致性
+
+#### 主题适配
+支持深色主题的按钮样式：
+
+```tsx
+// 深色主题适配
+className="... dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600"
+```
+
+## 📖 快速参考
+
+### 标准按钮模板
+
+#### 主CTA按钮（复制粘贴使用）
+```tsx
+<Button
+  size="lg"
+  className="rounded-full h-14 px-8 text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+>
+  按钮文本
+  <ArrowRight className="ml-2 h-5 w-5" />
+</Button>
+```
+
+#### 次级CTA按钮（复制粘贴使用）
+```tsx
+<Button
+  size="lg"
+  variant="outline"
+  className="rounded-full h-14 px-8 text-base border-2 border-blue-200 hover:bg-blue-50"
+>
+  <Icon className="mr-2 h-5 w-5" />
+  按钮文本
+</Button>
+```
+
+### 常用图标
+- **ArrowRight**: 主要按钮右侧箭头
+- **Clock**: 时间相关功能
+- **Zap**: 快速/电力相关
+- **Play**: 播放/开始相关
+- **Mail**: 邮件/联系相关
+
+---
+
+*最后更新：2024年1月*
+*文档版本：v1.1*
+*维护者：UI/UX Team*
+
+# Button Design Standards
+
+## 🎯 按钮样式规范
+
+我们统一使用以下按钮样式规范，确保整个网站的一致性和专业外观。
+
+### 📏 标准按钮样式
+
+#### 主CTA按钮（主要行动按钮）
+
+```tsx
+<Button
+  size="lg"
+  className="rounded-full h-14 px-8 text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+>
+  按钮文本
+  <ArrowRight className="ml-2 h-5 w-5" />
+</Button>
+```
+
+**样式说明：**
+- **高度**: `h-14` = 3.5rem = 56px
+- **字体大小**: `text-base` = 1rem = 16px
+- **圆角**: `rounded-full` = 完全圆角
+- **内边距**: `px-8` = 2rem = 32px 左右内边距
+- **背景**: 渐变色 (蓝色到靛蓝色)
+- **阴影**: `shadow-lg` = 大阴影
+- **图标**: 右侧箭头，尺寸 h-5 w-5，左边距 ml-2
+
+#### 次级CTA按钮（辅助行动按钮）
+
+```tsx
+<Button
+  size="lg"
+  variant="outline"
+  className="rounded-full h-14 px-8 text-base border-2 border-blue-200 hover:bg-blue-50"
+>
+  <Icon className="mr-2 h-5 w-5" />
+  按钮文本
+</Button>
+```
+
+**样式说明：**
+- **高度**: `h-14` = 3.5rem = 56px
+- **变体**: `variant="outline"` = 边框样式
+- **边框**: `border-2 border-blue-200` = 2px蓝色边框
+- **悬停**: `hover:bg-blue-50` = 浅蓝色背景
+- **图标**: 左侧图标，尺寸 h-5 w-5，右边距 mr-2
+
+### 🎨 设计原理
+
+#### 尺寸层级
+1. **主要按钮**: `h-14` - 用于最重要的行动号召
+2. **次级按钮**: `h-14` - 保持与主按钮一致的高度
+3. **小型按钮**: `h-10` 或 `h-12` - 用于次要功能
+
+#### 颜色系统
+- **主要**: 蓝色渐变 (`blue-600` → `indigo-600`)
+- **悬停**: 深蓝色渐变 (`blue-700` → `indigo-700`)
+- **辅助**: 边框样式，浅色悬停背景
+
+#### 图标规范
+- **尺寸**: 统一使用 `h-5 w-5` (20px)
+- **位置**: 主要按钮右侧，次级按钮左侧
+- **间距**: 与文字间距 `ml-2` 或 `mr-2` (8px)
+
+### 📱 响应式适配
+
+#### 移动端优化
+```tsx
+<div className="flex flex-col sm:flex-row gap-4">
+  <Button className="...">主要按钮</Button>
+  <Button variant="outline" className="...">次级按钮</Button>
+</div>
+```
+
+- **移动端**: 垂直排列 (`flex-col`)
+- **平板及以上**: 水平排列 (`sm:flex-row`)
+- **间距**: `gap-4` = 1rem = 16px
+
+### 📋 已应用页面
+
+#### ✅ Academy页面
+- **立即开始学习**: 主CTA按钮样式
+- **探索Skill Agent**: 次级CTA按钮样式
+
+#### ✅ For Teams页面
+- **立即预约演示**: 主CTA按钮样式（与Academy一致）
+- **了解详情**: 次级CTA按钮样式
+
+#### 🔄 Agent Mall页面（待更新）
+- **预约产品演示**: 使用了 `variant="secondary"`，建议迁移到标准样式
+- **联系销售顾问**: 使用了边框样式，基本符合规范
+
+### 🔧 实施细节
+
+#### 标准按钮组件结构
+```tsx
+import { Button } from "@/components/ui/button"
+import { ArrowRight, IconName } from "lucide-react"
+
+export default function Component() {
+  return (
+    <Button
+      size="lg"
+      className="rounded-full h-14 px-8 text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+    >
+      按钮文本
+      <ArrowRight className="ml-2 h-5 w-5" />
+    </Button>
+  )
+}
+```
+
+#### 按钮组布局
+```tsx
+<div className="flex flex-col sm:flex-row gap-4 justify-center">
+  <Button className="...">主要行动</Button>
+  <Button variant="outline" className="...">次要行动</Button>
+</div>
+```
+
+### 🚫 禁止使用
+
+- ❌ 不使用默认的 `size="default"` 按钮
+- ❌ 不使用 `py-4` 等自定义高度（应使用 `h-14`）
+- ❌ 不使用不一致的颜色系统
+- ❌ 不使用不一致的图标尺寸
+- ❌ 不省略必要的hover状态
+
+### 🔄 迁移指南
+
+#### 从旧样式迁移到新样式
+
+**旧样式（Agent Mall页面）：**
+```tsx
+<Button
+  size="lg"
+  variant="secondary"
+  className="bg-white text-blue-600 hover:bg-gray-100 rounded-full"
+>
+  预约产品演示
+</Button>
+```
+
+**新样式（标准规范）：**
+```tsx
+<Button
+  size="lg"
+  className="rounded-full h-14 px-8 text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+>
+  预约产品演示
+  <ArrowRight className="ml-2 h-5 w-5" />
+</Button>
+```
+
+#### 迁移步骤：
+1. 移除 `variant="secondary"`
+2. 添加标准样式类：`h-14 px-8 text-base`
+3. 替换背景色为渐变色
+4. 添加 `shadow-lg`
+5. 添加右侧箭头图标
+6. 调整悬停状态
+
+### 🎯 一致性检查清单
+
+#### 视觉一致性
+- [ ] 按钮高度是否为 `h-14`？
+- [ ] 是否使用了正确的渐变色？
+- [ ] 图标尺寸是否为 `h-5 w-5`？
+- [ ] 圆角是否为 `rounded-full`？
+
+#### 交互一致性
+- [ ] 是否有正确的hover状态？
+- [ ] 是否使用了 `shadow-lg`？
+- [ ] 移动端是否垂直排列？
+
+#### 内容一致性
+- [ ] 文字是否简洁明了？
+- [ ] 图标位置是否正确？
+- [ ] 按钮间距是否合适？
+
+### 🚀 未来扩展
+
+#### 新增按钮类型
+当需要新增按钮类型时，请：
+
+1. 在此文档中定义新的样式规范
+2. 更新所有相关页面的按钮
+3. 确保与现有按钮的视觉一致性
+
+#### 主题适配
+支持深色主题的按钮样式：
+
+```tsx
+// 深色主题适配
+className="... dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600"
+```
+
+## 📖 快速参考
+
+### 标准按钮模板
+
+#### 主CTA按钮（复制粘贴使用）
+```tsx
+<Button
+  size="lg"
+  className="rounded-full h-14 px-8 text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+>
+  按钮文本
+  <ArrowRight className="ml-2 h-5 w-5" />
+</Button>
+```
+
+#### 次级CTA按钮（复制粘贴使用）
+```tsx
+<Button
+  size="lg"
+  variant="outline"
+  className="rounded-full h-14 px-8 text-base border-2 border-blue-200 hover:bg-blue-50"
+>
+  <Icon className="mr-2 h-5 w-5" />
+  按钮文本
+</Button>
+```
+
+### 常用图标
+- **ArrowRight**: 主要按钮右侧箭头
+- **Clock**: 时间相关功能
+- **Zap**: 快速/电力相关
+- **Play**: 播放/开始相关
+- **Mail**: 邮件/联系相关
+
+---
+
+*最后更新：2024年1月*
+*文档版本：v1.1*
+*维护者：UI/UX Team*
