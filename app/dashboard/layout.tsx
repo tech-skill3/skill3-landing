@@ -1,13 +1,10 @@
-"use client"
-
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { 
-  LayoutDashboard, 
-  BookOpen, 
-  Trophy, 
-  User, 
-  Settings, 
+import {
+  LayoutDashboard,
+  BookOpen,
+  Trophy,
+  User,
+  Settings,
   LogOut
 } from "lucide-react"
 
@@ -16,7 +13,6 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode
 }) {
-  const pathname = usePathname()
 
   const menuItems = [
     { id: "overview", label: "仪表盘概览", icon: LayoutDashboard, href: "/dashboard" },
@@ -42,16 +38,11 @@ export default function DashboardLayout({
             <nav className="space-y-2">
               {menuItems.map((item) => {
                 const Icon = item.icon
-                const isActive = pathname === item.href
                 return (
                   <Link
                     key={item.id}
                     href={item.href}
-                    className={`w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
-                      isActive
-                        ? "bg-blue-50 text-blue-700 border border-blue-200"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                    }`}
+                    className="w-full flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-lg transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                   >
                     <Icon className="size-5" />
                     {item.label}
