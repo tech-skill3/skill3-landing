@@ -1,5 +1,6 @@
 ---
-description:使用shadcn组件库，不要使用emoji图标
+description:- **Tailwind CSS** with Shadcn UI components，不要使用emoji图标
+
 globs:
 alwaysApply: true
 ---
