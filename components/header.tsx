@@ -50,7 +50,7 @@ export default function Header() {
           <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
             S
           </div>
-          <span>SaaSify</span>
+          <span>Skill³</span>
         </Link>
         <nav className="hidden md:flex gap-8">
           <Link

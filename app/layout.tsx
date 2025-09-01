@@ -9,8 +9,8 @@ import FooterController from "./footer-controller"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SaaSify - Streamline Your Workflow",
-  description: "Boost productivity, reduce costs, and scale your business with our all-in-one SaaS platform.",
+  title: "Skill³",
+  description: "",
 }
 
 export default function RootLayout({
