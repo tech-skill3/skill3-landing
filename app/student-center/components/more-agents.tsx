@@ -7,8 +7,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
   Search,
-  Filter,
-  TrendingUp,
   Users,
   Star,
   Bot,
@@ -123,17 +121,9 @@ export function MoreAgents() {
         ))}
       </div>
 
-      {/* 搜索和筛选区域 */}
-      <div className="flex items-center justify-between gap-4">
-        <Button
-          variant="outline"
-          className="flex items-center gap-2 bg-gray-900 text-white hover:bg-gray-800 border-gray-900"
-        >
-          <Filter className="h-4 w-4" />
-          Show Filters
-        </Button>
-
-        <div className="flex-1 max-w-md relative">
+      {/* 搜索区域 */}
+      <div className="flex justify-start">
+        <div className="w-full max-w-md relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
           <Input
             placeholder="Search Skill Agents"
@@ -142,14 +132,6 @@ export function MoreAgents() {
             className="pl-10 bg-gray-100 border-gray-200"
           />
         </div>
-
-        <Button
-          variant="outline"
-          className="flex items-center gap-2"
-        >
-          <TrendingUp className="h-4 w-4" />
-          Trending
-        </Button>
       </div>
 
       {/* Agent网格 */}

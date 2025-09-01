@@ -7,8 +7,6 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
   Search,
-  Filter,
-  TrendingUp,
   Users,
   Award
 } from 'lucide-react'
@@ -129,17 +127,9 @@ export function MoreCourses() {
         ))}
       </div>
 
-      {/* 搜索和筛选区域 */}
-      <div className="flex items-center justify-between gap-4">
-        <Button
-          variant="outline"
-          className="flex items-center gap-2 bg-gray-900 text-white hover:bg-gray-800 border-gray-900"
-        >
-          <Filter className="h-4 w-4" />
-          Show Filters
-        </Button>
-
-        <div className="flex-1 max-w-md relative">
+      {/* 搜索区域 */}
+      <div className="flex justify-start">
+        <div className="w-full max-w-md relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
           <Input
             placeholder="Search"
@@ -148,35 +138,21 @@ export function MoreCourses() {
             className="pl-10 bg-gray-100 border-gray-200"
           />
         </div>
-
-        <Button
-          variant="outline"
-          className="flex items-center gap-2"
-        >
-          <TrendingUp className="h-4 w-4" />
-          Trending
-        </Button>
       </div>
 
       {/* 课程网格 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {courses.map((course) => (
           <Card
             key={course.id}
             className="cursor-pointer hover:shadow-lg transition-shadow bg-white border border-gray-200"
             onClick={() => handleCourseClick(course.id)}
           >
-            <div className="p-4">
-              {/* 课程封面 */}
-              <div className="relative mb-3">
-                <div className="w-full h-24 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                  <div className="text-white text-2xl font-bold">
-                    {course.title.includes('MW3') ? 'MW3' : course.title.charAt(0)}
-                  </div>
-                </div>
-                
+            <div className="p-4 flex gap-4">
+              {/* 左侧课程信息 */}
+              <div className="flex-1 space-y-3">
                 {/* 标签 */}
-                <div className="absolute top-2 left-2 flex gap-1">
+                <div className="flex flex-wrap gap-1">
                   <Badge variant="secondary" className="text-xs bg-gray-700 text-white">
                     {course.category}
                   </Badge>
@@ -192,23 +168,30 @@ export function MoreCourses() {
                     </Badge>
                   )}
                 </div>
-              </div>
 
-              {/* 课程信息 */}
-              <div className="space-y-2">
+                {/* 课程标题 */}
                 <h3 className="font-medium text-sm text-gray-900 line-clamp-2 leading-tight">
                   {course.title}
                 </h3>
                 
+                {/* 参与人数 */}
                 <div className="flex items-center text-xs text-gray-500">
                   <Users className="h-3 w-3 mr-1" />
                   {course.participants} participants
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-gray-500">
-                  <div className="flex items-center">
-                    <span className="text-gray-400">🏃‍♂️</span>
-                    <span className="ml-1">{course.provider}</span>
+                {/* 提供商 */}
+                <div className="flex items-center text-xs text-gray-500">
+                  <span className="text-gray-400">🏃‍♂️</span>
+                  <span className="ml-1">{course.provider}</span>
+                </div>
+              </div>
+
+              {/* 右侧课程封面 */}
+              <div className="w-20 h-20 flex-shrink-0">
+                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                  <div className="text-white text-lg font-bold">
+                    {course.title.includes('MW3') ? 'MW3' : course.title.charAt(0)}
                   </div>
                 </div>
               </div>
