@@ -95,12 +95,6 @@ export default function Header() {
             {mounted && theme === "dark" ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
             <span className="sr-only">Toggle theme</span>
           </Button>
-          <Link
-            href="/login"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Log in
-          </Link>
           <Button 
             onClick={() => setWalletModalOpen(true)}
             className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
@@ -147,9 +141,6 @@ export default function Header() {
               Resources
             </Link>
             <div className="flex flex-col gap-2 pt-2 border-t">
-              <Link href="/login" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Log in
-              </Link>
               <Button 
                 onClick={() => setWalletModalOpen(true)}
                 className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
