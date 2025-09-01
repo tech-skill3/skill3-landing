@@ -12,10 +12,12 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "next-themes"
+import ConnectWalletModal from "@/components/wallet/connect-wallet-modal"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [walletModalOpen, setWalletModalOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -99,7 +101,10 @@ export default function Header() {
           >
             Log in
           </Link>
-          <Button className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg">
+          <Button 
+            onClick={() => setWalletModalOpen(true)}
+            className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+          >
             Get Started
             <ChevronRight className="ml-1 size-4" />
           </Button>
@@ -145,7 +150,10 @@ export default function Header() {
               <Link href="/login" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
                 Log in
               </Link>
-              <Button className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg">
+              <Button 
+                onClick={() => setWalletModalOpen(true)}
+                className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+              >
                 Get Started
                 <ChevronRight className="ml-1 size-4" />
               </Button>
@@ -153,6 +161,11 @@ export default function Header() {
           </div>
         </motion.div>
       )}
+      
+      <ConnectWalletModal 
+        open={walletModalOpen} 
+        onOpenChange={setWalletModalOpen} 
+      />
     </header>
   )
 }
