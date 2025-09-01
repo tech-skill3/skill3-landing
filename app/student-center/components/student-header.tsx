@@ -1,7 +1,6 @@
 'use client'
 
-import Link from 'next/link'
-import { Bell, ArrowLeft } from 'lucide-react'
+import { Bell } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import UserMenu from './user-menu'
 

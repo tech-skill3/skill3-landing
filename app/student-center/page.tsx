@@ -6,9 +6,10 @@ import { StudentHeader } from './components/student-header'
 import { Dashboard } from './components/dashboard'
 import { MyLearning } from './components/my-learning'
 import { MoreCourses } from './components/more-courses'
+import { MoreAgents } from './components/more-agents'
 import { MyAchievements } from './components/my-achievements'
 
-type ActiveTab = 'dashboard' | 'learning' | 'courses' | 'achievements'
+type ActiveTab = 'dashboard' | 'learning' | 'courses' | 'agents' | 'achievements'
 
 export default function StudentCenterPage() {
   const [activeTab, setActiveTab] = useState<ActiveTab>('dashboard')
@@ -21,6 +22,8 @@ export default function StudentCenterPage() {
         return <MyLearning />
       case 'courses':
         return <MoreCourses />
+      case 'agents':
+        return <MoreAgents />
       case 'achievements':
         return <MyAchievements />
       default:

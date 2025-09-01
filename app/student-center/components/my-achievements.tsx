@@ -17,7 +17,6 @@ import {
   Zap,
   Users,
   TrendingUp,
-  Calendar,
   Download,
   Share
 } from 'lucide-react'

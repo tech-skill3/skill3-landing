@@ -1,10 +1,10 @@
 'use client'
 
-import { LayoutDashboard, BookOpen, Plus, Trophy } from 'lucide-react'
+import { LayoutDashboard, BookOpen, Plus, Trophy, Bot } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
-type ActiveTab = 'dashboard' | 'learning' | 'courses' | 'achievements'
+type ActiveTab = 'dashboard' | 'learning' | 'courses' | 'agents' | 'achievements'
 
 interface StudentSidebarProps {
   activeTab: ActiveTab
@@ -29,6 +29,12 @@ const menuItems = [
     label: '更多课程',
     icon: Plus,
     description: '探索更多学习资源'
+  },
+  {
+    id: 'agents' as ActiveTab,
+    label: '更多Skill Agent',
+    icon: Bot,
+    description: '发现强大的AI技能助手'
   },
   {
     id: 'achievements' as ActiveTab,

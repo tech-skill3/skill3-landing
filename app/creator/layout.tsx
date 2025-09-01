@@ -10,6 +10,7 @@ import {
   BarChart3, 
   LogOut
 } from "lucide-react"
+import CreatorHeader from './components/creator-header'
 
 export default function CreatorLayout({
   children,
@@ -74,7 +75,7 @@ export default function CreatorLayout({
         {/* 右侧内容区域 */}
         <div className="flex-1 bg-gray-50">
           {/* 顶部 Creator Header */}
-          {require('./components/creator-header').default()}
+          <CreatorHeader />
           {children}
         </div>
       </div>
