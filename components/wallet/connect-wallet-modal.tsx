@@ -28,9 +28,8 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
     try {
       await connect()
       if (!error) {
-        // 连接成功，关闭弹窗
         setTimeout(() => {
-          onOpenChange(false)
+          onOpen-Change(false)
         }, 1000)
       }
     } finally {
@@ -43,70 +42,80 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
     const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     
     if (isMobile && isLocalhost) {
-      // 在本地开发环境下，显示移动端说明
       setShowMobileInstructions(true)
       return
     }
     
-    handleMetaMaskConnect() // 使用MetaMask连接逻辑
+    handleMetaMaskConnect()
   }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[450px] bg-white border border-gray-200 p-0 overflow-hidden">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 p-6 text-white relative">
+      {/* ==================== 【核心修改在这里】 ==================== */}
+      <DialogContent className="
+        max-w-sm w-full  /* <-- 修改：使用 max-w-sm 和 w-full */
+        bg-white border-0 p-0 overflow-hidden rounded-2xl shadow-xl
+      ">
+      {/* 
+        解释:
+        - `max-w-sm`: (max-width: 24rem / 384px) 设置一个优雅的最大宽度，适用于所有屏幕尺寸。
+                      你可以根据需要换成 `max-w-xs` (更窄) 或 `max-w-md` (更宽)。
+        - `w-full`: 确保在窄屏幕上，弹窗宽度会收缩以适应屏幕。
+        - `shadcn/ui` 的 Dialog 会自动处理边距和居中，所以这样就足够了。
+      */}
+      {/* ========================================================== */}
+
+        {/* Header (保持不变) */}
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 px-5 py-4 text-white relative">
           <button
             onClick={() => onOpenChange(false)}
-            className="absolute right-4 top-4 text-white/80 hover:text-white transition-colors"
+            className="absolute right-3 top-3 text-white/80 hover:text-white transition-colors"
           >
-            <X className="h-5 w-5" />
+            <X className="h-4 w-4" />
           </button>
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
-              <span className="text-lg font-bold">B</span>
+            <div className="w-7 h-7 bg-white/20 rounded-lg flex items-center justify-center">
+              <span className="text-sm font-bold">B</span>
             </div>
             <div>
-              <h2 className="text-xl font-bold">CONNECT</h2>
-              <p className="text-sm text-white/90">Join the Web3 revolution</p>
+              <h2 className="text-lg font-bold">CONNECT</h2>
+              <p className="text-xs text-white/90">Join the Web3 revolution</p>
             </div>
           </div>
         </div>
 
-        {/* Content */}
-        <div className="p-6 space-y-6">
-          {/* Connection Status */}
+        {/* Content (保持不变) */}
+        <div className="px-5 py-4 space-y-4">
+          {/* ... 你的所有内部逻辑和JSX都保持不变 ... */}
           {isConnected && account && (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+            <div className="bg-green-50 border border-green-200 rounded-xl p-3">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-green-700 font-medium">Connected Successfully!</span>
+                <span className="text-green-700 font-medium text-sm">Connected Successfully!</span>
               </div>
-              <p className="text-sm text-green-600 mt-1">
+              <p className="text-xs text-green-600 mt-1">
                 Account: {account.slice(0, 6)}...{account.slice(-4)}
               </p>
             </div>
           )}
 
-          {/* Error Message */}
           {error && (
-            <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+            <div className="bg-red-50 border border-red-200 rounded-xl p-3">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                <span className="text-red-700 font-medium">Connection Failed</span>
+                <span className="text-red-700 font-medium text-sm">Connection Failed</span>
               </div>
-              <p className="text-sm text-red-600 mt-1">{error}</p>
+              <p className="text-xs text-red-600 mt-1">{error}</p>
             </div>
           )}
 
-          {/* Mobile Instructions */}
           {showMobileInstructions && (
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-3">
               <div className="flex items-start gap-3">
-                <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+                <AlertCircle className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <h4 className="text-blue-700 font-medium mb-2">移动端连接说明</h4>
-                  <div className="text-sm text-blue-600 space-y-1">
+                  <h4 className="text-blue-700 font-medium mb-2 text-sm">移动端连接说明</h4>
+                  <div className="text-xs text-blue-600 space-y-1">
                     <p>1. 在手机上打开 MetaMask 应用</p>
                     <p>2. 点击底部的「浏览器」标签</p>
                     <p>3. 输入你的本地IP地址 (如: 192.168.1.100:3000)</p>
@@ -116,7 +125,7 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
                     onClick={() => setShowMobileInstructions(false)}
                     variant="outline"
                     size="sm"
-                    className="mt-3 text-blue-600 border-blue-300 hover:bg-blue-100"
+                    className="mt-2 text-blue-600 border-blue-300 hover:bg-blue-100 h-7 px-3 text-xs"
                   >
                     我知道了
                   </Button>
@@ -124,26 +133,26 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
               </div>
             </div>
           )}
-          {/* Wallet Options */}
-          <div className="space-y-3">
+
+          <div className="space-y-2.5">
             <Button
               onClick={handleMobileConnect}
               disabled={isConnecting || isConnected}
-              className="w-full h-12 bg-purple-100 hover:bg-purple-200 text-purple-700 font-medium rounded-lg border-0 flex items-center justify-center gap-3 disabled:opacity-50"
+              className="w-full h-11 bg-purple-100 hover:bg-purple-200 text-purple-700 font-medium rounded-xl border-0 flex items-center justify-center gap-2.5 disabled:opacity-50 text-sm"
             >
               {isConnecting ? (
-                <Loader2 className="h-5 w-5 animate-spin" />
+                <Loader2 className="h-4 w-4 animate-spin" />
               ) : (
-                <Smartphone className="h-5 w-5" />
+                <Smartphone className="h-4 w-4" />
               )}
               PLAY ON YOUR SMARTPHONE
             </Button>
 
             <Button
               disabled
-              className="w-full h-12 bg-gray-300 text-gray-500 font-medium rounded-lg flex items-center justify-center gap-3 cursor-not-allowed"
+              className="w-full h-11 bg-gray-200 text-gray-500 font-medium rounded-xl flex items-center justify-center gap-2.5 cursor-not-allowed text-sm"
             >
-              <div className="w-5 h-5 bg-gray-400 rounded-full flex items-center justify-center">
+              <div className="w-4 h-4 bg-gray-400 rounded-full flex items-center justify-center">
                 <span className="text-white text-xs font-bold">C</span>
               </div>
               WITH COINBASE WALLET (Coming Soon)
@@ -152,12 +161,12 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
             <Button
               onClick={handleMetaMaskConnect}
               disabled={isConnecting || isConnected}
-              className="w-full h-12 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-lg flex items-center justify-center gap-3 disabled:opacity-50"
+              className="w-full h-11 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-xl flex items-center justify-center gap-2.5 disabled:opacity-50 text-sm"
             >
               {isConnecting ? (
-                <Loader2 className="h-5 w-5 animate-spin" />
+                <Loader2 className="h-4 w-4 animate-spin" />
               ) : (
-                <div className="w-5 h-5 bg-orange-600 rounded flex items-center justify-center">
+                <div className="w-4 h-4 bg-orange-600 rounded flex items-center justify-center">
                   <span className="text-white text-xs">🦊</span>
                 </div>
               )}
@@ -165,37 +174,34 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
             </Button>
           </div>
 
-          {/* Divider */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <div className="flex-1 h-px bg-gray-200"></div>
-            <span className="text-sm text-gray-500 font-medium">OR</span>
+            <span className="text-xs text-gray-400 font-medium">OR</span>
             <div className="flex-1 h-px bg-gray-200"></div>
           </div>
 
-          {/* Email Section */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-xs font-medium text-gray-700 mb-1.5">
                 Email address
               </label>
               <Input
                 type="email"
                 placeholder="Enter email here"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full h-12 rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                onChange={(e) => setEmail(e.targe-t.value)}
+                className="w-full h-10 rounded-xl border-gray-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 text-sm"
               />
             </div>
 
             <Button
-              className="w-full h-12 bg-green-500 hover:bg-green-600 text-white font-medium rounded-lg"
+              className="w-full h-11 bg-green-500 hover:bg-green-600 text-white font-medium rounded-xl text-sm"
             >
               CONTINUE WITH EMAIL
             </Button>
           </div>
 
-          {/* Terms */}
-          <p className="text-xs text-gray-500 text-center leading-relaxed">
+          <p className="text-xs text-gray-400 text-center leading-relaxed px-2">
             By continuing, you agree to the{" "}
             <a href="#" className="text-blue-500 hover:underline">
               Terms of Service
