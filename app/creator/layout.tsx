@@ -73,6 +73,8 @@ export default function CreatorLayout({
 
         {/* 右侧内容区域 */}
         <div className="flex-1 bg-gray-50">
+          {/* 顶部 Creator Header */}
+          {require('./components/creator-header').default()}
           {children}
         </div>
       </div>

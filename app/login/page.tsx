@@ -40,7 +40,7 @@ export default function LoginPage() {
     if (role === 'creator') {
       router.push("/creator")
     } else {
-      router.push("/dashboard")
+      router.push("/student-center")
     }
   }
 

@@ -85,7 +85,7 @@ export default function LandingPage() {
                 Launching Soon
               </Badge>
               <h1 className="font-hero text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70" style={{lineHeight: '1.2'}}>
-                Elevate Your Workflow with SaaSify
+                Elevate Your Workflow with Skill³
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
                 The all-in-one platform that helps teams collaborate, automate, and deliver exceptional results.

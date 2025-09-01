@@ -3,8 +3,8 @@ import "@/styles/globals.css"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import { ThemeProvider } from "@/components/theme-provider"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
+import HeaderController from "./header-controller"
+import FooterController from "./footer-controller"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,11 +23,11 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <div className="flex min-h-[100dvh] flex-col">
-            <Header />
+            <HeaderController />
             <main className="flex-1">
               {children}
             </main>
-            <Footer />
+            <FooterController />
           </div>
         </ThemeProvider>
       </body>
