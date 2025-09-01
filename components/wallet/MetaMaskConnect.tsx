@@ -1,23 +1,21 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { ethers } from "ethers"
 import { Button } from "@/components/ui/button"
 
 interface EthereumWindow extends Window {
-  ethereum?: any
+  ethereum?: {
+    request: (args: { method: string; params?: unknown[] }) => Promise<unknown>
+  }
 }
 
 export default function WalletConnect() {
   const [isConnected, setIsConnected] = useState(false)
-  const [signer, setSigner] = useState<ethers.Signer | null>(null)
+  const [, setSigner] = useState<ethers.Signer | null>(null)
   const [address, setAddress] = useState<string | null>(null)
 
-  useEffect(() => {
-    checkConnection()
-  }, [])
-
-  async function checkConnection() {
+  const checkConnection = useCallback(async () => {
     const windowEth = (window as EthereumWindow).ethereum
     if (typeof windowEth !== "undefined") {
       try {
@@ -33,7 +31,11 @@ export default function WalletConnect() {
         console.error("Failed to check connection:", error)
       }
     }
-  }
+  }, [])
+
+  useEffect(() => {
+    checkConnection()
+  }, [checkConnection])
 
   async function connectWallet() {
     const windowEth = (window as EthereumWindow).ethereum

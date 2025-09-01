@@ -4,12 +4,10 @@ import { useState } from "react"
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
-  DialogTitle,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { X, Smartphone, Mail, Loader2, AlertCircle } from "lucide-react"
+import { X, Smartphone, Loader2, AlertCircle } from "lucide-react"
 import { useMetaMaskConnect } from "@/hooks/useMetaMaskConnect"
 
 interface ConnectWalletModalProps {
@@ -27,11 +25,11 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
     setIsConnecting(true)
     try {
       await connect()
-      if (!error) {
-        setTimeout(() => {
-          onOpen-Change(false)
-        }, 1000)
-      }
+              if (!error) {
+          setTimeout(() => {
+            onOpenChange(false)
+          }, 1000)
+        }
     } finally {
       setIsConnecting(false)
     }
@@ -51,21 +49,8 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      {/* ==================== 【核心修改在这里】 ==================== */}
-      <DialogContent className="
-        max-w-sm w-full  /* <-- 修改：使用 max-w-sm 和 w-full */
-        bg-white border-0 p-0 overflow-hidden rounded-2xl shadow-xl
-      ">
-      {/* 
-        解释:
-        - `max-w-sm`: (max-width: 24rem / 384px) 设置一个优雅的最大宽度，适用于所有屏幕尺寸。
-                      你可以根据需要换成 `max-w-xs` (更窄) 或 `max-w-md` (更宽)。
-        - `w-full`: 确保在窄屏幕上，弹窗宽度会收缩以适应屏幕。
-        - `shadcn/ui` 的 Dialog 会自动处理边距和居中，所以这样就足够了。
-      */}
-      {/* ========================================================== */}
-
-        {/* Header (保持不变) */}
+      <DialogContent className="max-w-sm w-full bg-white border-0 p-0 overflow-hidden rounded-2xl shadow-xl">
+        {/* Header */}
         <div className="bg-gradient-to-r from-purple-600 to-blue-600 px-5 py-4 text-white relative">
           <button
             onClick={() => onOpenChange(false)}
@@ -84,9 +69,8 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
           </div>
         </div>
 
-        {/* Content (保持不变) */}
+        {/* Content */}
         <div className="px-5 py-4 space-y-4">
-          {/* ... 你的所有内部逻辑和JSX都保持不变 ... */}
           {isConnected && account && (
             <div className="bg-green-50 border border-green-200 rounded-xl p-3">
               <div className="flex items-center gap-2">
@@ -189,7 +173,7 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
                 type="email"
                 placeholder="Enter email here"
                 value={email}
-                onChange={(e) => setEmail(e.targe-t.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full h-10 rounded-xl border-gray-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 text-sm"
               />
             </div>
