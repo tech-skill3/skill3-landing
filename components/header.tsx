@@ -83,6 +83,7 @@ export default function Header() {
           >
             Pricing
           </Link>
+
           <Link
             href="#resources"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -95,6 +96,7 @@ export default function Header() {
             {mounted && theme === "dark" ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
             <span className="sr-only">Toggle theme</span>
           </Button>
+
           <Button 
             onClick={() => setWalletModalOpen(true)}
             className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
@@ -119,7 +121,7 @@ export default function Header() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden absolute top-16 inset-x-0 bg-background/95 backdrop-blur-lg border-b"
+          className="md:hidden fixed top-16 inset-x-0 z-[60] bg-background/95 backdrop-blur-lg border-b"
         >
           <div className="container py-4 flex flex-col gap-4">
             <Link href="/academy" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
@@ -140,7 +142,13 @@ export default function Header() {
             <Link href="#resources" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Resources
             </Link>
+            <Link href="/invite" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              Invite to Earn
+            </Link>
             <div className="flex flex-col gap-2 pt-2 border-t">
+              <Button asChild className="rounded-full h-10 px-6 text-sm" variant="outline" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/invite" prefetch={false}>Invite to Earn</Link>
+              </Button>
               <Button 
                 onClick={() => setWalletModalOpen(true)}
                 className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"

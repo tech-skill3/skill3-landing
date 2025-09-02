@@ -5,7 +5,7 @@ import Header from "@/components/header"
 
 export default function HeaderController() {
   const pathname = usePathname()
-  const hide = pathname?.startsWith("/student-center")
+  const hide = pathname?.startsWith("/student-center") || pathname?.startsWith("/creator") || pathname?.startsWith("/invite")
   if (hide) return null
   return <Header />
 }

@@ -1,16 +1,20 @@
 'use client'
 
-import { Bell } from 'lucide-react'
+import { Bell, ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import UserMenu from './user-menu'
+import { useRouter } from 'next/navigation'
 
 export function StudentHeader() {
+  const router = useRouter()
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-gray-200 h-14">
       <div className="px-4 h-14 flex items-center justify-between">
         {/* 返回按钮和Logo */}
         <div className="flex items-center pl-2">
-
+          <Button variant="ghost" size="sm" className="mr-2" onClick={() => router.back()}>
+            <ArrowLeft className="h-4 w-4" />
+          </Button>
           <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">S3</span>
           </div>
