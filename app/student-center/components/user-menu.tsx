@@ -30,7 +30,7 @@ export default function UserMenu() {
           <div className="px-3 py-2 text-xs text-gray-500">Galxe+</div>
           <Link href="/invite" className="block px-3 py-2 rounded-md hover:bg-gray-50">Invite to Earn</Link>
           <Link href="#" className="block px-3 py-2 rounded-md hover:bg-gray-50">View on Ethereum</Link>
-          <Link href="#" className="block px-3 py-2 rounded-md hover:bg-gray-50">Settings</Link>
+          <Link href="/student-center/account-settings" className="block px-3 py-2 rounded-md hover:bg-gray-50">Settings</Link>
           <Link href="#" className="block px-3 py-2 rounded-md hover:bg-gray-50">Switch Account</Link>
           <Link href="#" className="block px-3 py-2 rounded-md hover:bg-gray-50">Disconnect</Link>
           <div className="my-2 border-t" />

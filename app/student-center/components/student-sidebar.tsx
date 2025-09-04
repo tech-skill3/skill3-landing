@@ -1,7 +1,10 @@
 'use client'
 
-import { LayoutDashboard, BookOpen, Plus, Trophy, Bot } from 'lucide-react'
+import { LayoutDashboard, BookOpen, Plus, Trophy, Bot, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { useState } from 'react'
 import { cn } from '@/lib/utils'
 
 type ActiveTab = 'dashboard' | 'learning' | 'courses' | 'agents' | 'achievements'
@@ -45,6 +48,7 @@ const menuItems = [
 ]
 
 export function StudentSidebar({ activeTab, onTabChange }: StudentSidebarProps) {
+  const [openApply, setOpenApply] = useState(false)
   return (
     <div className="fixed left-0 top-14 h-[calc(100vh-3.5rem)] w-64 bg-white border-r border-gray-200">
       <div className="p-4">
@@ -74,6 +78,46 @@ export function StudentSidebar({ activeTab, onTabChange }: StudentSidebarProps) 
             )
           })}
         </nav>
+
+        {/* 申请成为创作者按钮 */}
+        <div className="pt-4 mt-4 border-t">
+          <Button
+            className="w-full rounded-full h-10 px-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white flex items-center justify-center gap-2"
+            onClick={() => setOpenApply(true)}
+          >
+            <Sparkles className="h-4 w-4" />申请成为创作者
+          </Button>
+        </div>
+
+        <Dialog open={openApply} onOpenChange={setOpenApply}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>申请成为创作者</DialogTitle>
+            </DialogHeader>
+            <div className="space-y-3">
+              <div>
+                <label className="block text-sm font-medium mb-1">姓名/昵称</label>
+                <Input placeholder="例如：Jimmy" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">邮箱</label>
+                <Input type="email" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">擅长领域</label>
+                <Input placeholder="如：AI 编程、数据分析" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">个人简介</label>
+                <Input placeholder="一句话介绍你自己" />
+              </div>
+              <div className="pt-2 flex justify-end gap-2">
+                <Button variant="outline" onClick={() => setOpenApply(false)}>取消</Button>
+                <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white">提交申请</Button>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   )

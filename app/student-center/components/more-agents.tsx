@@ -24,7 +24,8 @@ const agents = [
     category: 'Programming',
     tags: ['AI', 'Coding', 'Productivity'],
     image: '/api/placeholder/200/120',
-    provider: 'CodeCraft AI'
+    provider: 'CodeCraft AI',
+    price: '$9.9/mo'
   },
   {
     id: 2,
@@ -35,7 +36,8 @@ const agents = [
     category: 'Analytics',
     tags: ['Data', 'Charts', 'Business'],
     image: '/api/placeholder/200/120',
-    provider: 'DataViz Pro'
+    provider: 'DataViz Pro',
+    price: '$12.9/mo'
   },
   {
     id: 3,
@@ -46,7 +48,8 @@ const agents = [
     category: 'Education',
     tags: ['Language', 'Learning', 'AI'],
     image: '/api/placeholder/200/120',
-    provider: 'LinguaBot'
+    provider: 'LinguaBot',
+    price: '$7.9/mo'
   },
   {
     id: 4,
@@ -57,7 +60,8 @@ const agents = [
     category: 'Finance',
     tags: ['Trading', 'Crypto', 'Analysis'],
     image: '/api/placeholder/200/120',
-    provider: 'TradeGenius'
+    provider: 'TradeGenius',
+    price: '$14.9/mo'
   },
   {
     id: 5,
@@ -68,7 +72,8 @@ const agents = [
     category: 'Creative',
     tags: ['Writing', 'Content', 'Creative'],
     image: '/api/placeholder/200/120',
-    provider: 'WriteBot Studio'
+    provider: 'WriteBot Studio',
+    price: '$8.9/mo'
   },
   {
     id: 6,
@@ -79,7 +84,8 @@ const agents = [
     category: 'Productivity',
     tags: ['Management', 'Team', 'Planning'],
     image: '/api/placeholder/200/120',
-    provider: 'TaskMaster AI'
+    provider: 'TaskMaster AI',
+    price: '$11.9/mo'
   }
 ]
 
@@ -161,6 +167,13 @@ export function MoreAgents() {
                   <div className="flex items-center gap-1 bg-white/90 px-2 py-1 rounded-full">
                     <Star className="h-3 w-3 text-yellow-500 fill-current" />
                     <span className="text-xs font-medium">{agent.rating}</span>
+                  </div>
+                </div>
+
+                {/* 价格标签 */}
+                <div className="absolute -bottom-2 right-2">
+                  <div className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full shadow">
+                    {agent.price}
                   </div>
                 </div>
               </div>

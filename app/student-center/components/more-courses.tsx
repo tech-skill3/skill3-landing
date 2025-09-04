@@ -21,7 +21,8 @@ const courses = [
     reward: 30,
     category: 'Parent',
     image: '/api/placeholder/200/120',
-    provider: 'Mission Web3'
+    provider: 'Mission Web3',
+    price: '$9.9'
   },
   {
     id: 2,
@@ -29,7 +30,8 @@ const courses = [
     participants: '2.88K',
     category: 'NFT',
     image: '/api/placeholder/200/120',
-    provider: 'Mission Web3'
+    provider: 'Mission Web3',
+    price: '$4.9'
   },
   {
     id: 3,
@@ -39,7 +41,8 @@ const courses = [
     reward: 30,
     category: 'NFT',
     image: '/api/placeholder/200/120',
-    provider: 'Mission Web3'
+    provider: 'Mission Web3',
+    price: '$6.9'
   },
   {
     id: 4,
@@ -49,7 +52,8 @@ const courses = [
     reward: 30,
     category: 'NFT',
     image: '/api/placeholder/200/120',
-    provider: 'Mission Web3'
+    provider: 'Mission Web3',
+    price: '$5.9'
   },
   {
     id: 5,
@@ -59,7 +63,8 @@ const courses = [
     points: 10,
     reward: 30,
     image: '/api/placeholder/200/120',
-    provider: 'Mission Web3'
+    provider: 'Mission Web3',
+    price: '$7.9'
   },
   {
     id: 6,
@@ -67,7 +72,8 @@ const courses = [
     participants: '19.47K',
     category: 'Parent',
     image: '/api/placeholder/200/120',
-    provider: 'Mission Web3'
+    provider: 'Mission Web3',
+    price: '$9.9'
   },
   {
     id: 7,
@@ -75,7 +81,8 @@ const courses = [
     participants: '2.70K',
     category: 'NFT',
     image: '/api/placeholder/200/120',
-    provider: 'Mission Web3'
+    provider: 'Mission Web3',
+    price: '$4.9'
   },
   {
     id: 8,
@@ -85,7 +92,8 @@ const courses = [
     reward: 30,
     category: 'NFT',
     image: '/api/placeholder/200/120',
-    provider: 'Mission Web3'
+    provider: 'Mission Web3',
+    price: '$6.9'
   }
 ]
 
@@ -140,58 +148,65 @@ export function MoreCourses() {
         </div>
       </div>
 
-      {/* 课程网格 */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      {/* 课程网格（样式对齐 Skill Agent 卡片） */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {courses.map((course) => (
           <Card
             key={course.id}
             className="cursor-pointer hover:shadow-lg transition-shadow bg-white border border-gray-200"
             onClick={() => handleCourseClick(course.id)}
           >
-            <div className="p-4 flex gap-4">
-              {/* 左侧课程信息 */}
-              <div className="flex-1 space-y-3">
-                {/* 标签 */}
-                <div className="flex flex-wrap gap-1">
+            <div className="p-4">
+              {/* 封面区域（与 Skill Agent 卡片一致） */}
+              <div className="relative mb-3">
+                <div className="w-full h-24 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                  <div className="text-white text-lg font-bold">
+                    {course.title.includes('MW3') ? 'MW3' : course.title.charAt(0)}
+                  </div>
+                </div>
+
+                {/* 左上角：类别标签 */}
+                <div className="absolute top-2 left-2 flex gap-1">
                   <Badge variant="secondary" className="text-xs bg-gray-700 text-white">
                     {course.category}
                   </Badge>
+                </div>
+
+                {/* 右上角：积分/奖励徽章 */}
+                <div className="absolute top-2 right-2 flex gap-1">
                   {course.points && (
-                    <Badge variant="secondary" className="text-xs bg-blue-600 text-white">
-                      {course.points} Points
-                    </Badge>
+                    <div className="bg-white/90 text-xs px-2 py-1 rounded-full">{course.points} pts</div>
                   )}
                   {course.reward && (
-                    <Badge variant="secondary" className="text-xs bg-orange-500 text-white flex items-center gap-1">
-                      <Award className="h-3 w-3" />
-                      {course.reward}
-                    </Badge>
+                    <div className="bg-orange-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                      <Award className="h-3 w-3" />{course.reward}
+                    </div>
                   )}
                 </div>
 
-                {/* 课程标题 */}
-                <h3 className="font-medium text-sm text-gray-900 line-clamp-2 leading-tight">
+                {/* 右下角：价格标签 */}
+                <div className="absolute -bottom-2 right-2">
+                  <div className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full shadow">
+                    {course.price}
+                  </div>
+                </div>
+              </div>
+
+              {/* 信息区域 */}
+              <div className="space-y-2">
+                <h3 className="font-medium text-sm text-gray-900 line-clamp-2">
                   {course.title}
                 </h3>
-                
-                {/* 参与人数 */}
+
                 <div className="flex items-center text-xs text-gray-500">
                   <Users className="h-3 w-3 mr-1" />
                   {course.participants} participants
                 </div>
 
-                {/* 提供商 */}
-                <div className="flex items-center text-xs text-gray-500">
-                  <span className="text-gray-400">🏃‍♂️</span>
-                  <span className="ml-1">{course.provider}</span>
-                </div>
-              </div>
-
-              {/* 右侧课程封面 */}
-              <div className="w-20 h-20 flex-shrink-0">
-                <div className="w-full h-full bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-                  <div className="text-white text-lg font-bold">
-                    {course.title.includes('MW3') ? 'MW3' : course.title.charAt(0)}
+                <div className="flex items-center justify-between text-xs text-gray-500 pt-1">
+                  <div className="flex items-center">
+                    <span className="text-gray-400">🏃‍♂️</span>
+                    <span className="ml-1">{course.provider}</span>
                   </div>
                 </div>
               </div>

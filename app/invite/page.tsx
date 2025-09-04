@@ -2,8 +2,6 @@
 
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { StudentHeader } from "@/app/student-center/components/student-header"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -11,7 +9,6 @@ import { Copy, Check, Users, Trophy } from "lucide-react"
 
 export default function InvitePage() {
   const [copied, setCopied] = useState(false)
-  const router = useRouter()
   // Placeholder referral code; replace with real data when available
   const referralCode = "GICyJr43Nj1NJOJhtsRhq1coBhrdgcmjX08LEiw86s="
   const referralUrl = `https://skill3.app/r/${referralCode}`

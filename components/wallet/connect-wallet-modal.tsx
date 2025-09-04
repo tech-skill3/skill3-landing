@@ -4,11 +4,14 @@ import { useState } from "react"
 import {
   Dialog,
   DialogContent,
+  DialogHeader,
+  DialogTitle,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { X, Smartphone, Loader2, AlertCircle } from "lucide-react"
 import { useMetaMaskConnect } from "@/hooks/useMetaMaskConnect"
+import { useRouter } from "next/navigation"
 
 interface ConnectWalletModalProps {
   open: boolean
@@ -16,10 +19,14 @@ interface ConnectWalletModalProps {
 }
 
 export default function ConnectWalletModal({ open, onOpenChange }: ConnectWalletModalProps) {
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("123@gmail.com")
+  const [showPassword, setShowPassword] = useState(false)
+  const [password, setPassword] = useState("123")
+  const [showRoleSelect, setShowRoleSelect] = useState(false)
   const [isConnecting, setIsConnecting] = useState(false)
   const [showMobileInstructions, setShowMobileInstructions] = useState(false)
   const { isConnected, account, error, connect } = useMetaMaskConnect()
+  const router = useRouter()
 
   const handleMetaMaskConnect = async () => {
     setIsConnecting(true)
@@ -48,6 +55,7 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
   }
 
   return (
+    <>
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-sm w-full bg-white border-0 p-0 overflow-hidden rounded-2xl shadow-xl">
         {/* Header */}
@@ -179,10 +187,31 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
             </div>
 
             <Button
+              onClick={() => {
+                if (!showPassword) {
+                  setShowPassword(true)
+                } else {
+                  setShowRoleSelect(true)
+                }
+              }}
               className="w-full h-11 bg-green-500 hover:bg-green-600 text-white font-medium rounded-xl text-sm"
             >
-              CONTINUE WITH EMAIL
+              {showPassword ? "LOG IN / SIGN UP" : "CONTINUE WITH EMAIL"}
             </Button>
+
+            {showPassword && (
+              <div>
+                <label className="block text-xs font-medium text-gray-700 mb-1.5">Password</label>
+                <Input
+                  type="password"
+                  placeholder="Enter password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full h-10 rounded-xl border-gray-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 text-sm"
+                />
+                <p className="text-[11px] text-gray-400 mt-1">Default email: 123@gmail.com · Default password: 123</p>
+              </div>
+            )}
           </div>
 
           <p className="text-xs text-gray-400 text-center leading-relaxed px-2">
@@ -198,5 +227,37 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
         </div>
       </DialogContent>
     </Dialog>
+    {/* Role selection modal */}
+    <Dialog key="role" open={showRoleSelect} onOpenChange={setShowRoleSelect}>
+      <DialogContent className="max-w-sm w-full bg-white rounded-2xl">
+        <DialogHeader>
+          <DialogTitle>选择你的身份</DialogTitle>
+        </DialogHeader>
+        <div className="grid gap-3">
+          <Button
+            className="h-11 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white"
+            onClick={() => {
+              setShowRoleSelect(false)
+              onOpenChange(false)
+              router.push('/creator')
+            }}
+          >
+            我是创作者（进入创作者后台）
+          </Button>
+          <Button
+            variant="outline"
+            className="h-11 rounded-xl"
+            onClick={() => {
+              setShowRoleSelect(false)
+              onOpenChange(false)
+              router.push('/student-center')
+            }}
+          >
+            我是学员（进入学员中心）
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
+    </>
   )
 }
