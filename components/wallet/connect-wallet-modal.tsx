@@ -186,31 +186,33 @@ export default function ConnectWalletModal({ open, onOpenChange }: ConnectWallet
               />
             </div>
 
-            <Button
-              onClick={() => {
-                if (!showPassword) {
-                  setShowPassword(true)
-                } else {
-                  setShowRoleSelect(true)
-                }
-              }}
-              className="w-full h-11 bg-green-500 hover:bg-green-600 text-white font-medium rounded-xl text-sm"
-            >
-              {showPassword ? "LOG IN / SIGN UP" : "CONTINUE WITH EMAIL"}
-            </Button>
-
-            {showPassword && (
-              <div>
-                <label className="block text-xs font-medium text-gray-700 mb-1.5">Password</label>
-                <Input
-                  type="password"
-                  placeholder="Enter password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="w-full h-10 rounded-xl border-gray-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 text-sm"
-                />
-                <p className="text-[11px] text-gray-400 mt-1">Default email: 123@gmail.com · Default password: 123</p>
-              </div>
+            {!showPassword ? (
+              <Button
+                onClick={() => setShowPassword(true)}
+                className="w-full h-11 bg-green-500 hover:bg-green-600 text-white font-medium rounded-xl text-sm"
+              >
+                CONTINUE WITH EMAIL
+              </Button>
+            ) : (
+              <>
+                <div>
+                  <label className="block text-xs font-medium text-gray-700 mb-1.5">Password</label>
+                  <Input
+                    type="password"
+                    placeholder="Enter password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="w-full h-10 rounded-xl border-gray-200 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 text-sm"
+                  />
+                  <p className="text-[11px] text-gray-400 mt-1">Default email: 123@gmail.com · Default password: 123</p>
+                </div>
+                <Button
+                  onClick={() => setShowRoleSelect(true)}
+                  className="w-full h-11 bg-green-500 hover:bg-green-600 text-white font-medium rounded-xl text-sm"
+                >
+                  LOG IN / SIGN UP
+                </Button>
+              </>
             )}
           </div>
 

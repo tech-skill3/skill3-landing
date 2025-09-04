@@ -5,7 +5,8 @@ import Footer from "@/components/footer"
 
 export default function FooterController() {
   const pathname = usePathname()
-  const hide = pathname?.startsWith("/student-center") || pathname?.startsWith("/creator") || pathname?.startsWith("/invite")
+  const isCreator = pathname === "/creator" || pathname?.startsWith("/creator/")
+  const hide = pathname?.startsWith("/student-center") || isCreator || pathname?.startsWith("/invite")
   if (hide) return null
   return <Footer />
 }
