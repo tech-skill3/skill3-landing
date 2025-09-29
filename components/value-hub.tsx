@@ -139,31 +139,6 @@ export default function ValueHub() {
             </motion.div>
           ))}
         </motion.div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center mt-12"
-        >
-          <div className="bg-muted/30 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">准备开启您的技能之旅？</h3>
-            <p className="text-muted-foreground mb-6">
-              无论您是学习者、创作者还是企业，我们都能为您提供最适合的解决方案
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="rounded-full h-12 px-8 text-base bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg">
-                立即开始
-                <ArrowRight className="ml-2 size-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base">
-                联系我们
-              </Button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
