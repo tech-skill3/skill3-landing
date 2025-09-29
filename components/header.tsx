@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import {
   ChevronRight,
+  ChevronDown,
   Menu,
   X,
   Moon,
@@ -18,6 +19,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [walletModalOpen, setWalletModalOpen] = useState(false)
+  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -31,9 +33,19 @@ export default function Header() {
       }
     }
 
+    const handleClickOutside = (event: MouseEvent) => {
+      if (companyDropdownOpen) {
+        setCompanyDropdownOpen(false)
+      }
+    }
+
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    document.addEventListener("click", handleClickOutside)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      document.removeEventListener("click", handleClickOutside)
+    }
+  }, [companyDropdownOpen])
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark")
@@ -52,24 +64,18 @@ export default function Header() {
           </div>
           <span>Skill³</span>
         </Link>
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden md:flex gap-8 items-center">
           <Link
-            href="/academy"
+            href="/solutions"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Academy
+            Solutions
           </Link>
           <Link
-            href="/agent-mall"
+            href="/skill-mall"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            Agent Mall
-          </Link>
-          <Link
-            href="/for-teams"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            For Teams
+            Skill Mall
           </Link>
           <Link
             href="/creator-hub"
@@ -83,13 +89,57 @@ export default function Header() {
           >
             Pricing
           </Link>
-
-          <Link
-            href="#resources"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            Resources
-          </Link>
+          
+          {/* Company & Resources Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
+              className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Company & Resources
+              <ChevronDown className={`size-4 transition-transform ${companyDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {companyDropdownOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className="absolute top-full right-0 mt-2 w-48 bg-background/95 backdrop-blur-lg border rounded-lg shadow-lg z-50"
+              >
+                <div className="py-2">
+                  <Link
+                    href="/company"
+                    className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                    onClick={() => setCompanyDropdownOpen(false)}
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/company#resources"
+                    className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                    onClick={() => setCompanyDropdownOpen(false)}
+                  >
+                    Resources
+                  </Link>
+                  <Link
+                    href="/company#documentation"
+                    className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                    onClick={() => setCompanyDropdownOpen(false)}
+                  >
+                    Documentation
+                  </Link>
+                  <Link
+                    href="/company#whitepaper"
+                    className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                    onClick={() => setCompanyDropdownOpen(false)}
+                  >
+                    White Paper
+                  </Link>
+                </div>
+              </motion.div>
+            )}
+          </div>
         </nav>
         <div className="hidden md:flex gap-4 items-center">
           <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
@@ -124,14 +174,11 @@ export default function Header() {
           className="md:hidden fixed top-16 inset-x-0 z-[60] bg-background/95 backdrop-blur-lg border-b"
         >
           <div className="container py-4 flex flex-col gap-4">
-            <Link href="/academy" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              Academy
+            <Link href="/solutions" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              Solutions
             </Link>
-            <Link href="/agent-mall" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              Agent Mall
-            </Link>
-            <Link href="/for-teams" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              For Teams
+            <Link href="/skill-mall" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              Skill Mall
             </Link>
             <Link href="/creator-hub" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Creator Hub
@@ -139,11 +186,8 @@ export default function Header() {
             <Link href="/pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Pricing
             </Link>
-            <Link href="#resources" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              Resources
-            </Link>
-            <Link href="/invite" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              Invite to Earn
+            <Link href="/company" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              Company & Resources
             </Link>
             <div className="flex flex-col gap-2 pt-2 border-t">
               <Button asChild className="rounded-full h-10 px-6 text-sm" variant="outline" onClick={() => setMobileMenuOpen(false)}>
