@@ -6,12 +6,15 @@ export default function Footer() {
       <div className="container flex flex-col gap-8 px-4 py-10 md:px-6 lg:py-16">
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="space-y-4">
-            <div className="flex items-center gap-2 font-bold">
-              <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
-                S
+            <Link href="/" className="flex items-center font-bold hover:opacity-80 transition-opacity">
+              <div className="w-24 h-16 flex items-center justify-center">
+                <img 
+                  src="/icons/1024Full.svg" 
+                  alt="Skill³ Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <span>SaaSify</span>
-            </div>
+            </Link>
             <p className="text-sm text-muted-foreground">
               Streamline your workflow with our all-in-one SaaS platform. Boost productivity and scale your business.
             </p>

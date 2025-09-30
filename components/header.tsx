@@ -58,11 +58,14 @@ export default function Header() {
       }`}
     >
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-bold hover:opacity-80 transition-opacity">
-          <div className="size-8 rounded-lg bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-primary-foreground">
-            S
+        <Link href="/" className="flex items-center font-bold hover:opacity-80 transition-opacity">
+          <div className="w-32 h-20 flex items-center justify-center">
+            <img 
+              src="/icons/1024Full.svg" 
+              alt="Skill³ Logo" 
+              className="w-full h-full object-contain"
+            />
           </div>
-          <span>Skill³</span>
         </Link>
         <nav className="hidden md:flex gap-8 items-center">
           <Link
