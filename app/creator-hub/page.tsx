@@ -2,13 +2,8 @@
 
 import { motion } from "framer-motion"
 import HeroSection from "./components/hero-section"
-import WhyCreator from "./components/why-creator"
-import CreatorStudioPro from "./components/creator-studio-pro"
-import CreationProcess from "./components/creation-process"
-import RevenueExplanation from "./components/revenue-explanation"
-import FAQ from "./components/faq"
-import FeaturedCreators from "./components/featured-creators"
-import CreatorApplication from "./components/creator-application"
+import TripleIncentiveSystem from "./components/triple-incentive-system"
+import ProblemSolution from "./components/problem-solution"
 
 export default function CreatorHubPage() {
   const containerVariants = {
@@ -29,13 +24,8 @@ export default function CreatorHubPage() {
       animate="visible"
     >
       <HeroSection />
-      <WhyCreator />
-      <CreatorStudioPro />
-      <CreationProcess />
-      <RevenueExplanation />
-      <FAQ />
-      <FeaturedCreators />
-      <CreatorApplication />
+      <TripleIncentiveSystem />
+      <ProblemSolution />
     </motion.div>
   )
 }

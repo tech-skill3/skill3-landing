@@ -1,10 +1,10 @@
 "use client"
 
-import SolutionsHero from "@/components/solutions/solutions-hero"
-import AiSkillPlatform from "@/components/solutions/ai-skill-platform"
-import OaasEngine from "@/components/solutions/oaas-engine"
-import IndustryScenarios from "@/components/solutions/industry-scenarios"
-import TalentVerification from "@/components/solutions/talent-verification"
+import SolutionsHero from "./components/solutions-hero"
+import AiSkillPlatform from "./components/ai-skill-platform"
+import OaasEngine from "./components/oaas-engine"
+import IndustryScenarios from "./components/industry-scenarios"
+import TalentVerification from "./components/talent-verification"
 
 export default function SolutionsPage() {
   return (
