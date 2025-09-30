@@ -169,37 +169,7 @@ export default function TripleIncentiveSystem() {
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900/20 dark:via-indigo-900/20 dark:to-purple-900/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-700">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-              立即加入，享受三重激励
-            </h3>
-            <p className="text-slate-600 dark:text-slate-300 mb-6">
-              成为 AI 创作者，解锁全新的 Web3 创作经济模式
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Badge variant="secondary" className="px-4 py-2">
-                <DollarSign className="w-4 h-4 mr-2" />
-                60% 收益分成
-              </Badge>
-              <Badge variant="secondary" className="px-4 py-2">
-                <Coins className="w-4 h-4 mr-2" />
-                SP 积分奖励
-              </Badge>
-              <Badge variant="secondary" className="px-4 py-2">
-                <Shield className="w-4 h-4 mr-2" />
-                NFT 资产权益
-              </Badge>
-            </div>
-          </div>
-        </motion.div>
+        
       </div>
     </section>
   )

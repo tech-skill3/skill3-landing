@@ -3,29 +3,18 @@
 import { motion } from "framer-motion"
 import HeroSection from "./components/hero-section"
 import TripleIncentiveSystem from "./components/triple-incentive-system"
-import ProblemSolution from "./components/problem-solution"
+import CreatorStudioExperience from "./components/creator-studio-experience"
+import SuccessStories from "./components/success-stories"
+import CreatorFAQ from "./components/creator-faq"
 
 export default function CreatorHubPage() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
   return (
-    <motion.div
-      className="flex-1"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-    >
+    <main className="min-h-screen">
       <HeroSection />
       <TripleIncentiveSystem />
-      <ProblemSolution />
-    </motion.div>
+      <CreatorStudioExperience />
+      <SuccessStories />
+      <CreatorFAQ />
+    </main>
   )
 }

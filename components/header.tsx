@@ -151,8 +151,14 @@ export default function Header() {
             onClick={() => setWalletModalOpen(true)}
             className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
           >
-            Get Started
-            <ChevronRight className="ml-1 size-4" />
+            Launch APP
+          </Button>
+
+          <Button 
+            variant="outline"
+            className="rounded-full h-10 px-6 text-sm"
+          >
+            Book a Demo
           </Button>
         </div>
         <div className="flex items-center gap-4 md:hidden">
@@ -197,8 +203,15 @@ export default function Header() {
                 onClick={() => setWalletModalOpen(true)}
                 className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
               >
-                Get Started
+                Launch APP
                 <ChevronRight className="ml-1 size-4" />
+              </Button>
+              <Button 
+                variant="outline"
+                className="rounded-full h-10 px-6 text-sm"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Book a Demo
               </Button>
             </div>
           </div>
