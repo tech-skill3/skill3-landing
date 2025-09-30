@@ -4,7 +4,7 @@ import { useCallback, useState } from "react"
 interface EthereumWindow extends Window {
   ethereum?: {
     isMetaMask?: boolean
-    request: (args: { method: string; params?: any[] }) => Promise<any>
+    request: (args: { method: string; params?: string[] }) => Promise<string[] | string>
   }
 }
 
@@ -36,9 +36,9 @@ export const useMetaMaskConnect = () => {
     const { ethereum } = window as EthereumWindow
     if (ethereum && ethereum.isMetaMask) {
       try {
-        const accounts = await ethereum.request({ method: "eth_accounts" })
+        const accounts = await ethereum.request({ method: "eth_accounts" }) as string[]
         if (accounts && accounts.length > 0) {
-          const chainId = await ethereum.request({ method: "eth_chainId" })
+          const chainId = await ethereum.request({ method: "eth_chainId" }) as string
           setState({
             isConnected: true,
             account: accounts[0],
@@ -95,13 +95,13 @@ export const useMetaMaskConnect = () => {
       }
 
       // Regular connection flow
-      const accounts = await ethereum.request({ method: "eth_requestAccounts" })
+      const accounts = await ethereum.request({ method: "eth_requestAccounts" }) as string[]
 
       if (!accounts || accounts.length === 0) {
         throw new Error("No accounts found")
       }
 
-      const chainId = await ethereum.request({ method: "eth_chainId" })
+      const chainId = await ethereum.request({ method: "eth_chainId" }) as string
 
       setState({
         isConnected: true,

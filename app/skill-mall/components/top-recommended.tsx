@@ -1,11 +1,12 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronLeft, ChevronRight, Star, Users, Clock, Award } from "lucide-react"
+import { ChevronLeft, ChevronRight, Star, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
+import Image from "next/image"
 
 export default function TopRecommended() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -61,9 +62,9 @@ export default function TopRecommended() {
     }
   ]
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % featuredSkills.length)
-  }
+  }, [featuredSkills.length])
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + featuredSkills.length) % featuredSkills.length)
@@ -72,7 +73,7 @@ export default function TopRecommended() {
   useEffect(() => {
     const timer = setInterval(nextSlide, 5000)
     return () => clearInterval(timer)
-  }, [])
+  }, [nextSlide])
 
   return (
     <section className="w-full py-20 md:py-32 lg:py-20 bg-muted/30">
@@ -152,9 +153,11 @@ export default function TopRecommended() {
                         <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20">
                           {/* 创作者信息 */}
                           <div className="flex items-center gap-3 mb-6">
-                            <img
+                            <Image
                               src={featuredSkills[currentSlide].creatorAvatar}
                               alt={featuredSkills[currentSlide].creator}
+                              width={48}
+                              height={48}
                               className="w-12 h-12 rounded-full object-cover border-2 border-white/30"
                             />
                             <div>

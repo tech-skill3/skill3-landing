@@ -20,7 +20,7 @@ export default function ValuePricing() {
             价值定价 (Value-Based Pricing)
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            针对特定业务 KPI，提供"成果即服务"合作模式，将部分资金与最终业务结果挂钩
+            针对特定业务 KPI，提供&ldquo;成果即服务&rdquo;合作模式，将部分资金与最终业务结果挂钩
           </p>
         </motion.div>
 

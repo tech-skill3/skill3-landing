@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Brain, BookOpen, Target, TrendingUp, ChevronRight } from "lucide-react"
+import { Brain, BookOpen, Target, TrendingUp, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -58,7 +58,7 @@ export default function AiSkillPlatform() {
                 1. AI技能训战平台
               </h2>
               <p className="text-xl text-muted-foreground mb-6">
-                "创-学-练-效"闭环：AI Agent驱动的技能转化
+                &ldquo;创-学-练-效&rdquo;闭环：AI Agent驱动的技能转化
               </p>
             </div>
 

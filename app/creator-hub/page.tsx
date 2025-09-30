@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import HeroSection from "./components/hero-section"
 import TripleIncentiveSystem from "./components/triple-incentive-system"
 import CreatorStudioExperience from "./components/creator-studio-experience"

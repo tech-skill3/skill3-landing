@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ChevronRight, Building2, ShoppingCart, Code, Users, TrendingUp, Target } from "lucide-react"
+import { ChevronRight, Building2, ShoppingCart, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 

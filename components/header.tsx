@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import {
   ChevronRight,
@@ -33,7 +34,7 @@ export default function Header() {
       }
     }
 
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = () => {
       if (companyDropdownOpen) {
         setCompanyDropdownOpen(false)
       }
@@ -60,10 +61,12 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center font-bold hover:opacity-80 transition-opacity">
           <div className="w-32 h-20 flex items-center justify-center">
-            <img 
+            <Image 
               src="/icons/1024Full.svg" 
               alt="Skill³ Logo" 
-              className="w-full h-full object-contain"
+              width={128}
+              height={80}
+              className="object-contain"
             />
           </div>
         </Link>

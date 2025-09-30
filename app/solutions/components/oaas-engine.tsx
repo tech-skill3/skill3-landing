@@ -65,7 +65,7 @@ export default function OaasEngine() {
                   成果即服务(OaaS)：将财务激励与业务成果完全对齐
                 </p>
                 <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-8">
-                  解释企业如何实现"为结果付费"。强调Web3技术（智能合约与预言机）在其中的关键作用——提供透明、不可篡改且自动执行的结算机制。
+                  解释企业如何实现&ldquo;为结果付费&rdquo;。强调Web3技术（智能合约与预言机）在其中的关键作用——提供透明、不可篡改且自动执行的结算机制。
                 </p>
                 <Button size="lg" variant="outline" className="rounded-full">
                   了解更多

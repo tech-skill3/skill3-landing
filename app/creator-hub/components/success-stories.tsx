@@ -8,9 +8,7 @@ import {
   TrendingUp, 
   Building, 
   Shield, 
-  DollarSign,
   Users,
-  Award,
   ArrowRight,
   Star
 } from "lucide-react"

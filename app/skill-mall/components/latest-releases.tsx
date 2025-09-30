@@ -1,11 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Star, Users, Clock, ChevronRight, Sparkles, TrendingUp } from "lucide-react"
+import { Star, ChevronRight, Sparkles, TrendingUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useRef } from "react"
+import Image from "next/image"
 
 export default function LatestReleases() {
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -189,9 +190,11 @@ export default function LatestReleases() {
                   <div className="relative">
                     {/* 课程图片 */}
                     <div className="relative h-48 overflow-hidden rounded-t-lg">
-                      <img
+                      <Image
                         src={skill.image}
                         alt={skill.title}
+                        width={320}
+                        height={192}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -234,9 +237,11 @@ export default function LatestReleases() {
                       {/* 创作者信息 */}
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-2">
-                          <img
+                          <Image
                             src={skill.creatorAvatar}
                             alt={skill.creator}
+                            width={24}
+                            height={24}
                             className="w-6 h-6 rounded-full object-cover"
                           />
                           <span className="text-sm font-medium">

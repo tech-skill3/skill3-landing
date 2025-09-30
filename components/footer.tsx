@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -8,12 +9,14 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center font-bold hover:opacity-80 transition-opacity">
               <div className="w-24 h-16 flex items-center justify-center">
-                <img 
-                  src="/icons/1024Full.svg" 
-                  alt="Skill³ Logo" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
+                 <Image 
+                   src="/icons/1024Full.svg" 
+                   alt="Skill³ Logo" 
+                   width={96}
+                   height={64}
+                   className="object-contain"
+                 />
+               </div>
             </Link>
             <p className="text-sm text-muted-foreground">
               Streamline your workflow with our all-in-one SaaS platform. Boost productivity and scale your business.
