@@ -51,7 +51,7 @@ export default function TopRecommended() {
       description: "融合AI技术与创意设计，掌握生成式AI工具，创造突破性的视觉作品和用户体验",
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop",
       creator: "张大师",
-      creatorAvatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face",
+      creatorAvatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face",
       rating: 4.9,
       difficulty: "中级",
       price: "¥1,999",
