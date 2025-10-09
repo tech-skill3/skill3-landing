@@ -1,0 +1,5 @@
+- name: Mirror Push to Target Repo
+  env:
+    TARGET_REPO_URL: "https://tech-skill3:${{ secrets.MIRROR_PAT }}@github.com/tech-skill3/skill3-landing.git"
+  run: |
+    git push --mirror "$TARGET_REPO_URL"  
