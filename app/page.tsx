@@ -94,6 +94,9 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Partners Carousel Section */}
+        <PartnersCarousel />
+
         {/* How It Works Section */}
         <HowItWorks />
 
