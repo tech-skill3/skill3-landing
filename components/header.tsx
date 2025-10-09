@@ -20,7 +20,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [walletModalOpen, setWalletModalOpen] = useState(false)
-  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false)
+  const [technologyDropdownOpen, setTechnologyDropdownOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -35,8 +35,8 @@ export default function Header() {
     }
 
     const handleClickOutside = () => {
-      if (companyDropdownOpen) {
-        setCompanyDropdownOpen(false)
+      if (technologyDropdownOpen) {
+        setTechnologyDropdownOpen(false)
       }
     }
 
@@ -46,7 +46,7 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll)
       document.removeEventListener("click", handleClickOutside)
     }
-  }, [companyDropdownOpen])
+  }, [technologyDropdownOpen])
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark")
@@ -96,17 +96,17 @@ export default function Header() {
             Pricing
           </Link>
           
-          {/* Company & Resources Dropdown */}
+          {/* Technology Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
+              onClick={() => setTechnologyDropdownOpen(!technologyDropdownOpen)}
               className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
-              Company & Resources
-              <ChevronDown className={`size-4 transition-transform ${companyDropdownOpen ? 'rotate-180' : ''}`} />
+              Technology
+              <ChevronDown className={`size-4 transition-transform ${technologyDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             
-            {companyDropdownOpen && (
+            {technologyDropdownOpen && (
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -115,37 +115,38 @@ export default function Header() {
               >
                 <div className="py-2">
                   <Link
-                    href="/company"
+                    href="/whitepapers"
                     className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-                    onClick={() => setCompanyDropdownOpen(false)}
+                    onClick={() => setTechnologyDropdownOpen(false)}
                   >
-                    About Us
+                    Whitepapers
                   </Link>
                   <Link
-                    href="/company#resources"
+                    href="/docs"
                     className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-                    onClick={() => setCompanyDropdownOpen(false)}
+                    onClick={() => setTechnologyDropdownOpen(false)}
                   >
-                    Resources
+                    Docs
                   </Link>
                   <Link
-                    href="/company#documentation"
+                    href="/blog"
                     className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-                    onClick={() => setCompanyDropdownOpen(false)}
+                    onClick={() => setTechnologyDropdownOpen(false)}
                   >
-                    Documentation
-                  </Link>
-                  <Link
-                    href="/company#whitepaper"
-                    className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-                    onClick={() => setCompanyDropdownOpen(false)}
-                  >
-                    White Paper
+                    Blog
                   </Link>
                 </div>
               </motion.div>
             )}
           </div>
+          
+          {/* About Us Link */}
+          <Link
+            href="/about"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            About us
+          </Link>
         </nav>
         <div className="hidden md:flex gap-4 items-center">
           <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
@@ -154,17 +155,17 @@ export default function Header() {
           </Button>
 
           <Button 
-            onClick={() => setWalletModalOpen(true)}
             className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
           >
-            Launch APP
+            Book a Demo
           </Button>
 
           <Button 
             variant="outline"
+            onClick={() => setWalletModalOpen(true)}
             className="rounded-full h-10 px-6 text-sm"
           >
-            Book a Demo
+            Launch APP
           </Button>
         </div>
         <div className="flex items-center gap-4 md:hidden">
