@@ -9,9 +9,11 @@ import HowItWorks from "@/components/how-it-works"
 import AiChallenges from "@/components/ai-challenges"
 import EcosystemArchitecture from "@/components/ecosystem-architecture"
 import ValueHub from "@/components/value-hub"
-import CompetitiveAdvantages from "@/components/competitive-advantages"
+
 import BottomCTA from "@/components/bottom-cta"
 import Newsletter from "@/components/newsletter"
+import PartnersCarousel from "@/components/partners-carousel"
+
 
 export default function LandingPage() {
 
@@ -110,8 +112,7 @@ export default function LandingPage() {
         {/* Value Hub Section */}
         <ValueHub />
 
-        {/* Competitive Advantages Section */}
-        <CompetitiveAdvantages />
+
 
         {/* Bottom CTA Section */}
         <BottomCTA />
