@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, Shield, Lock, CheckCircle, TrendingUp, Zap, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import ROICalculator from "./roi-calculator"
 
 export default function OaasEngine() {
   const workflowSteps = [
@@ -132,6 +133,9 @@ export default function OaasEngine() {
                   </div>
                 </motion.div>
               </div>
+
+              {/* ROI 计算器 */}
+              <ROICalculator />
             </CardContent>
           </Card>
         </motion.div>
