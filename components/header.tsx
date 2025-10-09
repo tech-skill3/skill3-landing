@@ -9,11 +9,9 @@ import {
   ChevronDown,
   Menu,
   X,
-  Moon,
-  Sun,
+  Globe,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useTheme } from "next-themes"
 import ConnectWalletModal from "@/components/wallet/connect-wallet-modal"
 
 export default function Header() {
@@ -21,7 +19,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [walletModalOpen, setWalletModalOpen] = useState(false)
   const [technologyDropdownOpen, setTechnologyDropdownOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false)
+  const [currentLanguage, setCurrentLanguage] = useState("English")
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -38,6 +37,9 @@ export default function Header() {
       if (technologyDropdownOpen) {
         setTechnologyDropdownOpen(false)
       }
+      if (languageDropdownOpen) {
+        setLanguageDropdownOpen(false)
+      }
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -48,8 +50,9 @@ export default function Header() {
     }
   }, [technologyDropdownOpen])
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
+  const handleLanguageChange = (language: string) => {
+    setCurrentLanguage(language)
+    setLanguageDropdownOpen(false)
   }
 
   return (
@@ -60,17 +63,17 @@ export default function Header() {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center font-bold hover:opacity-80 transition-opacity">
-          <div className="w-32 h-20 flex items-center justify-center">
+          <div className="w-24 h-16 flex items-center justify-center">
             <Image 
               src="/icons/1024Full.svg" 
               alt="Skill³ Logo" 
-              width={128}
-              height={80}
+              width={96}
+              height={64}
               className="object-contain"
             />
           </div>
         </Link>
-        <nav className="hidden md:flex gap-8 items-center">
+        <nav className="hidden md:flex gap-5 items-center">
           <Link
             href="/solutions"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -148,29 +151,69 @@ export default function Header() {
             About us
           </Link>
         </nav>
-        <div className="hidden md:flex gap-4 items-center">
-          <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
-            {mounted && theme === "dark" ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
-            <span className="sr-only">Toggle theme</span>
-          </Button>
+        <div className="hidden md:flex gap-3 items-center">
+          <div className="relative">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)} 
+              className="rounded-full"
+            >
+              <Globe className="size-[18px]" />
+              <span className="sr-only">Switch language</span>
+            </Button>
+            
+            {languageDropdownOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className="absolute top-full right-0 mt-2 w-32 bg-background/95 backdrop-blur-lg border rounded-lg shadow-lg z-50"
+              >
+                <div className="py-2">
+                  <button
+                    onClick={() => handleLanguageChange("English")}
+                    className={`block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted/50 ${
+                      currentLanguage === "English" ? "text-foreground font-medium" : "text-muted-foreground"
+                    }`}
+                  >
+                    English
+                  </button>
+                  <button
+                    onClick={() => handleLanguageChange("中文")}
+                    className={`block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted/50 ${
+                      currentLanguage === "中文" ? "text-foreground font-medium" : "text-muted-foreground"
+                    }`}
+                  >
+                    中文
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </div>
 
           <Button 
-            className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+            className="rounded-full h-9 px-4 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
           >
-            Book a Demo
+            Book Demo
           </Button>
 
           <Button 
             variant="outline"
             onClick={() => setWalletModalOpen(true)}
-            className="rounded-full h-10 px-6 text-sm"
+            className="rounded-full h-9 px-4 text-sm"
           >
             Launch APP
           </Button>
         </div>
         <div className="flex items-center gap-4 md:hidden">
-          <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
-            {mounted && theme === "dark" ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)} 
+            className="rounded-full"
+          >
+            <Globe className="size-[18px]" />
           </Button>
           <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
