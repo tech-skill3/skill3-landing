@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['cdn.dribbble.com'],
+    domains: ['cdn.dribbble.com', 'images.unsplash.com'],
   },
   // 禁用静态优化，使用动态渲染避免预渲染问题
   experimental: {

@@ -48,7 +48,7 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll)
       document.removeEventListener("click", handleClickOutside)
     }
-  }, [technologyDropdownOpen])
+  }, [technologyDropdownOpen, languageDropdownOpen])
 
   const handleLanguageChange = (language: string) => {
     setCurrentLanguage(language)
