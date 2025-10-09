@@ -184,17 +184,17 @@ export default function LatestReleases() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex-none w-80"
+                className="flex-none w-72"
               >
                 <Card className="h-full hover:shadow-xl transition-all duration-300 group cursor-pointer border-0 shadow-lg">
                   <div className="relative">
                     {/* 课程图片 */}
-                    <div className="relative h-48 overflow-hidden rounded-t-lg">
+                    <div className="relative h-40 overflow-hidden rounded-t-lg">
                       <Image
                         src={skill.image}
                         alt={skill.title}
-                        width={320}
-                        height={192}
+                        width={288}
+                        height={160}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -211,22 +211,14 @@ export default function LatestReleases() {
                       <Badge className="absolute top-3 right-3 bg-black/50 text-white border-0 backdrop-blur-sm">
                         {skill.category}
                       </Badge>
-                      
-                      {/* 价格 */}
-                      <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
-                        <span className="font-bold text-sm">{skill.price}</span>
-                      </div>
                     </div>
 
-                    <CardContent className="p-6">
+                    <CardContent className="p-4">
                       {/* 课程标题 */}
                       <div className="mb-3">
-                        <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors">
+                        <h3 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors line-clamp-2">
                           {skill.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {skill.subtitle}
-                        </p>
                       </div>
 
                       {/* 课程描述 */}
@@ -254,35 +246,26 @@ export default function LatestReleases() {
                         </div>
                       </div>
 
-                      {/* 难度 */}
-                      <div className="mb-4">
-                        <Badge variant="outline" className="text-xs">
-                          难度：{skill.difficulty}
-                        </Badge>
-                      </div>
-
-                      {/* Web3 价值信息 */}
-                      <div className="bg-muted/50 rounded-lg p-3 mb-4 space-y-2">
-                        <div className="text-xs font-medium text-muted-foreground mb-2">Web3 价值</div>
-                        <div className="grid grid-cols-1 gap-2 text-xs">
-                          <div className="flex justify-between">
-                            <span className="text-muted-foreground">价格</span>
-                            <span className="font-bold text-primary">{skill.price}</span>
+                      {/* Web3 价值信息 - 突出显示 */}
+                      <div className="bg-gradient-to-r from-primary/10 to-blue-500/10 border border-primary/20 rounded-lg p-4 mb-4">
+                        <div className="text-sm font-bold text-primary mb-3 flex items-center gap-2">
+                          <Sparkles className="size-4" />
+                          Web3 价值收益
+                        </div>
+                        <div className="grid grid-cols-1 gap-3 text-sm">
+                          <div className="flex justify-between items-center">
+                            <span className="text-muted-foreground">课程价格</span>
+                            <span className="font-bold text-lg text-primary">{skill.price}</span>
                           </div>
-                          <div className="flex justify-between">
+                          <div className="flex justify-between items-center">
                             <span className="text-muted-foreground">SP 奖励</span>
                             <span className="font-bold text-green-600">{skill.spReward}</span>
                           </div>
-                          <div className="flex justify-between">
-                            <span className="text-muted-foreground">SBT 凭证</span>
-                            <span className="font-medium text-blue-600 text-right">{skill.sbtType}</span>
+                          <div className="pt-2 border-t border-primary/10">
+                            <div className="text-xs text-muted-foreground mb-1">获得认证</div>
+                            <div className="font-medium text-blue-600 text-sm">{skill.sbtType}</div>
                           </div>
                         </div>
-                      </div>
-
-                      {/* 发布日期 */}
-                      <div className="text-xs text-muted-foreground mb-4">
-                        发布于：{skill.releaseDate}
                       </div>
 
                       {/* CTA 按钮 */}
