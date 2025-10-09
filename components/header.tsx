@@ -143,7 +143,7 @@ export default function Header() {
           
           {/* About Us Link */}
           <Link
-            href="/about"
+            href="/about-us"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
             About us
@@ -240,8 +240,8 @@ export default function Header() {
             <Link href="/pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Pricing
             </Link>
-            <Link href="/company" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              Company & Resources
+            <Link href="/about-us" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              About us
             </Link>
             <div className="flex flex-col gap-2 pt-2 border-t">
               <Button asChild className="rounded-full h-10 px-6 text-sm" variant="outline" onClick={() => setMobileMenuOpen(false)}>
