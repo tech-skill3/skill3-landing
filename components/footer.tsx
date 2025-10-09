@@ -19,7 +19,7 @@ export default function Footer() {
                </div>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Empowering the future of AI-driven skill development and talent ecosystem.
+              Skill-as-Asset.<br></br>Building a Trust Infrastructure for Human Capital in the AI ​​Era.
             </p>
             <div className="flex gap-4">
               {/* X (Twitter) */}
