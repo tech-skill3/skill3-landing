@@ -21,10 +21,8 @@ export default function Header() {
   const [technologyDropdownOpen, setTechnologyDropdownOpen] = useState(false)
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false)
   const [currentLanguage, setCurrentLanguage] = useState("English")
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true)
     const handleScroll = () => {
       if (window.scrollY > 10) {
         setIsScrolled(true)

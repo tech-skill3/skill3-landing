@@ -11,8 +11,9 @@ export default function CreatorHubPage() {
     <main className="min-h-screen">
       <HeroSection />
       <TripleIncentiveSystem />
-      <CreatorStudioExperience />
       <SuccessStories />
+      <CreatorStudioExperience />
+      
       <CreatorFAQ />
     </main>
   )
