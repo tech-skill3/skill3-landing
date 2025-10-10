@@ -33,10 +33,7 @@ export default function CreatorLayout({
         <div className="w-64 bg-white border-r border-gray-200 min-h-screen">
           <div className="p-6">
             <div className="flex items-center gap-2 mb-8">
-              <div className="size-8 rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white font-bold">
-                S
-              </div>
-              <span className="text-xl font-bold text-gray-900">SaaSify Creator</span>
+              <span className="text-xl font-bold text-gray-900">Creator Center</span>
             </div>
 
             <nav className="space-y-2">
