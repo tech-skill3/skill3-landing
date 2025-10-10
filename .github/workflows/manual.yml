@@ -16,12 +16,12 @@ jobs:
 
 
       - name: Mirror Push to Target Repo
-              env:
-                # 请再次确认 tech-skill3 和 skill3-landing 是正确的目标用户名和仓库名
-                TARGET_REPO_URL: "https://tech-skill3:${{ secrets.MIRROR_PAT }}@github.com/tech-skill3/skill3-landing.git"
-              run: |
-                # 为了调试，我们先打印一下URL（不含PAT），确认格式
-                echo "Attempting to push to tech-skill3/skill3-landing.git"
-                
-                # 执行镜像推送
-                git push --mirror "$TARGET_REPO_URL"
+        env:
+            # 请再次确认 tech-skill3 和 skill3-landing 是正确的目标用户名和仓库名
+          TARGET_REPO_URL: "https://tech-skill3:${{ secrets.MIRROR_PAT }}@github.com/tech-skill3/skill3-landing.git"
+        run: |
+          # 为了调试，我们先打印一下URL（不含PAT），确认格式
+          echo "Attempting to push to tech-skill3/skill3-landing.git"
+          
+          # 执行镜像推送
+          git push --mirror "$TARGET_REPO_URL"
