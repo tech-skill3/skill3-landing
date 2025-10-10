@@ -191,9 +191,10 @@ export default function Header() {
           </div>
 
           <Button 
+            asChild
             className="rounded-full h-9 px-4 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
           >
-            Book Demo
+            <Link href="/demo">Book Demo</Link>
           </Button>
 
           <Button 
@@ -255,11 +256,13 @@ export default function Header() {
                 <ChevronRight className="ml-1 size-4" />
               </Button>
               <Button 
+                asChild
                 variant="outline"
                 className="rounded-full h-10 px-6 text-sm"
-                onClick={() => setMobileMenuOpen(false)}
               >
-                Book a Demo
+                <Link href="/demo" onClick={() => setMobileMenuOpen(false)}>
+                  Book a Demo
+                </Link>
               </Button>
             </div>
           </div>

@@ -48,8 +48,8 @@ export default function LandingPage() {
                   Explore Skill Mall
                   <ArrowRight className="ml-2 size-4" />
                 </Button>
-                <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base">
-                  Book a Demo
+                <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base" asChild>
+                  <Link href="/demo">Book a Demo</Link>
                 </Button>
               </div>
 
