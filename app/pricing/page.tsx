@@ -5,7 +5,7 @@ import LearnerPricing from "./components/learner-pricing"
 import CreatorPricing from "./components/creator-pricing"
 
 export const metadata: Metadata = {
-  title: "Pricing - Skill3",
+  title: "Skill3",
   description: "Comprehensive pricing for enterprises, learners, and creators in the Skill3 ecosystem.",
 }
 
