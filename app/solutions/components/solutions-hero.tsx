@@ -4,8 +4,10 @@ import { motion } from "framer-motion"
 import { ArrowRight, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function SolutionsHero() {
+  const { t } = useLanguage()
   return (
     <section className="w-full py-20 md:py-32 lg:py-20 overflow-hidden">
       <div className="container px-4 md:px-6 relative">
@@ -18,21 +20,21 @@ export default function SolutionsHero() {
           className="text-center max-w-4xl mx-auto mb-12"
         >
           <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-            企业解决方案
+            {t.solutions.hero.badge}
           </Badge>
           <h1 className="font-hero text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70" style={{lineHeight: '1.2'}}>
-            AI驱动的技能转化与ROI交付平台
+            {t.solutions.hero.title}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            我们与您共同达成可衡量的业务KPI。通过AI原生的训战平台，将技能培养转化为实际业务成果，确保每一笔培训投入都产生可量化的回报。
+            {t.solutions.hero.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="rounded-full h-12 px-8 text-base">
-              申请演示
+              {t.solutions.hero.demoButton}
               <ArrowRight className="ml-2 size-4" />
             </Button>
             <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base">
-              查看定价
+              {t.solutions.hero.pricingButton}
               <Play className="ml-2 size-4" />
             </Button>
           </div>

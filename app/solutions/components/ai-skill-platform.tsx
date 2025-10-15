@@ -4,38 +4,41 @@ import { motion } from "framer-motion"
 import { Brain, BookOpen, Target, TrendingUp, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function AiSkillPlatform() {
+  const { t } = useLanguage()
+  
   const skillSteps = [
     {
       id: "create",
-      title: "创",
-      subtitle: "AI智课师",
-      description: "构建AI技能体",
+      title: t.solutions.aiSkillPlatform.steps.create.title,
+      subtitle: t.solutions.aiSkillPlatform.steps.create.subtitle,
+      description: t.solutions.aiSkillPlatform.steps.create.description,
       icon: Brain,
       color: "from-blue-500 to-cyan-500"
     },
     {
       id: "learn",
-      title: "学", 
-      subtitle: "AI导师",
-      description: "交互式学习",
+      title: t.solutions.aiSkillPlatform.steps.learn.title, 
+      subtitle: t.solutions.aiSkillPlatform.steps.learn.subtitle,
+      description: t.solutions.aiSkillPlatform.steps.learn.description,
       icon: BookOpen,
       color: "from-green-500 to-emerald-500"
     },
     {
       id: "practice",
-      title: "练",
-      subtitle: "AI陪练师", 
-      description: "高保真模拟实战",
+      title: t.solutions.aiSkillPlatform.steps.practice.title,
+      subtitle: t.solutions.aiSkillPlatform.steps.practice.subtitle, 
+      description: t.solutions.aiSkillPlatform.steps.practice.description,
       icon: Target,
       color: "from-orange-500 to-red-500"
     },
     {
       id: "effect",
-      title: "效",
-      subtitle: "AI督导师",
-      description: "智能分析量化ROI",
+      title: t.solutions.aiSkillPlatform.steps.effect.title,
+      subtitle: t.solutions.aiSkillPlatform.steps.effect.subtitle,
+      description: t.solutions.aiSkillPlatform.steps.effect.description,
       icon: TrendingUp,
       color: "from-purple-500 to-pink-500"
     }
@@ -54,12 +57,12 @@ export default function AiSkillPlatform() {
           {/* 左侧内容 */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                1. AI技能训战平台
-              </h2>
-              <p className="text-xl text-muted-foreground mb-6">
-                &ldquo;创-学-练-效&rdquo;闭环：AI Agent驱动的技能转化
-              </p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            {t.solutions.aiSkillPlatform.title}
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            {t.solutions.aiSkillPlatform.subtitle}
+          </p>
             </div>
 
             <div className="space-y-4">
@@ -83,7 +86,7 @@ export default function AiSkillPlatform() {
                     </div>
                   </div>
                   <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-opacity">
-                    了解更多
+                    {t.solutions.aiSkillPlatform.learnMoreButton}
                     <ChevronRight className="ml-1 size-4" />
                   </Button>
                 </motion.div>
@@ -101,7 +104,7 @@ export default function AiSkillPlatform() {
             <Card className="p-8 bg-gradient-to-br from-background to-muted/20">
               <CardContent className="p-0">
                 <h3 className="text-xl font-semibold text-center mb-8">
-                  创-学-练-效闭环流程图
+                  {t.solutions.aiSkillPlatform.flowchartTitle}
                 </h3>
                 
                 <div className="relative">
@@ -116,9 +119,9 @@ export default function AiSkillPlatform() {
                       className="flex flex-col items-center"
                     >
                       <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-xl mb-2">
-                        创
+                        {t.solutions.aiSkillPlatform.steps.create.title}
                       </div>
-                      <span className="text-sm font-medium">AI智课师</span>
+                      <span className="text-sm font-medium">{t.solutions.aiSkillPlatform.steps.create.subtitle}</span>
                     </motion.div>
 
                     {/* 学 */}
@@ -130,9 +133,9 @@ export default function AiSkillPlatform() {
                       className="flex flex-col items-center"
                     >
                       <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold text-xl mb-2">
-                        学
+                        {t.solutions.aiSkillPlatform.steps.learn.title}
                       </div>
-                      <span className="text-sm font-medium">AI导师</span>
+                      <span className="text-sm font-medium">{t.solutions.aiSkillPlatform.steps.learn.subtitle}</span>
                     </motion.div>
 
                     {/* 效 */}
@@ -144,9 +147,9 @@ export default function AiSkillPlatform() {
                       className="flex flex-col items-center"
                     >
                       <div className="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl mb-2">
-                        效
+                        {t.solutions.aiSkillPlatform.steps.effect.title}
                       </div>
-                      <span className="text-sm font-medium">AI督导师</span>
+                      <span className="text-sm font-medium">{t.solutions.aiSkillPlatform.steps.effect.subtitle}</span>
                     </motion.div>
 
                     {/* 练 */}
@@ -158,9 +161,9 @@ export default function AiSkillPlatform() {
                       className="flex flex-col items-center"
                     >
                       <div className="w-16 h-16 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-xl mb-2">
-                        练
+                        {t.solutions.aiSkillPlatform.steps.practice.title}
                       </div>
-                      <span className="text-sm font-medium">AI陪练师</span>
+                      <span className="text-sm font-medium">{t.solutions.aiSkillPlatform.steps.practice.subtitle}</span>
                     </motion.div>
                   </div>
 

@@ -7,8 +7,10 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function ROICalculator() {
+  const { t } = useLanguage()
   const [teamSize, setTeamSize] = useState<number>(50)
   const [currentConversionRate, setCurrentConversionRate] = useState<number>(15)
   const [targetConversionRate, setTargetConversionRate] = useState<number>(25)
@@ -65,10 +67,10 @@ export default function ROICalculator() {
             </div>
           </div>
           <CardTitle className="text-2xl md:text-3xl font-bold">
-            ROI 计算器
+            {t.solutions.roiCalculator.title}
           </CardTitle>
           <p className="text-muted-foreground">
-            输入团队规模和转化率，预估 OaaS 带来的收益增长
+            {t.solutions.roiCalculator.subtitle}
           </p>
         </CardHeader>
 
@@ -78,7 +80,7 @@ export default function ROICalculator() {
             <div className="space-y-2">
               <Label htmlFor="teamSize" className="flex items-center gap-2">
                 <Users className="size-4" />
-                团队规模（人）
+                {t.solutions.roiCalculator.inputs.teamSize}
               </Label>
               <Input
                 id="teamSize"
@@ -94,7 +96,7 @@ export default function ROICalculator() {
             <div className="space-y-2">
               <Label htmlFor="currentConversion" className="flex items-center gap-2">
                 <Target className="size-4" />
-                当前转化率（%）
+                {t.solutions.roiCalculator.inputs.currentConversion}
               </Label>
               <Input
                 id="currentConversion"
@@ -111,7 +113,7 @@ export default function ROICalculator() {
             <div className="space-y-2">
               <Label htmlFor="targetConversion" className="flex items-center gap-2">
                 <TrendingUp className="size-4" />
-                目标转化率（%）
+                {t.solutions.roiCalculator.inputs.targetConversion}
               </Label>
               <Input
                 id="targetConversion"
@@ -128,7 +130,7 @@ export default function ROICalculator() {
             <div className="space-y-2">
               <Label htmlFor="avgDealValue" className="flex items-center gap-2">
                 <DollarSign className="size-4" />
-                平均订单价值（元）
+                {t.solutions.roiCalculator.inputs.avgDealValue}
               </Label>
               <Input
                 id="avgDealValue"
@@ -144,7 +146,7 @@ export default function ROICalculator() {
             <div className="space-y-2">
               <Label htmlFor="trainingCost" className="flex items-center gap-2">
                 <Calculator className="size-4" />
-                人均培训成本（元）
+                {t.solutions.roiCalculator.inputs.trainingCost}
               </Label>
               <Input
                 id="trainingCost"
@@ -166,7 +168,7 @@ export default function ROICalculator() {
             transition={{ duration: 0.3 }}
             className="bg-background/80 rounded-xl p-6 border"
           >
-            <h3 className="text-xl font-semibold mb-6 text-center">预估收益分析</h3>
+            <h3 className="text-xl font-semibold mb-6 text-center">{t.solutions.roiCalculator.results.title}</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <Card className="bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-800">
@@ -174,7 +176,7 @@ export default function ROICalculator() {
                   <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                     {formatCurrency(results.revenueIncrease)}
                   </div>
-                  <div className="text-sm text-muted-foreground mt-1">年收入增长</div>
+                  <div className="text-sm text-muted-foreground mt-1">{t.solutions.roiCalculator.results.revenueIncrease}</div>
                 </CardContent>
               </Card>
 
@@ -183,7 +185,7 @@ export default function ROICalculator() {
                   <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                     {results.roi > 0 ? '+' : ''}{formatNumber(results.roi)}%
                   </div>
-                  <div className="text-sm text-muted-foreground mt-1">投资回报率</div>
+                  <div className="text-sm text-muted-foreground mt-1">{t.solutions.roiCalculator.results.roi}</div>
                 </CardContent>
               </Card>
 
@@ -192,7 +194,7 @@ export default function ROICalculator() {
                   <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
                     {formatNumber(results.paybackPeriod)}
                   </div>
-                  <div className="text-sm text-muted-foreground mt-1">回本周期（月）</div>
+                  <div className="text-sm text-muted-foreground mt-1">{t.solutions.roiCalculator.results.paybackPeriod}</div>
                 </CardContent>
               </Card>
 
@@ -201,7 +203,7 @@ export default function ROICalculator() {
                   <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
                     {formatCurrency(results.totalTrainingCost)}
                   </div>
-                  <div className="text-sm text-muted-foreground mt-1">总培训投入</div>
+                  <div className="text-sm text-muted-foreground mt-1">{t.solutions.roiCalculator.results.totalTrainingInvestment}</div>
                 </CardContent>
               </Card>
             </div>
@@ -210,14 +212,14 @@ export default function ROICalculator() {
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
               <Card className="bg-muted/30">
                 <CardContent className="p-4">
-                  <h4 className="font-semibold mb-2 text-center">当前状态</h4>
+                  <h4 className="font-semibold mb-2 text-center">{t.solutions.roiCalculator.results.currentStatus}</h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>转化率:</span>
+                      <span>{t.solutions.roiCalculator.results.conversionRate}:</span>
                       <span className="font-medium">{currentConversionRate}%</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>年收入:</span>
+                      <span>{t.solutions.roiCalculator.results.annualRevenue}:</span>
                       <span className="font-medium">{formatCurrency(results.currentRevenue)}</span>
                     </div>
                   </div>
@@ -226,14 +228,14 @@ export default function ROICalculator() {
 
               <Card className="bg-primary/5">
                 <CardContent className="p-4">
-                  <h4 className="font-semibold mb-2 text-center">预期状态</h4>
+                  <h4 className="font-semibold mb-2 text-center">{t.solutions.roiCalculator.results.expectedStatus}</h4>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>转化率:</span>
+                      <span>{t.solutions.roiCalculator.results.conversionRate}:</span>
                       <span className="font-medium text-primary">{targetConversionRate}%</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>年收入:</span>
+                      <span>{t.solutions.roiCalculator.results.annualRevenue}:</span>
                       <span className="font-medium text-primary">{formatCurrency(results.projectedRevenue)}</span>
                     </div>
                   </div>
@@ -244,7 +246,7 @@ export default function ROICalculator() {
             {/* 行动按钮 */}
             <div className="mt-6 text-center">
               <Button size="lg" className="rounded-full">
-                获取定制化 ROI 方案
+                {t.solutions.roiCalculator.getCustomizedPlan}
                 <TrendingUp className="ml-2 size-4" />
               </Button>
             </div>

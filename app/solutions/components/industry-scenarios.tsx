@@ -4,47 +4,35 @@ import { motion } from "framer-motion"
 import { ChevronRight, Building2, ShoppingCart, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function IndustryScenarios() {
+  const { t } = useLanguage()
+  
   const scenarios = [
     {
-      title: "金融AI陪练",
-      subtitle: "赋能银行客户经理",
-      description: "通过AI模拟客户进行高仿真对话训练，实时分析话术，提升转化效率",
-      features: [
-        "AI模拟客户进行高仿真对话训练",
-        "实时分析话术优化建议",
-        "提升客户转化效率",
-        "量化培训ROI"
-      ],
+      title: t.solutions.industryScenarios.scenarios.finance.title,
+      subtitle: t.solutions.industryScenarios.scenarios.finance.subtitle,
+      description: t.solutions.industryScenarios.scenarios.finance.description,
+      features: t.solutions.industryScenarios.scenarios.finance.features,
       icon: Building2,
       color: "from-blue-500 to-cyan-500",
       bgColor: "from-blue-50 to-cyan-50 dark:from-blue-950/20 to-cyan-950/20"
     },
     {
-      title: "零售AI真练",
-      subtitle: "助力销售团队",
-      description: "AI分析真实销售录音，提供优化建议，提升下单率",
-      features: [
-        "AI分析真实销售录音",
-        "智能提供优化建议",
-        "提升客户下单率",
-        "销售技能量化评估"
-      ],
+      title: t.solutions.industryScenarios.scenarios.retail.title,
+      subtitle: t.solutions.industryScenarios.scenarios.retail.subtitle,
+      description: t.solutions.industryScenarios.scenarios.retail.description,
+      features: t.solutions.industryScenarios.scenarios.retail.features,
       icon: ShoppingCart,
       color: "from-green-500 to-emerald-500",
       bgColor: "from-green-50 to-emerald-50 dark:from-green-950/20 to-emerald-950/20"
     },
     {
-      title: "编程实操",
-      subtitle: "提供在线编程环境",
-      description: "集成OJ/Jupyter，高效掌握核心技术技能",
-      features: [
-        "提供在线编程环境",
-        "集成OJ/Jupyter平台",
-        "高效掌握核心技术技能",
-        "实时代码评估反馈"
-      ],
+      title: t.solutions.industryScenarios.scenarios.programming.title,
+      subtitle: t.solutions.industryScenarios.scenarios.programming.subtitle,
+      description: t.solutions.industryScenarios.scenarios.programming.description,
+      features: t.solutions.industryScenarios.scenarios.programming.features,
       icon: Code,
       color: "from-purple-500 to-pink-500",
       bgColor: "from-purple-50 to-pink-50 dark:from-purple-950/20 to-pink-950/20"
@@ -62,10 +50,10 @@ export default function IndustryScenarios() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            3. 行业应用场景
+            {t.solutions.industryScenarios.title}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            针对不同行业特点，提供定制化的AI技能训练解决方案
+            {t.solutions.industryScenarios.subtitle}
           </p>
         </motion.div>
 
@@ -111,7 +99,7 @@ export default function IndustryScenarios() {
                     variant="ghost" 
                     className="w-full justify-between group-hover:bg-primary/5 transition-colors"
                   >
-                    了解更多
+                    {t.solutions.industryScenarios.learnMoreButton}
                     <ChevronRight className="size-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
@@ -129,16 +117,16 @@ export default function IndustryScenarios() {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
-            <div className="text-muted-foreground">行业场景覆盖</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{t.solutions.industryScenarios.stats.coverage.value}</div>
+            <div className="text-muted-foreground">{t.solutions.industryScenarios.stats.coverage.label}</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">95%</div>
-            <div className="text-muted-foreground">技能转化成功率</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{t.solutions.industryScenarios.stats.successRate.value}</div>
+            <div className="text-muted-foreground">{t.solutions.industryScenarios.stats.successRate.label}</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">300%</div>
-            <div className="text-muted-foreground">平均ROI提升</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{t.solutions.industryScenarios.stats.roiImprovement.value}</div>
+            <div className="text-muted-foreground">{t.solutions.industryScenarios.stats.roiImprovement.label}</div>
           </div>
         </motion.div>
       </div>

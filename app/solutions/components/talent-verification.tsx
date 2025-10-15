@@ -5,46 +5,49 @@ import { ChevronRight, Shield, Search, CheckCircle, Award, Fingerprint } from "l
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function TalentVerification() {
+  const { t } = useLanguage()
+  
   const features = [
     {
       icon: Shield,
-      title: "透明可信",
-      description: "基于区块链的不可篡改技能记录"
+      title: t.solutions.talentVerification.features.transparent.title,
+      description: t.solutions.talentVerification.features.transparent.description
     },
     {
       icon: Fingerprint,
-      title: "防篡改",
-      description: "密码学保证的技能数据完整性"
+      title: t.solutions.talentVerification.features.tamperProof.title,
+      description: t.solutions.talentVerification.features.tamperProof.description
     },
     {
       icon: Search,
-      title: "精准匹配",
-      description: "QSV数据驱动的候选人匹配"
+      title: t.solutions.talentVerification.features.preciseMatching.title,
+      description: t.solutions.talentVerification.features.preciseMatching.description
     },
     {
       icon: CheckCircle,
-      title: "简化调查",
-      description: "自动化背景调查流程"
+      title: t.solutions.talentVerification.features.simplifiedInvestigation.title,
+      description: t.solutions.talentVerification.features.simplifiedInvestigation.description
     }
   ]
 
   const benefits = [
     {
-      title: "95%",
-      subtitle: "招聘准确率",
-      description: "基于真实技能数据的精准匹配"
+      title: t.solutions.talentVerification.benefits.accuracy.title,
+      subtitle: t.solutions.talentVerification.benefits.accuracy.subtitle,
+      description: t.solutions.talentVerification.benefits.accuracy.description
     },
     {
-      title: "70%",
-      subtitle: "时间节省",
-      description: "简化背景调查和技能验证流程"
+      title: t.solutions.talentVerification.benefits.timeSaving.title,
+      subtitle: t.solutions.talentVerification.benefits.timeSaving.subtitle,
+      description: t.solutions.talentVerification.benefits.timeSaving.description
     },
     {
-      title: "85%",
-      subtitle: "成本降低",
-      description: "减少错误招聘带来的损失"
+      title: t.solutions.talentVerification.benefits.costReduction.title,
+      subtitle: t.solutions.talentVerification.benefits.costReduction.subtitle,
+      description: t.solutions.talentVerification.benefits.costReduction.description
     }
   ]
 
@@ -62,19 +65,19 @@ export default function TalentVerification() {
             <CardContent className="p-0">
               <div className="text-center mb-12">
                 <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                  Web3技能验证
+                  {t.solutions.talentVerification.badge}
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  4. 验证人才库
+                  {t.solutions.talentVerification.title}
                 </h2>
                 <p className="text-xl text-muted-foreground mb-6">
-                  精准招聘，基于可信的链上技能数据
+                  {t.solutions.talentVerification.subtitle}
                 </p>
                 <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-8">
-                  解释Skill SBT（技能护照）如何提供透明可信、防篡改的人才验证。利用QSV数据精准匹配候选人，简化背景调查。
+                  {t.solutions.talentVerification.description}
                 </p>
                 <Button size="lg" variant="outline" className="rounded-full">
-                  了解更多
+                  {t.solutions.talentVerification.learnMoreButton}
                   <ChevronRight className="ml-2 size-4" />
                 </Button>
               </div>
@@ -82,7 +85,7 @@ export default function TalentVerification() {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* 左侧特性 */}
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-semibold mb-6">Skill SBT 技能护照特性</h3>
+                  <h3 className="text-2xl font-semibold mb-6">{t.solutions.talentVerification.featuresTitle}</h3>
                   
                   {features.map((feature, index) => (
                     <motion.div
@@ -117,27 +120,27 @@ export default function TalentVerification() {
                       <div className="w-20 h-20 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center mx-auto mb-4">
                         <Award className="size-10 text-white" />
                       </div>
-                      <h4 className="text-xl font-semibold mb-2">Skill SBT 技能护照</h4>
-                      <p className="text-sm text-muted-foreground">Soul Bound Token</p>
+                      <h4 className="text-xl font-semibold mb-2">{t.solutions.talentVerification.sbtTitle}</h4>
+                      <p className="text-sm text-muted-foreground">{t.solutions.talentVerification.sbtSubtitle}</p>
                     </div>
                     
                     <div className="space-y-4">
                       <div className="flex items-center justify-between p-3 bg-background/70 rounded-lg">
                         <span className="text-sm font-medium">技能验证状态</span>
                         <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
-                          已验证
+                          {t.solutions.talentVerification.sbtStatus.verified}
                         </Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-background/70 rounded-lg">
                         <span className="text-sm font-medium">链上记录</span>
                         <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
-                          不可篡改
+                          {t.solutions.talentVerification.sbtStatus.onChain}
                         </Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-background/70 rounded-lg">
-                        <span className="text-sm font-medium">QSV评分</span>
+                        <span className="text-sm font-medium">{t.solutions.talentVerification.sbtStatus.qsvScoreLabel}</span>
                         <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300">
-                          A级
+                          {t.solutions.talentVerification.sbtStatus.qsvScore}
                         </Badge>
                       </div>
                     </div>

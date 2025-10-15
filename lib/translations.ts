@@ -153,6 +153,193 @@ interface TranslationStructure {
       priorityDesc: string
     }
   }
+  solutions: {
+    hero: {
+      badge: string
+      title: string
+      subtitle: string
+      demoButton: string
+      pricingButton: string
+    }
+    aiSkillPlatform: {
+      title: string
+      subtitle: string
+      flowchartTitle: string
+      learnMoreButton: string
+      steps: {
+        create: {
+          title: string
+          subtitle: string
+          description: string
+        }
+        learn: {
+          title: string
+          subtitle: string
+          description: string
+        }
+        practice: {
+          title: string
+          subtitle: string
+          description: string
+        }
+        effect: {
+          title: string
+          subtitle: string
+          description: string
+        }
+      }
+    }
+    oaasEngine: {
+      title: string
+      subtitle: string
+      description: string
+      learnMoreButton: string
+      workflowTitle: string
+      workflowSteps: {
+        defineKPI: {
+          title: string
+          description: string
+        }
+        matchSkills: {
+          title: string
+          description: string
+        }
+        lockFunds: {
+          title: string
+          description: string
+        }
+        achieveKPI: {
+          title: string
+          description: string
+        }
+        verifyResults: {
+          title: string
+          description: string
+        }
+        autoSettle: {
+          title: string
+          description: string
+        }
+      }
+    }
+    industryScenarios: {
+      title: string
+      subtitle: string
+      learnMoreButton: string
+      scenarios: {
+        finance: {
+          title: string
+          subtitle: string
+          description: string
+          features: string[]
+        }
+        retail: {
+          title: string
+          subtitle: string
+          description: string
+          features: string[]
+        }
+        programming: {
+          title: string
+          subtitle: string
+          description: string
+          features: string[]
+        }
+      }
+      stats: {
+        coverage: {
+          value: string
+          label: string
+        }
+        successRate: {
+          value: string
+          label: string
+        }
+        roiImprovement: {
+          value: string
+          label: string
+        }
+      }
+    }
+    talentVerification: {
+      badge: string
+      title: string
+      subtitle: string
+      description: string
+      learnMoreButton: string
+      featuresTitle: string
+      features: {
+        transparent: {
+          title: string
+          description: string
+        }
+        tamperProof: {
+          title: string
+          description: string
+        }
+        preciseMatching: {
+          title: string
+          description: string
+        }
+        simplifiedInvestigation: {
+          title: string
+          description: string
+        }
+      }
+      sbtTitle: string
+      sbtSubtitle: string
+      sbtStatus: {
+          verified: string
+          onChain: string
+          qsvScore: string
+          qsvScoreLabel: string
+        }
+      benefits: {
+        accuracy: {
+          title: string
+          subtitle: string
+          description: string
+        }
+        timeSaving: {
+          title: string
+          subtitle: string
+          description: string
+        }
+        costReduction: {
+          title: string
+          subtitle: string
+          description: string
+        }
+      }
+    }
+    roiCalculator: {
+      title: string
+      subtitle: string
+      inputs: {
+        teamSize: string
+        currentConversion: string
+        targetConversion: string
+        avgDealValue: string
+        trainingCost: string
+      }
+      results: {
+          title: string
+          currentRevenue: string
+          projectedRevenue: string
+          revenueIncrease: string
+          totalCost: string
+          roi: string
+          paybackPeriod: string
+          totalTrainingInvestment: string
+          currentStatus: string
+          expectedStatus: string
+          conversionRate: string
+          annualRevenue: string
+        }
+      calculateButton: string
+      getCustomizedPlan: string
+    }
+  }
 }
 
 export const translations: Record<Language, TranslationStructure> = {
@@ -326,6 +513,208 @@ export const translations: Record<Language, TranslationStructure> = {
         priority: 'Priority',
         priorityDesc: 'Event Notifications'
       }
+    },
+    solutions: {
+      hero: {
+        badge: 'Enterprise Solutions',
+        title: 'AI-Driven Skill Transformation & ROI Delivery Platform',
+        subtitle: 'We work with you to achieve measurable business KPIs. Through our AI-native training platform, we transform skill development into actual business outcomes, ensuring every training investment generates quantifiable returns.',
+        demoButton: 'Request Demo',
+        pricingButton: 'View Pricing'
+      },
+      aiSkillPlatform: {
+        title: '1. AI Skill Training Platform',
+        subtitle: '"Create-Learn-Practice-Effect" Loop: AI Agent-Driven Skill Transformation',
+        flowchartTitle: 'Create-Learn-Practice-Effect Loop Flowchart',
+        learnMoreButton: 'Learn More',
+        steps: {
+          create: {
+            title: 'Create',
+            subtitle: 'AI Course Creator',
+            description: 'Build AI Skill Units'
+          },
+          learn: {
+            title: 'Learn',
+            subtitle: 'AI Tutor',
+            description: 'Interactive Learning'
+          },
+          practice: {
+            title: 'Practice',
+            subtitle: 'AI Training Partner',
+            description: 'High-Fidelity Simulation Practice'
+          },
+          effect: {
+            title: 'Effect',
+            subtitle: 'AI Supervisor',
+            description: 'Intelligent Analysis & ROI Quantification'
+          }
+        }
+      },
+      oaasEngine: {
+        title: '2. Outcome Proof Engine (OaaS)',
+        subtitle: 'Outcome as a Service (OaaS): Fully Align Financial Incentives with Business Results',
+        description: 'Explains how enterprises achieve "pay for results". Emphasizes the key role of Web3 technology (smart contracts and oracles) in providing transparent, tamper-proof, and automatically executed settlement mechanisms.',
+        learnMoreButton: 'Learn More',
+        workflowTitle: 'OaaS Workflow',
+        workflowSteps: {
+          defineKPI: {
+            title: 'Define Business KPIs',
+            description: 'Clarify measurable business objectives'
+          },
+          matchSkills: {
+            title: 'Match AI Skill Units',
+            description: 'Intelligently recommend the most suitable skill training'
+          },
+          lockFunds: {
+            title: 'Lock Training Funds',
+            description: 'Smart contract escrow for training investment'
+          },
+          achieveKPI: {
+            title: 'Employees Learn & Achieve KPIs',
+            description: 'AI-driven personalized learning paths'
+          },
+          verifyResults: {
+            title: 'AI Verify Results',
+            description: 'Oracle verification of business outcomes'
+          },
+          autoSettle: {
+            title: 'Auto Settlement',
+            description: 'Smart contract automatic payment execution'
+          }
+        }
+      },
+      industryScenarios: {
+        title: '3. Industry Application Scenarios',
+        subtitle: 'Customized AI skill training solutions tailored to different industry characteristics',
+        learnMoreButton: 'Learn More',
+        scenarios: {
+          finance: {
+            title: 'Financial AI Training',
+            subtitle: 'Empowering Bank Account Managers',
+            description: 'High-fidelity conversational training through AI customer simulation, real-time speech analysis to improve conversion efficiency',
+            features: [
+              'AI simulates customers for high-fidelity conversational training',
+              'Real-time speech analysis and optimization suggestions',
+              'Improve customer conversion efficiency',
+              'Quantify training ROI'
+            ]
+          },
+          retail: {
+            title: 'Retail AI Practice',
+            subtitle: 'Assisting Sales Teams',
+            description: 'AI analyzes real sales recordings, provides optimization suggestions, improves order rates',
+            features: [
+              'AI analyzes real sales recordings',
+              'Intelligently provides optimization suggestions',
+              'Improve customer order rates',
+              'Quantitative sales skill assessment'
+            ]
+          },
+          programming: {
+            title: 'Programming Practice',
+            subtitle: 'Providing Online Programming Environment',
+            description: 'Integrated OJ/Jupyter, efficiently master core technical skills',
+            features: [
+              'Provide online programming environment',
+              'Integrated OJ/Jupyter platform',
+              'Efficiently master core technical skills',
+              'Real-time code evaluation feedback'
+            ]
+          }
+        },
+        stats: {
+          coverage: {
+            value: '50+',
+            label: 'Industry Scenarios Covered'
+          },
+          successRate: {
+            value: '95%',
+            label: 'Skill Transformation Success Rate'
+          },
+          roiImprovement: {
+            value: '300%',
+            label: 'Average ROI Improvement'
+          }
+        }
+      },
+      talentVerification: {
+        badge: 'Web3 Skill Verification',
+        title: '4. Verified Talent Pool',
+        subtitle: 'Precise Recruitment Based on Trusted On-Chain Skill Data',
+        description: 'Explains how Skill SBT (Skill Passport) provides transparent, trustworthy, and tamper-proof talent verification. Utilizes QSV data for precise candidate matching and simplified background checks.',
+        learnMoreButton: 'Learn More',
+        featuresTitle: 'Skill SBT Passport Features',
+        features: {
+          transparent: {
+            title: 'Transparent & Trustworthy',
+            description: 'Blockchain-based immutable skill records'
+          },
+          tamperProof: {
+            title: 'Tamper-Proof',
+            description: 'Cryptographically guaranteed skill data integrity'
+          },
+          preciseMatching: {
+            title: 'Precise Matching',
+            description: 'QSV data-driven candidate matching'
+          },
+          simplifiedInvestigation: {
+            title: 'Simplified Investigation',
+            description: 'Automated background check process'
+          }
+        },
+        sbtTitle: 'Skill SBT Passport',
+        sbtSubtitle: 'Soul Bound Token',
+        sbtStatus: {
+          verified: 'Verified',
+          onChain: 'Immutable',
+          qsvScore: 'A-Grade',
+          qsvScoreLabel: 'QSV Score'
+        },
+        benefits: {
+          accuracy: {
+            title: '95%',
+            subtitle: 'Recruitment Accuracy',
+            description: 'Precise matching based on real skill data'
+          },
+          timeSaving: {
+            title: '70%',
+            subtitle: 'Time Savings',
+            description: 'Simplified background checks and skill verification'
+          },
+          costReduction: {
+            title: '85%',
+            subtitle: 'Cost Reduction',
+            description: 'Reduce losses from incorrect hiring'
+          }
+        }
+      },
+      roiCalculator: {
+        title: 'ROI Calculator',
+        subtitle: 'Enter team size and conversion rates to estimate revenue growth from OaaS',
+        inputs: {
+          teamSize: 'Team Size (People)',
+          currentConversion: 'Current Conversion Rate (%)',
+          targetConversion: 'Target Conversion Rate (%)',
+          avgDealValue: 'Average Deal Value (CNY)',
+          trainingCost: 'Training Cost per Person (CNY)'
+        },
+        results: {
+          title: 'Estimated Revenue Analysis',
+          currentRevenue: 'Current Annual Revenue',
+          projectedRevenue: 'Projected Annual Revenue',
+          revenueIncrease: 'Revenue Increase',
+          totalCost: 'Total Training Cost',
+          roi: 'ROI',
+          paybackPeriod: 'Payback Period (Months)',
+          totalTrainingInvestment: 'Total Training Investment',
+          currentStatus: 'Current Status',
+          expectedStatus: 'Expected Status',
+          conversionRate: 'Conversion Rate',
+          annualRevenue: 'Annual Revenue'
+        },
+        calculateButton: 'Calculate ROI',
+        getCustomizedPlan: 'Get Customized ROI Plan'
+      }
     }
   },
   zh: {
@@ -497,6 +886,208 @@ export const translations: Record<Language, TranslationStructure> = {
         exclusiveDesc: '内容访问',
         priority: '优先',
         priorityDesc: '活动通知'
+      }
+    },
+    solutions: {
+      hero: {
+        badge: '企业解决方案',
+        title: 'AI驱动的技能转化与ROI交付平台',
+        subtitle: '我们与您共同达成可衡量的业务KPI。通过AI原生的训战平台，将技能培养转化为实际业务成果，确保每一笔培训投入都产生可量化的回报。',
+        demoButton: '申请演示',
+        pricingButton: '查看定价'
+      },
+      aiSkillPlatform: {
+        title: '1. AI技能训战平台',
+        subtitle: '"创-学-练-效"闭环：AI Agent驱动的技能转化',
+        flowchartTitle: '创-学-练-效闭环流程图',
+        learnMoreButton: '了解更多',
+        steps: {
+          create: {
+            title: '创',
+            subtitle: 'AI智课师',
+            description: '构建AI技能体'
+          },
+          learn: {
+            title: '学',
+            subtitle: 'AI导师',
+            description: '交互式学习'
+          },
+          practice: {
+            title: '练',
+            subtitle: 'AI陪练师',
+            description: '高保真模拟实战'
+          },
+          effect: {
+            title: '效',
+            subtitle: 'AI督导师',
+            description: '智能分析量化ROI'
+          }
+        }
+      },
+      oaasEngine: {
+        title: '2. 成果证明引擎(OaaS)',
+        subtitle: '成果即服务(OaaS)：将财务激励与业务成果完全对齐',
+        description: '解释企业如何实现"为结果付费"。强调Web3技术（智能合约与预言机）在其中的关键作用——提供透明、不可篡改且自动执行的结算机制。',
+        learnMoreButton: '了解更多',
+        workflowTitle: 'OaaS工作流程',
+        workflowSteps: {
+          defineKPI: {
+            title: '定义业务KPI',
+            description: '明确可衡量的业务目标'
+          },
+          matchSkills: {
+            title: '匹配AI技能体',
+            description: '智能推荐最适合的技能培训'
+          },
+          lockFunds: {
+            title: '锁定培训资金',
+            description: '智能合约托管培训投资'
+          },
+          achieveKPI: {
+            title: '员工学习达成KPI',
+            description: 'AI驱动的个性化学习路径'
+          },
+          verifyResults: {
+            title: 'AI验证成果',
+            description: '预言机验证业务成果'
+          },
+          autoSettle: {
+            title: '自动结算',
+            description: '智能合约自动执行付款'
+          }
+        }
+      },
+      industryScenarios: {
+        title: '3. 行业应用场景',
+        subtitle: '针对不同行业特点，提供定制化的AI技能训练解决方案',
+        learnMoreButton: '了解更多',
+        scenarios: {
+          finance: {
+            title: '金融AI陪练',
+            subtitle: '赋能银行客户经理',
+            description: '通过AI模拟客户进行高仿真对话训练，实时分析话术，提升转化效率',
+            features: [
+              'AI模拟客户进行高仿真对话训练',
+              '实时分析话术优化建议',
+              '提升客户转化效率',
+              '量化培训ROI'
+            ]
+          },
+          retail: {
+            title: '零售AI真练',
+            subtitle: '助力销售团队',
+            description: 'AI分析真实销售录音，提供优化建议，提升下单率',
+            features: [
+              'AI分析真实销售录音',
+              '智能提供优化建议',
+              '提升客户下单率',
+              '销售技能量化评估'
+            ]
+          },
+          programming: {
+            title: '编程实操',
+            subtitle: '提供在线编程环境',
+            description: '集成OJ/Jupyter，高效掌握核心技术技能',
+            features: [
+              '提供在线编程环境',
+              '集成OJ/Jupyter平台',
+              '高效掌握核心技术技能',
+              '实时代码评估反馈'
+            ]
+          }
+        },
+        stats: {
+          coverage: {
+            value: '50+',
+            label: '行业场景覆盖'
+          },
+          successRate: {
+            value: '95%',
+            label: '技能转化成功率'
+          },
+          roiImprovement: {
+            value: '300%',
+            label: '平均ROI提升'
+          }
+        }
+      },
+      talentVerification: {
+        badge: 'Web3技能验证',
+        title: '4. 验证人才库',
+        subtitle: '精准招聘，基于可信的链上技能数据',
+        description: '解释Skill SBT（技能护照）如何提供透明可信、防篡改的人才验证。利用QSV数据精准匹配候选人，简化背景调查。',
+        learnMoreButton: '了解更多',
+        featuresTitle: 'Skill SBT 技能护照特性',
+        features: {
+          transparent: {
+            title: '透明可信',
+            description: '基于区块链的不可篡改技能记录'
+          },
+          tamperProof: {
+            title: '防篡改',
+            description: '密码学保证的技能数据完整性'
+          },
+          preciseMatching: {
+            title: '精准匹配',
+            description: 'QSV数据驱动的候选人匹配'
+          },
+          simplifiedInvestigation: {
+            title: '简化调查',
+            description: '自动化背景调查流程'
+          }
+        },
+        sbtTitle: 'Skill SBT 技能护照',
+        sbtSubtitle: 'Soul Bound Token',
+        sbtStatus: {
+          verified: '已验证',
+          onChain: '不可篡改',
+          qsvScore: 'A级',
+          qsvScoreLabel: 'QSV评分'
+        },
+        benefits: {
+          accuracy: {
+            title: '95%',
+            subtitle: '招聘准确率',
+            description: '基于真实技能数据的精准匹配'
+          },
+          timeSaving: {
+            title: '70%',
+            subtitle: '时间节省',
+            description: '简化背景调查和技能验证流程'
+          },
+          costReduction: {
+            title: '85%',
+            subtitle: '成本降低',
+            description: '减少错误招聘带来的损失'
+          }
+        }
+      },
+      roiCalculator: {
+        title: 'ROI 计算器',
+        subtitle: '输入团队规模和转化率，预估 OaaS 带来的收益增长',
+        inputs: {
+          teamSize: '团队规模（人）',
+          currentConversion: '当前转化率（%）',
+          targetConversion: '目标转化率（%）',
+          avgDealValue: '平均成交金额（元）',
+          trainingCost: '人均培训成本（元）'
+        },
+        results: {
+          title: '预估收益分析',
+          currentRevenue: '当前年收入',
+          projectedRevenue: '预期年收入',
+          revenueIncrease: '收入增长',
+          totalCost: '总培训成本',
+          roi: 'ROI',
+          paybackPeriod: '回本周期（月）',
+          totalTrainingInvestment: '总培训投入',
+          currentStatus: '当前状态',
+          expectedStatus: '预期状态',
+          conversionRate: '转化率',
+          annualRevenue: '年收入'
+        },
+        calculateButton: '计算ROI',
+        getCustomizedPlan: '获取定制化 ROI 方案'
       }
     }
   }
