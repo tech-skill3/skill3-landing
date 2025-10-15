@@ -2,9 +2,10 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Mail, Send, CheckCircle } from "lucide-react"
+import { Mail, CheckCircle, Clock, Star, Bell, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 const container = {
   hidden: { opacity: 0 },
@@ -23,6 +24,7 @@ const item = {
 }
 
 export default function Newsletter() {
+  const { t } = useLanguage()
   const [email, setEmail] = useState("")
   const [isSubscribed, setIsSubscribed] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -57,10 +59,10 @@ export default function Newsletter() {
                 <Mail className="size-8" />
               </div>
               <h2 className="font-hero text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider mb-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-                Newsletter订阅
+                {t.newsletter.title}
               </h2>
               <p className="text-lg text-muted-foreground">
-                订阅我们的邮件，获取最新动态
+                {t.newsletter.subtitle}
               </p>
             </motion.div>
 
@@ -74,7 +76,7 @@ export default function Newsletter() {
                   <div className="flex-1">
                     <Input
                       type="email"
-                      placeholder="输入您的邮箱地址"
+                      placeholder={t.newsletter.placeholder}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="h-12 px-4 text-base border-2 border-border/40 focus:border-primary/50 bg-background/80 backdrop-blur-sm rounded-xl"
@@ -89,21 +91,21 @@ export default function Newsletter() {
                     {isLoading ? (
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                        <span>订阅中...</span>
+                        <span>{t.newsletter.subscribingButton}</span>
                       </div>
                     ) : (
                       <div className="flex items-center gap-2">
                         <Send className="size-4" />
-                        <span>订阅</span>
+                        <span>{t.newsletter.subscribeButton}</span>
                       </div>
                     )}
                   </Button>
                 </div>
 
                 <div className="text-center">
-                  <p className="text-sm text-muted-foreground">
-                    我们承诺保护您的隐私，不会发送垃圾邮件
-                  </p>
+                  <p className="text-xs text-muted-foreground">
+                  {t.newsletter.privacyNote}
+                </p>
                 </div>
               </motion.form>
             ) : (
@@ -118,10 +120,10 @@ export default function Newsletter() {
                   <CheckCircle className="size-8" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">
-                  订阅成功！
+                  {t.newsletter.successTitle}
                 </h3>
                 <p className="text-muted-foreground">
-                  感谢您的订阅，我们会定期向您发送最新动态
+                  {t.newsletter.successMessage}
                 </p>
               </motion.div>
             )}
@@ -132,16 +134,19 @@ export default function Newsletter() {
               className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 pt-8 border-t border-border/40"
             >
               <div className="text-center">
-                <div className="text-lg font-bold text-primary mb-1">每周</div>
-                <div className="text-sm text-muted-foreground">技术更新</div>
+                <Clock className="size-8 text-blue-500 mx-auto mb-2" />
+                <div className="text-sm font-medium">{t.newsletter.benefits.weekly}</div>
+                <div className="text-xs text-muted-foreground">{t.newsletter.benefits.weeklyDesc}</div>
               </div>
               <div className="text-center">
-                <div className="text-lg font-bold text-primary mb-1">独家</div>
-                <div className="text-sm text-muted-foreground">内容访问</div>
+                <Star className="size-8 text-yellow-500 mx-auto mb-2" />
+                <div className="text-sm font-medium">{t.newsletter.benefits.exclusive}</div>
+                <div className="text-xs text-muted-foreground">{t.newsletter.benefits.exclusiveDesc}</div>
               </div>
               <div className="text-center">
-                <div className="text-lg font-bold text-primary mb-1">优先</div>
-                <div className="text-sm text-muted-foreground">活动通知</div>
+                <Bell className="size-8 text-green-500 mx-auto mb-2" />
+                <div className="text-sm font-medium">{t.newsletter.benefits.priority}</div>
+                <div className="text-xs text-muted-foreground">{t.newsletter.benefits.priorityDesc}</div>
               </div>
             </motion.div>
           </div>

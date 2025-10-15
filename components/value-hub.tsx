@@ -4,8 +4,11 @@ import { motion } from "framer-motion"
 import { GraduationCap, Users, Building2, ArrowRight, CheckCircle } from "lucide-react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function ValueHub() {
+  const { t } = useLanguage()
+  
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -24,17 +27,11 @@ export default function ValueHub() {
   const audiences = [
     {
       icon: <GraduationCap className="size-8" />,
-      title: "面向学习者",
-      subtitle: "超越证书，掌握技能",
-      description: "获得真实的能力，并以区块链技术真正拥有您的成就。您的每一次进步都将成为不可篡改的数字资产。",
-      benefits: [
-        "个性化AI导师指导",
-        "真实项目实战练习",
-        "NFT技能证书",
-        "$SKILL代币奖励",
-        "终身学习档案"
-      ],
-      cta: "开始学习",
+      title: t.valueHub.learners.title,
+      subtitle: t.valueHub.learners.subtitle,
+      description: t.valueHub.learners.description,
+      benefits: t.valueHub.learners.benefits,
+      cta: t.valueHub.learners.cta,
       ctaLink: "/academy",
       bgColor: "from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20",
       iconColor: "text-blue-600",
@@ -42,17 +39,11 @@ export default function ValueHub() {
     },
     {
       icon: <Users className="size-8" />,
-      title: "面向创作者",
-      subtitle: "将您的专业知识变现",
-      description: "在我们这里，您不仅仅是教授课程，更是在构建未来的教育。享受60%的收入分成和多重激励。",
-      benefits: [
-        "60%收入分成",
-        "创作者工作室",
-        "多重激励机制",
-        "专业教学工具",
-        "全球学员群体"
-      ],
-      cta: "成为创作者",
+      title: t.valueHub.creators.title,
+      subtitle: t.valueHub.creators.subtitle,
+      description: t.valueHub.creators.description,
+      benefits: t.valueHub.creators.benefits,
+      cta: t.valueHub.creators.cta,
       ctaLink: "/creator-hub",
       bgColor: "from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20",
       iconColor: "text-purple-600",
@@ -60,17 +51,11 @@ export default function ValueHub() {
     },
     {
       icon: <Building2 className="size-8" />,
-      title: "面向企业",
-      subtitle: "停止为'培训'付费，开始为'成果'投资",
-      description: "通过我们独有的'成果证明'模式，确保您的每一笔培训投入都带来可衡量的业务回报。",
-      benefits: [
-        "成果导向培训",
-        "员工技能追踪",
-        "定制培训方案",
-        "ROI数据分析",
-        "企业级支持"
-      ],
-      cta: "预约演示",
+      title: t.valueHub.enterprises.title,
+      subtitle: t.valueHub.enterprises.subtitle,
+      description: t.valueHub.enterprises.description,
+      benefits: t.valueHub.enterprises.benefits,
+      cta: t.valueHub.enterprises.cta,
       ctaLink: "/for-teams",
       bgColor: "from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20",
       iconColor: "text-green-600",
@@ -88,9 +73,9 @@ export default function ValueHub() {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center justify-center space-y-4 text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">价值主张中心</h2>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{t.valueHub.title}</h2>
           <p className="max-w-[800px] text-muted-foreground md:text-lg">
-            一个分栏或选项卡区域，针对三个主要用户群体进行精准的价值沟通，并将他们引导至相应的深度信息页面。
+            {t.valueHub.subtitle}
           </p>
         </motion.div>
 

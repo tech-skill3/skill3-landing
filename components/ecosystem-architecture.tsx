@@ -4,8 +4,11 @@ import { motion } from "framer-motion"
 import { ArrowUpDown, Globe, Shield, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function EcosystemArchitecture() {
+  const { t } = useLanguage()
+  
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -34,10 +37,10 @@ export default function EcosystemArchitecture() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="font-hero text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-            双层生态系统架构
+            {t.ecosystemArchitecture.title}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            信任结算层与技能资产化平台
+            {t.ecosystemArchitecture.subtitle}
           </p>
         </motion.div>
 
@@ -60,10 +63,10 @@ export default function EcosystemArchitecture() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-foreground">
-                        应用层 (Skill3.com)
+                        {t.ecosystemArchitecture.applicationLayer.title}
                       </h3>
                       <p className="text-muted-foreground">
-                        AI技能体创造与流通平台
+                        {t.ecosystemArchitecture.applicationLayer.subtitle}
                       </p>
                     </div>
                   </div>
@@ -79,7 +82,7 @@ export default function EcosystemArchitecture() {
           >
             <div className="flex flex-col items-center">
               <ArrowUpDown className="size-8 text-primary animate-pulse" />
-              <span className="text-sm text-muted-foreground mt-2">数据交互</span>
+              <span className="text-sm text-muted-foreground mt-2">{t.ecosystemArchitecture.dataInteraction}</span>
             </div>
           </motion.div>
 
@@ -95,10 +98,10 @@ export default function EcosystemArchitecture() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-foreground">
-                        协议层 (Skill3.org)
+                        {t.ecosystemArchitecture.protocolLayer.title}
                       </h3>
                       <p className="text-muted-foreground">
-                        人力资本预言机，信任结算层
+                        {t.ecosystemArchitecture.protocolLayer.subtitle}
                       </p>
                     </div>
                   </div>
@@ -116,7 +119,7 @@ export default function EcosystemArchitecture() {
               size="lg" 
               className="rounded-full h-12 px-8 text-base bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 transition-all duration-300"
             >
-              了解更多关于协议的信息
+              {t.ecosystemArchitecture.learnMoreButton}
               <ArrowRight className="ml-2 size-4" />
             </Button>
           </motion.div>

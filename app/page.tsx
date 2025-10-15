@@ -14,9 +14,11 @@ import ValueHub from "@/components/value-hub"
 import BottomCTA from "@/components/bottom-cta"
 import Newsletter from "@/components/newsletter"
 import PartnersCarousel from "@/components/partners-carousel"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 
 export default function LandingPage() {
+  const { t } = useLanguage()
 
 
 
@@ -36,21 +38,21 @@ export default function LandingPage() {
               className="text-center max-w-3xl mx-auto mb-12"
             >
               <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                Launching Soon
+                {t.hero.badge}
               </Badge>
               <h1 className="font-hero text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70" style={{lineHeight: '1.2'}}>
-                Skill³: AI-Driven Learning,Immersive Al Testing, Skill Unit Monetization              
+                {t.hero.title}              
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Master new skills through Al-driven learning, test your expertise with real-world Al Coaching, and publish your Skill Units to earn substantial rewards.
+                {t.hero.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 px-8 text-base">
-                  Explore Skill Mall
+                  {t.hero.exploreButton}
                   <ArrowRight className="ml-2 size-4" />
                 </Button>
                 <Button size="lg" variant="outline" className="rounded-full h-12 px-8 text-base" asChild>
-                  <Link href="/demo">Book a Demo</Link>
+                  <Link href="/demo">{t.hero.demoButton}</Link>
                 </Button>
               </div>
 
@@ -73,8 +75,8 @@ export default function LandingPage() {
                     >
                       <path d="M8 5v14l11-7z"/>
                     </svg>
-                    <p className="text-lg font-medium">视频演示</p>
-                    <p className="text-sm opacity-75">点击播放产品介绍视频</p>
+                    <p className="text-lg font-medium">{t.video.placeholder}</p>
+                    <p className="text-sm opacity-75">{t.video.playHint}</p>
                   </div>
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/10 hover:bg-black/20 transition-colors cursor-pointer group">

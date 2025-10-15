@@ -3,8 +3,10 @@
 import { motion } from "framer-motion"
 import { TrendingUp, AlertTriangle, Shield } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function AiChallenges() {
+  const { t } = useLanguage()
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -22,23 +24,23 @@ export default function AiChallenges() {
 
   const challenges = [
     {
-      title: "范式转移",
-    subtitle: "竞争力转向",
-    description: "\"做到什么\"",
+      title: t.aiChallenges.challenges.challenge1.title,
+      subtitle: t.aiChallenges.challenges.challenge1.subtitle,
+      description: t.aiChallenges.challenges.challenge1.description,
       icon: <TrendingUp className="size-8" />,
       gradient: "from-blue-500 to-cyan-500",
     },
     {
-      title: "效率黑洞",
-    subtitle: "传统招聘代价",
-    description: "巨大",
+      title: t.aiChallenges.challenges.challenge2.title,
+      subtitle: t.aiChallenges.challenges.challenge2.subtitle,
+      description: t.aiChallenges.challenges.challenge2.description,
       icon: <AlertTriangle className="size-8" />,
       gradient: "from-orange-500 to-red-500",
     },
     {
-      title: "知识资产化",
-    subtitle: "专家工具需求",
-    description: "防止公地化",
+      title: t.aiChallenges.challenges.challenge3.title,
+      subtitle: t.aiChallenges.challenges.challenge3.subtitle,
+      description: t.aiChallenges.challenges.challenge3.description,
       icon: <Shield className="size-8" />,
       gradient: "from-green-500 to-emerald-500",
     },
@@ -57,10 +59,10 @@ export default function AiChallenges() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="font-hero text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-            AI时代的挑战
+            {t.aiChallenges.title}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            AI时代，人力资本市场面临信任基础设施的缺失
+            {t.aiChallenges.subtitle}
           </p>
         </motion.div>
 

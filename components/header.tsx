@@ -13,14 +13,15 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import ConnectWalletModal from "@/components/wallet/connect-wallet-modal"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function Header() {
+  const { language, setLanguage, t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [walletModalOpen, setWalletModalOpen] = useState(false)
   const [technologyDropdownOpen, setTechnologyDropdownOpen] = useState(false)
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false)
-  const [currentLanguage, setCurrentLanguage] = useState("English")
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,8 +49,8 @@ export default function Header() {
     }
   }, [technologyDropdownOpen, languageDropdownOpen])
 
-  const handleLanguageChange = (language: string) => {
-    setCurrentLanguage(language)
+  const handleLanguageChange = (newLanguage: 'en' | 'zh') => {
+    setLanguage(newLanguage)
     setLanguageDropdownOpen(false)
   }
 
@@ -74,36 +75,36 @@ export default function Header() {
         <nav className="hidden md:flex gap-5 items-center">
           <Link
             href="/solutions"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[80px] text-center"
           >
-            Solutions
+            {t.navigation.solutions}
           </Link>
           <Link
             href="/skill-mall"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[80px] text-center"
           >
-            Skill Mall
+            {t.navigation.skillMall}
           </Link>
           <Link
             href="/creator-hub"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[100px] text-center"
           >
-            Creator Hub
+            {t.navigation.creatorHub}
           </Link>
           <Link
             href="/pricing"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[60px] text-center"
           >
-            Pricing
+            {t.navigation.pricing}
           </Link>
           
           {/* Technology Dropdown */}
           <div className="relative">
             <button
               onClick={() => setTechnologyDropdownOpen(!technologyDropdownOpen)}
-              className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[90px] justify-center"
             >
-              Technology
+              {t.navigation.technology}
               <ChevronDown className={`size-4 transition-transform ${technologyDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             
@@ -120,21 +121,21 @@ export default function Header() {
                     className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
                     onClick={() => setTechnologyDropdownOpen(false)}
                   >
-                    Whitepapers
+                    {t.navigation.whitepapers}
                   </Link>
                   <Link
                     href="/docs"
                     className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
                     onClick={() => setTechnologyDropdownOpen(false)}
                   >
-                    Docs
+                    {t.navigation.docs}
                   </Link>
                   <Link
                     href="/blog"
                     className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
                     onClick={() => setTechnologyDropdownOpen(false)}
                   >
-                    Blog
+                    {t.navigation.blog}
                   </Link>
                 </div>
               </motion.div>
@@ -146,7 +147,7 @@ export default function Header() {
             href="/about-us"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
           >
-            About us
+            {t.navigation.aboutUs}
           </Link>
         </nav>
         <div className="hidden md:flex gap-3 items-center">
@@ -170,17 +171,17 @@ export default function Header() {
               >
                 <div className="py-2">
                   <button
-                    onClick={() => handleLanguageChange("English")}
+                    onClick={() => handleLanguageChange("en")}
                     className={`block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted/50 ${
-                      currentLanguage === "English" ? "text-foreground font-medium" : "text-muted-foreground"
+                      language === "en" ? "text-foreground font-medium" : "text-muted-foreground"
                     }`}
                   >
                     English
                   </button>
                   <button
-                    onClick={() => handleLanguageChange("中文")}
+                    onClick={() => handleLanguageChange("zh")}
                     className={`block w-full text-left px-4 py-2 text-sm transition-colors hover:bg-muted/50 ${
-                      currentLanguage === "中文" ? "text-foreground font-medium" : "text-muted-foreground"
+                      language === "zh" ? "text-foreground font-medium" : "text-muted-foreground"
                     }`}
                   >
                     中文
@@ -191,18 +192,17 @@ export default function Header() {
           </div>
 
           <Button 
-            asChild
-            className="rounded-full h-9 px-4 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
+            className="rounded-full h-9 px-4 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg min-w-[100px]"
           >
-            <Link href="/demo">Book Demo</Link>
+            {t.buttons.bookDemo}
           </Button>
 
           <Button 
             variant="outline"
             onClick={() => setWalletModalOpen(true)}
-            className="rounded-full h-9 px-4 text-sm"
+            className="rounded-full h-9 px-4 text-sm min-w-[110px]"
           >
-            Launch APP
+            {t.buttons.launchApp}
           </Button>
         </div>
         <div className="flex items-center gap-4 md:hidden">
@@ -216,7 +216,7 @@ export default function Header() {
           </Button>
           <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-            <span className="sr-only">Toggle menu</span>
+            <span className="sr-only">{t.buttons.toggleMenu}</span>
           </Button>
         </div>
       </div>
@@ -241,8 +241,8 @@ export default function Header() {
             <Link href="/pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
               Pricing
             </Link>
-            <Link href="/about-us" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              About us
+            <Link href="/company" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+              Company & Resources
             </Link>
             <div className="flex flex-col gap-2 pt-2 border-t">
               <Button asChild className="rounded-full h-10 px-6 text-sm" variant="outline" onClick={() => setMobileMenuOpen(false)}>
@@ -256,13 +256,11 @@ export default function Header() {
                 <ChevronRight className="ml-1 size-4" />
               </Button>
               <Button 
-                asChild
                 variant="outline"
                 className="rounded-full h-10 px-6 text-sm"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                <Link href="/demo" onClick={() => setMobileMenuOpen(false)}>
-                  Book a Demo
-                </Link>
+                Book a Demo
               </Button>
             </div>
           </div>
