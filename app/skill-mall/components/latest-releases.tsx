@@ -7,111 +7,113 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useRef } from "react"
 import Image from "next/image"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function LatestReleases() {
+  const { t } = useLanguage()
   const scrollRef = useRef<HTMLDivElement>(null)
 
   const latestSkills = [
     {
       id: 1,
-      title: "AI数字人直播技能体",
-      subtitle: "AI Virtual Streamer Skill",
-      description: "掌握AI数字人技术，打造个人虚拟IP，开启元宇宙直播新时代",
+      title: t.skillMall.courses.latest.aiVirtualStreamer.title,
+      subtitle: t.skillMall.courses.latest.aiVirtualStreamer.subtitle,
+      description: t.skillMall.courses.latest.aiVirtualStreamer.description,
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop",
-      creator: "陈老师",
+      creator: t.skillMall.courses.latest.aiVirtualStreamer.creator,
       creatorAvatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face",
       rating: 4.8,
-      difficulty: "中级",
+      difficulty: t.skillMall.courses.latest.aiVirtualStreamer.difficulty,
       price: "¥1,599",
       spReward: "2,400 SP",
-      sbtType: "AI创作者认证",
+      sbtType: t.skillMall.courses.latest.aiVirtualStreamer.sbtType,
       isNew: true,
-      category: "AI技术",
+      category: t.skillMall.courses.latest.aiVirtualStreamer.category,
       releaseDate: "2024-01-15"
     },
     {
       id: 2,
-      title: "Web3游戏开发技能体",
-      subtitle: "Web3 Game Development Skill",
-      description: "学习区块链游戏开发，掌握NFT集成，创造下一代游戏体验",
+      title: t.skillMall.courses.latest.web3GameDevelopment.title,
+      subtitle: t.skillMall.courses.latest.web3GameDevelopment.subtitle,
+      description: t.skillMall.courses.latest.web3GameDevelopment.description,
       image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=250&fit=crop",
-      creator: "李工程师",
+      creator: t.skillMall.courses.latest.web3GameDevelopment.creator,
       creatorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
       rating: 4.9,
-      difficulty: "高级",
+      difficulty: t.skillMall.courses.latest.web3GameDevelopment.difficulty,
       price: "¥2,299",
       spReward: "3,500 SP",
-      sbtType: "Web3开发者认证",
+      sbtType: t.skillMall.courses.latest.web3GameDevelopment.sbtType,
       isNew: true,
-      category: "区块链",
+      category: t.skillMall.courses.latest.web3GameDevelopment.category,
       releaseDate: "2024-01-12"
     },
     {
       id: 3,
-      title: "AI音乐创作技能体",
-      subtitle: "AI Music Composition Skill",
-      description: "利用AI技术创作原创音乐，掌握音频生成和编辑技能",
+      title: t.skillMall.courses.latest.aiMusicComposition.title,
+      subtitle: t.skillMall.courses.latest.aiMusicComposition.subtitle,
+      description: t.skillMall.courses.latest.aiMusicComposition.description,
       image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=250&fit=crop",
-      creator: "王音乐家",
+      creator: t.skillMall.courses.latest.aiMusicComposition.creator,
       creatorAvatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face",
       rating: 4.7,
-      difficulty: "初中级",
+      difficulty: t.skillMall.courses.latest.aiMusicComposition.difficulty,
       price: "¥1,299",
       spReward: "1,950 SP",
-      sbtType: "AI音乐师认证",
+      sbtType: t.skillMall.courses.latest.aiMusicComposition.sbtType,
       isNew: true,
-      category: "创意AI",
+      category: t.skillMall.courses.latest.aiMusicComposition.category,
       releaseDate: "2024-01-10"
     },
     {
       id: 4,
-      title: "智能合约审计技能体",
-      subtitle: "Smart Contract Auditing Skill",
-      description: "学习智能合约安全审计，成为区块链安全专家",
+      title: t.skillMall.courses.latest.smartContractAuditing.title,
+      subtitle: t.skillMall.courses.latest.smartContractAuditing.subtitle,
+      description: t.skillMall.courses.latest.smartContractAuditing.description,
       image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop",
-      creator: "张安全专家",
+      creator: t.skillMall.courses.latest.smartContractAuditing.creator,
       creatorAvatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face",
       rating: 4.9,
-      difficulty: "高级",
+      difficulty: t.skillMall.courses.latest.smartContractAuditing.difficulty,
       price: "¥2,799",
       spReward: "4,200 SP",
-      sbtType: "区块链安全专家认证",
+      sbtType: t.skillMall.courses.latest.smartContractAuditing.sbtType,
       isNew: true,
-      category: "区块链安全",
+      category: t.skillMall.courses.latest.smartContractAuditing.category,
       releaseDate: "2024-01-08"
     },
     {
       id: 5,
-      title: "AI视频剪辑技能体",
-      subtitle: "AI Video Editing Skill",
-      description: "掌握AI驱动的视频编辑技术，提升创作效率和质量",
+      title: t.skillMall.courses.latest.aiVideoEditing.title,
+      subtitle: t.skillMall.courses.latest.aiVideoEditing.subtitle,
+      description: t.skillMall.courses.latest.aiVideoEditing.description,
       image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=250&fit=crop",
-      creator: "赵导演",
+      creator: t.skillMall.courses.latest.aiVideoEditing.creator,
       creatorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
       rating: 4.8,
-      difficulty: "中级",
+      difficulty: t.skillMall.courses.latest.aiVideoEditing.difficulty,
       price: "¥1,499",
       spReward: "2,250 SP",
-      sbtType: "AI视频师认证",
+      sbtType: t.skillMall.courses.latest.aiVideoEditing.sbtType,
       isNew: true,
-      category: "视频制作",
+      category: t.skillMall.courses.latest.aiVideoEditing.category,
       releaseDate: "2024-01-05"
     },
     {
       id: 6,
-      title: "DeFi协议开发技能体",
-      subtitle: "DeFi Protocol Development Skill",
-      description: "深入学习去中心化金融协议开发，掌握流动性挖矿机制",
+      title: t.skillMall.courses.latest.defiProtocolDevelopment.title,
+      subtitle: t.skillMall.courses.latest.defiProtocolDevelopment.subtitle,
+      description: t.skillMall.courses.latest.defiProtocolDevelopment.description,
       image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=400&h=250&fit=crop",
-      creator: "刘架构师",
+      creator: t.skillMall.courses.latest.defiProtocolDevelopment.creator,
       creatorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
       rating: 4.9,
-      difficulty: "专家级",
+      difficulty: t.skillMall.courses.latest.defiProtocolDevelopment.difficulty,
       price: "¥3,299",
       spReward: "4,950 SP",
-      sbtType: "DeFi专家认证",
+      sbtType: t.skillMall.courses.latest.defiProtocolDevelopment.sbtType,
       isNew: true,
-      category: "DeFi",
+      category: t.skillMall.courses.latest.defiProtocolDevelopment.category,
       releaseDate: "2024-01-03"
     }
   ]
@@ -142,11 +144,11 @@ export default function LatestReleases() {
             <div className="flex items-center gap-3 mb-4">
               <Sparkles className="size-8 text-primary" />
               <h2 className="font-hero text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-                LATEST RELEASES
+                {t.skillMall.latestReleases.title}
               </h2>
             </div>
             <p className="text-lg text-muted-foreground">
-              最新发布的AI技能体，紧跟技术前沿
+              {t.skillMall.latestReleases.subtitle}
             </p>
           </div>
           
@@ -203,7 +205,7 @@ export default function LatestReleases() {
                       {skill.isNew && (
                         <Badge className="absolute top-3 left-3 bg-red-500 text-white border-0">
                           <TrendingUp className="size-3 mr-1" />
-                          NEW
+                          {t.skillMall.latestReleases.newBadge}
                         </Badge>
                       )}
                       
@@ -250,19 +252,19 @@ export default function LatestReleases() {
                       <div className="bg-gradient-to-r from-primary/10 to-blue-500/10 border border-primary/20 rounded-lg p-4 mb-4">
                         <div className="text-sm font-bold text-primary mb-3 flex items-center gap-2">
                           <Sparkles className="size-4" />
-                          Web3 价值收益
+                          {t.skillMall.latestReleases.web3Value}
                         </div>
                         <div className="grid grid-cols-1 gap-3 text-sm">
                           <div className="flex justify-between items-center">
-                            <span className="text-muted-foreground">课程价格</span>
+                            <span className="text-muted-foreground">{t.skillMall.latestReleases.price}</span>
                             <span className="font-bold text-lg text-primary">{skill.price}</span>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span className="text-muted-foreground">SP 奖励</span>
+                            <span className="text-muted-foreground">{t.skillMall.latestReleases.spReward}</span>
                             <span className="font-bold text-green-600">{skill.spReward}</span>
                           </div>
                           <div className="pt-2 border-t border-primary/10">
-                            <div className="text-xs text-muted-foreground mb-1">获得认证</div>
+                            <div className="text-xs text-muted-foreground mb-1">{t.skillMall.latestReleases.certification}</div>
                             <div className="font-medium text-blue-600 text-sm">{skill.sbtType}</div>
                           </div>
                         </div>
@@ -271,10 +273,10 @@ export default function LatestReleases() {
                       {/* CTA 按钮 */}
                       <div className="grid grid-cols-2 gap-2">
                         <Button variant="outline" size="sm" className="rounded-full">
-                          探索
+                          {t.skillMall.latestReleases.exploreButton}
                         </Button>
                         <Button size="sm" className="rounded-full group-hover:bg-primary/90 transition-colors">
-                          购买
+                          {t.skillMall.latestReleases.buyButton}
                         </Button>
                       </div>
                     </CardContent>
@@ -293,7 +295,7 @@ export default function LatestReleases() {
             className="text-center mt-8"
           >
             <Button variant="outline" size="lg" className="rounded-full px-8">
-              查看全部最新课程
+              {t.skillMall.latestReleases.viewAllButton}
               <ChevronRight className="size-4 ml-2" />
             </Button>
           </motion.div>

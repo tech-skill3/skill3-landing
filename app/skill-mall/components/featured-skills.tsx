@@ -5,8 +5,10 @@ import { Star, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function FeaturedSkills() {
+  const { t } = useLanguage()
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -66,10 +68,10 @@ export default function FeaturedSkills() {
           className="text-center mb-16"
         >
           <h2 className="font-hero text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-            精选推荐课程
+            {t.skillMall.featuredSkills.title}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            由行业专家精心打造，AI技术加持的高质量学习体验
+            {t.skillMall.featuredSkills.subtitle}
           </p>
         </motion.div>
 
@@ -91,7 +93,7 @@ export default function FeaturedSkills() {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-bold mb-2">{skill.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">讲师：{skill.instructor}</p>
+                  <p className="text-sm text-muted-foreground mb-4">{t.skillMall.featuredSkills.creator}：{skill.instructor}</p>
                   
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center">
@@ -108,7 +110,7 @@ export default function FeaturedSkills() {
                   <div className="flex items-center justify-between">
                     <div className="text-xl font-bold text-primary">{skill.price}</div>
                     <Button size="sm" className="rounded-full">
-                      立即学习
+                      {t.skillMall.featuredSkills.learnNowButton}
                     </Button>
                   </div>
                 </CardContent>

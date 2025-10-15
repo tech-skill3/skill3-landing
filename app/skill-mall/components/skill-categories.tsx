@@ -5,8 +5,10 @@ import { ArrowRight, Code, Palette, Briefcase, Brain, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function SkillCategories() {
+  const { t } = useLanguage()
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -84,10 +86,10 @@ export default function SkillCategories() {
           className="flex flex-col items-center justify-center space-y-4 text-center mb-16"
         >
           <h2 className="font-hero text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-            热门技能分类
+            {t.skillMall.skillCategories.title}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            精选四大核心技能领域，AI导师全程指导，实战项目验证学习成果
+            {t.skillMall.skillCategories.subtitle}
           </p>
         </motion.div>
 
@@ -105,7 +107,7 @@ export default function SkillCategories() {
                   <div className="absolute top-4 right-4 z-10">
                     <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0">
                       <Star className="size-3 mr-1" />
-                      热门
+                      {t.skillMall.skillCategories.popularBadge}
                     </Badge>
                   </div>
                 )}
@@ -127,23 +129,23 @@ export default function SkillCategories() {
                   <div className="grid grid-cols-3 gap-4 mb-6">
                     <div className="text-center">
                       <div className="text-lg font-bold text-primary">{category.courses}</div>
-                      <div className="text-xs text-muted-foreground">课程数</div>
+                      <div className="text-xs text-muted-foreground">{t.skillMall.skillCategories.coursesLabel}</div>
                     </div>
                     <div className="text-center">
                       <div className="text-lg font-bold text-primary">{category.students}</div>
-                      <div className="text-xs text-muted-foreground">学习者</div>
+                      <div className="text-xs text-muted-foreground">{t.skillMall.skillCategories.studentsLabel}</div>
                     </div>
                     <div className="text-center">
                       <div className="text-lg font-bold text-primary flex items-center justify-center">
                         <Star className="size-4 mr-1 fill-current" />
                         {category.rating}
                       </div>
-                      <div className="text-xs text-muted-foreground">评分</div>
+                      <div className="text-xs text-muted-foreground">{t.skillMall.skillCategories.ratingLabel}</div>
                     </div>
                   </div>
                   
                   <Button className="w-full rounded-full" variant="outline">
-                    探索课程
+                    {t.skillMall.skillCategories.exploreButton}
                     <ArrowRight className="ml-2 size-4" />
                   </Button>
                 </CardContent>

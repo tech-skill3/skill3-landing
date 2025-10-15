@@ -153,6 +153,192 @@ interface TranslationStructure {
       priorityDesc: string
     }
   }
+  skillMall: {
+    hero: {
+      badge: string
+      title: string
+      subtitle: string
+      exploreButton: string
+      learnButton: string
+      stats: {
+        courses: string
+        learners: string
+        completion: string
+        rating: string
+      }
+    }
+    topRecommended: {
+      title: string
+      subtitle: string
+      learnNowButton: string
+      exploreButton: string
+      buyButton: string
+      creator: string
+      difficulty: string
+      price: string
+      spReward: string
+      sbtType: string
+      web3Value: string
+    }
+    latestReleases: {
+      title: string
+      subtitle: string
+      newBadge: string
+      web3Value: string
+      certification: string
+      exploreButton: string
+      buyButton: string
+      viewAllButton: string
+      learnNowButton: string
+      creator: string
+      difficulty: string
+      price: string
+      spReward: string
+      sbtType: string
+      category: string
+    }
+    featuredSkills: {
+      title: string
+      subtitle: string
+      viewAllButton: string
+      learnNowButton: string
+      creator: string
+      difficulty: string
+      price: string
+      spReward: string
+      sbtType: string
+      category: string
+    }
+    skillCategories: {
+      title: string
+      subtitle: string
+      popularBadge: string
+      coursesLabel: string
+      studentsLabel: string
+      ratingLabel: string
+      exploreButton: string
+      viewAllButton: string
+      categories: {
+        programming: string
+        design: string
+        marketing: string
+        business: string
+        dataScience: string
+        ai: string
+        blockchain: string
+        finance: string
+      }
+    }
+    cta: {
+      title: string
+      subtitle: string
+      startLearningButton: string
+      learnMoreButton: string
+      createSkillButton: string
+      joinCommunityButton: string
+      features: string
+    }
+    common: {
+      difficulty: {
+        beginner: string
+        intermediate: string
+        advanced: string
+        expert: string
+      }
+      rating: string
+      students: string
+      duration: string
+      free: string
+      premium: string
+    }
+    courses: {
+      featured: {
+        aiFinancialTrading: {
+          title: string
+          subtitle: string
+          description: string
+          creator: string
+          difficulty: string
+          sbtType: string
+          skills: string[]
+        }
+        aiMedicalDiagnosis: {
+          title: string
+          subtitle: string
+          description: string
+          creator: string
+          difficulty: string
+          sbtType: string
+          skills: string[]
+        }
+        aiCreativeDesigner: {
+          title: string
+          subtitle: string
+          description: string
+          creator: string
+          difficulty: string
+          sbtType: string
+          skills: string[]
+        }
+      }
+      latest: {
+        aiVirtualStreamer: {
+          title: string
+          subtitle: string
+          description: string
+          creator: string
+          difficulty: string
+          sbtType: string
+          category: string
+        }
+        web3GameDevelopment: {
+          title: string
+          subtitle: string
+          description: string
+          creator: string
+          difficulty: string
+          sbtType: string
+          category: string
+        }
+        aiMusicComposition: {
+          title: string
+          subtitle: string
+          description: string
+          creator: string
+          difficulty: string
+          sbtType: string
+          category: string
+        }
+        smartContractAuditing: {
+          title: string
+          subtitle: string
+          description: string
+          creator: string
+          difficulty: string
+          sbtType: string
+          category: string
+        }
+        aiVideoEditing: {
+          title: string
+          subtitle: string
+          description: string
+          creator: string
+          difficulty: string
+          sbtType: string
+          category: string
+        }
+        defiProtocolDevelopment: {
+          title: string
+          subtitle: string
+          description: string
+          creator: string
+          difficulty: string
+          sbtType: string
+          category: string
+        }
+      }
+    }
+  }
   solutions: {
     hero: {
       badge: string
@@ -495,6 +681,192 @@ export const translations: Record<Language, TranslationStructure> = {
     },
     partnersCarousel: {
       trustedBy: 'Trusted by individuals at'
+    },
+    skillMall: {
+      hero: {
+        badge: 'Skill Marketplace',
+        title: 'Discover AI-Powered Skills',
+        subtitle: 'Browse thousands of expert-crafted skill bodies and start your learning journey with AI mentors',
+        exploreButton: 'Explore Skills',
+        learnButton: 'Start Learning',
+        stats: {
+          courses: 'Premium Courses',
+          learners: 'Learners',
+          completion: 'Completion Rate',
+          rating: 'Average Rating'
+        }
+      },
+      topRecommended: {
+        title: 'Top Recommended',
+        subtitle: 'Handpicked skills by our AI experts',
+        learnNowButton: 'Learn Now',
+        exploreButton: 'Explore',
+        buyButton: 'Buy',
+        creator: 'Creator',
+        difficulty: 'Difficulty',
+        price: 'Price',
+        spReward: 'SP Reward',
+        sbtType: 'SBT Type',
+        web3Value: 'Web3 Value'
+      },
+      latestReleases: {
+        title: 'Latest Releases',
+        subtitle: 'Newest skills added to the marketplace',
+        newBadge: 'NEW',
+        web3Value: 'Web3 Value',
+        certification: 'Certification',
+        exploreButton: 'Explore',
+        buyButton: 'Buy',
+        viewAllButton: 'View All',
+        learnNowButton: 'Learn Now',
+        creator: 'Creator',
+        difficulty: 'Difficulty',
+        price: 'Price',
+        spReward: 'SP Reward',
+        sbtType: 'SBT Type',
+        category: 'Category'
+      },
+      featuredSkills: {
+        title: 'Featured Skills',
+        subtitle: 'Popular skills trending in the community',
+        viewAllButton: 'View All',
+        learnNowButton: 'Learn Now',
+        creator: 'Creator',
+        difficulty: 'Difficulty',
+        price: 'Price',
+        spReward: 'SP Reward',
+        sbtType: 'SBT Type',
+        category: 'Category'
+      },
+      skillCategories: {
+        title: 'Skill Categories',
+        subtitle: 'Explore skills by category',
+        popularBadge: 'Popular',
+        coursesLabel: 'Courses',
+        studentsLabel: 'Students',
+        ratingLabel: 'Rating',
+        exploreButton: 'Explore Courses',
+        viewAllButton: 'View All',
+        categories: {
+          programming: 'Programming',
+          design: 'Design',
+          marketing: 'Marketing',
+          business: 'Business',
+          dataScience: 'Data Science',
+          ai: 'Artificial Intelligence',
+          blockchain: 'Blockchain',
+          finance: 'Finance'
+        }
+      },
+      cta: {
+        title: 'Ready to Create Your Own Skill?',
+        subtitle: 'Join thousands of creators and monetize your expertise',
+        startLearningButton: 'Start Learning',
+        learnMoreButton: 'Learn More',
+        createSkillButton: 'Create Skill',
+        joinCommunityButton: 'Join Community',
+        features: '🎯 Personalized Learning Paths • 🤖 AI Smart Tutoring • 📊 Real-time Progress Tracking • 🏆 Authoritative Skill Certification'
+      },
+      common: {
+        difficulty: {
+          beginner: 'Beginner',
+          intermediate: 'Intermediate',
+          advanced: 'Advanced',
+          expert: 'Expert'
+        },
+        rating: 'Rating',
+        students: 'Students',
+        duration: 'Duration',
+        free: 'Free',
+        premium: 'Premium'
+      },
+      courses: {
+        featured: {
+          aiFinancialTrading: {
+            title: 'AI Financial Trading',
+            subtitle: 'Master AI-driven trading strategies',
+            description: 'Learn to build intelligent trading systems using machine learning algorithms and quantitative analysis techniques.',
+            creator: 'Dr. Sarah Chen',
+            difficulty: 'Advanced',
+            sbtType: 'AI Trading Expert',
+            skills: ['Machine Learning', 'Quantitative Analysis', 'Risk Management', 'Python']
+          },
+          aiMedicalDiagnosis: {
+            title: 'AI Medical Diagnosis',
+            subtitle: 'AI-powered medical image analysis',
+            description: 'Master medical image analysis using deep learning, covering X-ray, CT, and MRI diagnosis techniques.',
+            creator: 'Dr. Michael Zhang',
+            difficulty: 'Expert',
+            sbtType: 'Medical AI Specialist',
+            skills: ['Deep Learning', 'Computer Vision', 'Medical Imaging', 'TensorFlow']
+          },
+          aiCreativeDesigner: {
+            title: 'AI Creative Designer',
+            subtitle: 'AI-assisted creative design',
+            description: 'Learn to use AI tools for creative design, including image generation, style transfer, and automated design workflows.',
+            creator: 'Emma Rodriguez',
+            difficulty: 'Intermediate',
+            sbtType: 'Creative AI Designer',
+            skills: ['AI Art Generation', 'Style Transfer', 'Creative Workflow', 'Design Thinking']
+          }
+        },
+        latest: {
+          aiVirtualStreamer: {
+            title: 'AI Virtual Streamer',
+            subtitle: 'Create AI-powered virtual streamers',
+            description: 'Learn to build virtual streaming personas using AI voice synthesis, motion capture, and real-time interaction technologies.',
+            creator: 'Alex Kim',
+            difficulty: 'Advanced',
+            sbtType: 'Virtual Content Creator',
+            category: 'Entertainment'
+          },
+          web3GameDevelopment: {
+            title: 'Web3 Game Development',
+            subtitle: 'Build blockchain-based games',
+            description: 'Master Web3 game development including NFT integration, tokenomics design, and decentralized game mechanics.',
+            creator: 'David Wilson',
+            difficulty: 'Advanced',
+            sbtType: 'Web3 Game Developer',
+            category: 'Blockchain'
+          },
+          aiMusicComposition: {
+            title: 'AI Music Composition',
+            subtitle: 'AI-assisted music creation',
+            description: 'Learn to compose music using AI tools, covering melody generation, harmony analysis, and automated arrangement.',
+            creator: 'Luna Martinez',
+            difficulty: 'Intermediate',
+            sbtType: 'AI Music Producer',
+            category: 'Creative Arts'
+          },
+          smartContractAuditing: {
+            title: 'Smart Contract Auditing',
+            subtitle: 'Blockchain security expert training',
+            description: 'Master smart contract security auditing, vulnerability detection, and best practices for secure blockchain development.',
+            creator: 'Robert Chen',
+            difficulty: 'Expert',
+            sbtType: 'Blockchain Security Expert',
+            category: 'Security'
+          },
+          aiVideoEditing: {
+            title: 'AI Video Editing',
+            subtitle: 'Intelligent video production',
+            description: 'Learn advanced video editing techniques using AI, including automated cutting, style transfer, and content generation.',
+            creator: 'Sophie Taylor',
+            difficulty: 'Intermediate',
+            sbtType: 'AI Video Producer',
+            category: 'Media Production'
+          },
+          defiProtocolDevelopment: {
+            title: 'DeFi Protocol Development',
+            subtitle: 'Build decentralized finance protocols',
+            description: 'Master DeFi protocol development including liquidity pools, yield farming, and automated market makers.',
+            creator: 'James Liu',
+            difficulty: 'Expert',
+            sbtType: 'DeFi Protocol Developer',
+            category: 'Finance'
+          }
+        }
+      }
     },
     newsletter: {
       title: 'Newsletter Subscription',
@@ -869,6 +1241,192 @@ export const translations: Record<Language, TranslationStructure> = {
     },
     partnersCarousel: {
       trustedBy: 'Trusted by individuals at'
+    },
+    skillMall: {
+      hero: {
+        badge: '技能市场',
+        title: '发现AI驱动的技能',
+        subtitle: '浏览数千个专家精心制作的技能体，与AI导师开始您的学习之旅',
+        exploreButton: '探索技能',
+        learnButton: '开始学习',
+        stats: {
+          courses: '精品课程',
+          learners: '学习者',
+          completion: '完成率',
+          rating: '平均评分'
+        }
+      },
+      topRecommended: {
+        title: '热门推荐',
+        subtitle: 'AI专家精选的技能',
+        learnNowButton: '立即学习',
+        exploreButton: '探索',
+        buyButton: '购买',
+        creator: '创作者',
+        difficulty: '难度',
+        price: '价格',
+        spReward: 'SP奖励',
+        sbtType: 'SBT类型',
+        web3Value: 'Web3价值'
+      },
+      latestReleases: {
+        title: '最新发布',
+        subtitle: '市场中最新添加的技能',
+        newBadge: '新',
+        web3Value: 'Web3价值',
+        certification: '认证',
+        exploreButton: '探索',
+        buyButton: '购买',
+        viewAllButton: '查看全部',
+        learnNowButton: '立即学习',
+        creator: '创作者',
+        difficulty: '难度',
+        price: '价格',
+        spReward: 'SP奖励',
+        sbtType: 'SBT类型',
+        category: '分类'
+      },
+      featuredSkills: {
+        title: '精选技能',
+        subtitle: '社区中热门的技能',
+        viewAllButton: '查看全部',
+        learnNowButton: '立即学习',
+        creator: '创作者',
+        difficulty: '难度',
+        price: '价格',
+        spReward: 'SP奖励',
+        sbtType: 'SBT类型',
+        category: '分类'
+      },
+      skillCategories: {
+        title: '技能分类',
+        subtitle: '按分类探索技能',
+        popularBadge: '热门',
+        coursesLabel: '课程数',
+        studentsLabel: '学习者',
+        ratingLabel: '评分',
+        exploreButton: '探索课程',
+        viewAllButton: '查看全部',
+        categories: {
+          programming: '编程',
+          design: '设计',
+          marketing: '营销',
+          business: '商业',
+          dataScience: '数据科学',
+          ai: '人工智能',
+          blockchain: '区块链',
+          finance: '金融'
+        }
+      },
+      cta: {
+        title: '准备创建您自己的技能？',
+        subtitle: '加入数千名创作者，将您的专业知识变现',
+        startLearningButton: '立即开始学习',
+        learnMoreButton: '了解更多',
+        createSkillButton: '创建技能',
+        joinCommunityButton: '加入社区',
+        features: '🎯 个性化学习路径 • 🤖 AI智能辅导 • 📊 实时进度跟踪 • 🏆 权威技能认证'
+      },
+      common: {
+        difficulty: {
+          beginner: '初级',
+          intermediate: '中级',
+          advanced: '高级',
+          expert: '专家'
+        },
+        rating: '评分',
+        students: '学员',
+        duration: '时长',
+        free: '免费',
+        premium: '付费'
+      },
+      courses: {
+        featured: {
+          aiFinancialTrading: {
+            title: 'AI金融交易',
+            subtitle: '掌握AI驱动的交易策略',
+            description: '学习使用机器学习算法和量化分析技术构建智能交易系统。',
+            creator: '陈博士',
+            difficulty: '高级',
+            sbtType: 'AI交易专家',
+            skills: ['机器学习', '量化分析', '风险管理', 'Python']
+          },
+          aiMedicalDiagnosis: {
+            title: 'AI医疗诊断',
+            subtitle: 'AI驱动的医学影像分析',
+            description: '掌握使用深度学习进行医学影像分析，涵盖X光、CT和MRI诊断技术。',
+            creator: '张医生',
+            difficulty: '专家',
+            sbtType: '医疗AI专家',
+            skills: ['深度学习', '计算机视觉', '医学影像', 'TensorFlow']
+          },
+          aiCreativeDesigner: {
+            title: 'AI创意设计师',
+            subtitle: 'AI辅助创意设计',
+            description: '学习使用AI工具进行创意设计，包括图像生成、风格迁移和自动化设计工作流。',
+            creator: '艾玛·罗德里格斯',
+            difficulty: '中级',
+            sbtType: '创意AI设计师',
+            skills: ['AI艺术生成', '风格迁移', '创意工作流', '设计思维']
+          }
+        },
+        latest: {
+          aiVirtualStreamer: {
+            title: 'AI虚拟主播',
+            subtitle: '创建AI驱动的虚拟主播',
+            description: '学习使用AI语音合成、动作捕捉和实时交互技术构建虚拟直播角色。',
+            creator: '金亚历克斯',
+            difficulty: '高级',
+            sbtType: '虚拟内容创作者',
+            category: '娱乐'
+          },
+          web3GameDevelopment: {
+            title: 'Web3游戏开发',
+            subtitle: '构建基于区块链的游戏',
+            description: '掌握Web3游戏开发，包括NFT集成、代币经济设计和去中心化游戏机制。',
+            creator: '大卫·威尔逊',
+            difficulty: '高级',
+            sbtType: 'Web3游戏开发者',
+            category: '区块链'
+          },
+          aiMusicComposition: {
+            title: 'AI音乐创作',
+            subtitle: 'AI辅助音乐创作',
+            description: '学习使用AI工具进行音乐创作，涵盖旋律生成、和声分析和自动编曲。',
+            creator: '露娜·马丁内斯',
+            difficulty: '中级',
+            sbtType: 'AI音乐制作人',
+            category: '创意艺术'
+          },
+          smartContractAuditing: {
+            title: '智能合约审计',
+            subtitle: '区块链安全专家培训',
+            description: '掌握智能合约安全审计、漏洞检测和安全区块链开发最佳实践。',
+            creator: '罗伯特·陈',
+            difficulty: '专家',
+            sbtType: '区块链安全专家',
+            category: '安全'
+          },
+          aiVideoEditing: {
+            title: 'AI视频剪辑',
+            subtitle: '智能视频制作',
+            description: '学习使用AI进行高级视频剪辑技术，包括自动剪切、风格迁移和内容生成。',
+            creator: '索菲·泰勒',
+            difficulty: '中级',
+            sbtType: 'AI视频制作人',
+            category: '媒体制作'
+          },
+          defiProtocolDevelopment: {
+            title: 'DeFi协议开发',
+            subtitle: '构建去中心化金融协议',
+            description: '掌握DeFi协议开发，包括流动性池、收益农场和自动化做市商。',
+            creator: '詹姆斯·刘',
+            difficulty: '专家',
+            sbtType: 'DeFi协议开发者',
+            category: '金融'
+          }
+        }
+      }
     },
     newsletter: {
       title: 'Newsletter订阅',

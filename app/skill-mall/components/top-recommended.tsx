@@ -7,57 +7,59 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function TopRecommended() {
+  const { t } = useLanguage()
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const featuredSkills = [
     {
       id: 1,
-      title: "AI金融交易大师技能体",
-      subtitle: "AI Financial Trading Master Skill",
-      description: "学习高频交易策略，掌握AI驱动的量化分析技术，获得区块链验证的交易专家认证",
+      title: t.skillMall.courses.featured.aiFinancialTrading.title,
+      subtitle: t.skillMall.courses.featured.aiFinancialTrading.subtitle,
+      description: t.skillMall.courses.featured.aiFinancialTrading.description,
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=500&fit=crop",
-      creator: "李教授",
+      creator: t.skillMall.courses.featured.aiFinancialTrading.creator,
       creatorAvatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face",
       rating: 4.9,
-      difficulty: "高级",
+      difficulty: t.skillMall.courses.featured.aiFinancialTrading.difficulty,
       price: "¥2,999",
       spReward: "4,500 SP",
-      sbtType: "AI金融专家认证",
-      skills: ["量化交易", "风险管理", "AI算法", "市场分析"],
+      sbtType: t.skillMall.courses.featured.aiFinancialTrading.sbtType,
+      skills: t.skillMall.courses.featured.aiFinancialTrading.skills,
       gradient: "from-blue-600 to-purple-600"
     },
     {
       id: 2,
-      title: "AI医疗诊断专家技能体",
-      subtitle: "AI Medical Diagnosis Expert Skill",
-      description: "掌握AI医学影像分析技能，学习深度学习在医疗诊断中的应用，获得权威医疗AI认证",
+      title: t.skillMall.courses.featured.aiMedicalDiagnosis.title,
+      subtitle: t.skillMall.courses.featured.aiMedicalDiagnosis.subtitle,
+      description: t.skillMall.courses.featured.aiMedicalDiagnosis.description,
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=500&fit=crop",
-      creator: "王博士",
+      creator: t.skillMall.courses.featured.aiMedicalDiagnosis.creator,
       creatorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face",
       rating: 4.8,
-      difficulty: "中高级",
+      difficulty: t.skillMall.courses.featured.aiMedicalDiagnosis.difficulty,
       price: "¥3,499",
       spReward: "5,250 SP",
-      sbtType: "AI医疗专家认证",
-      skills: ["医学影像", "深度学习", "诊断算法", "数据分析"],
+      sbtType: t.skillMall.courses.featured.aiMedicalDiagnosis.sbtType,
+      skills: t.skillMall.courses.featured.aiMedicalDiagnosis.skills,
       gradient: "from-green-600 to-teal-600"
     },
     {
       id: 3,
-      title: "AI创意设计师技能体",
-      subtitle: "AI Creative Designer Skill",
-      description: "融合AI技术与创意设计，掌握生成式AI工具，创造突破性的视觉作品和用户体验",
+      title: t.skillMall.courses.featured.aiCreativeDesigner.title,
+      subtitle: t.skillMall.courses.featured.aiCreativeDesigner.subtitle,
+      description: t.skillMall.courses.featured.aiCreativeDesigner.description,
       image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=500&fit=crop",
-      creator: "张大师",
+      creator: t.skillMall.courses.featured.aiCreativeDesigner.creator,
       creatorAvatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face",
       rating: 4.9,
-      difficulty: "中级",
+      difficulty: t.skillMall.courses.featured.aiCreativeDesigner.difficulty,
       price: "¥1,999",
       spReward: "3,000 SP",
-      sbtType: "AI创意师认证",
-      skills: ["生成式AI", "UI设计", "品牌设计", "用户体验"],
+      sbtType: t.skillMall.courses.featured.aiCreativeDesigner.sbtType,
+      skills: t.skillMall.courses.featured.aiCreativeDesigner.skills,
       gradient: "from-pink-600 to-orange-600"
     }
   ]
@@ -86,10 +88,10 @@ export default function TopRecommended() {
           className="text-center mb-12"
         >
           <h2 className="font-hero text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider mb-4 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-            TOP RECOMMENDED
+            {t.skillMall.topRecommended.title}
           </h2>
           <p className="text-lg text-muted-foreground">
-            精选AI技能体，由行业顶尖专家打造
+            {t.skillMall.topRecommended.subtitle}
           </p>
         </motion.div>
 
@@ -145,7 +147,7 @@ export default function TopRecommended() {
                           </div>
 
                           <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-8">
-                            立即学习
+                            {t.skillMall.topRecommended.learnNowButton}
                           </Button>
                         </div>
 
@@ -173,7 +175,7 @@ export default function TopRecommended() {
 
                           {/* 难度 */}
                           <div className="mb-6">
-                            <div className="text-xs text-white/70 mb-1">难度等级</div>
+                            <div className="text-xs text-white/70 mb-1">{t.skillMall.topRecommended.difficulty}</div>
                             <div className="flex items-center text-white">
                               <Award className="size-4 mr-2" />
                               <span className="font-bold">{featuredSkills[currentSlide].difficulty}</span>
@@ -182,22 +184,22 @@ export default function TopRecommended() {
 
                           {/* Web3 价值信息 */}
                           <div className="space-y-3 mb-6">
-                            <div className="text-xs text-white/70 mb-2">Web3 价值</div>
+                            <div className="text-xs text-white/70 mb-2">{t.skillMall.topRecommended.web3Value}</div>
                             <div className="space-y-2">
                               <div className="flex justify-between items-center">
-                                <span className="text-white/80 text-sm">价格</span>
+                                <span className="text-white/80 text-sm">{t.skillMall.topRecommended.price}</span>
                                 <span className="text-2xl font-bold text-white">
                                   {featuredSkills[currentSlide].price}
                                 </span>
                               </div>
                               <div className="flex justify-between items-center">
-                                <span className="text-white/80 text-sm">SP 奖励</span>
+                                <span className="text-white/80 text-sm">{t.skillMall.topRecommended.spReward}</span>
                                 <span className="font-bold text-green-300">
                                   {featuredSkills[currentSlide].spReward}
                                 </span>
                               </div>
                               <div className="flex justify-between items-center">
-                                <span className="text-white/80 text-sm">SBT 凭证</span>
+                                <span className="text-white/80 text-sm">{t.skillMall.topRecommended.sbtType}</span>
                                 <span className="font-medium text-blue-300 text-right text-xs">
                                   {featuredSkills[currentSlide].sbtType}
                                 </span>
@@ -208,10 +210,10 @@ export default function TopRecommended() {
                           {/* CTA 按钮 */}
                           <div className="grid grid-cols-2 gap-3">
                             <Button variant="outline" className="bg-white/20 border-white/30 text-white hover:bg-white/30 rounded-full">
-                              探索
+                              {t.skillMall.topRecommended.exploreButton}
                             </Button>
                             <Button className="bg-white text-black hover:bg-white/90 rounded-full">
-                              购买
+                              {t.skillMall.topRecommended.buyButton}
                             </Button>
                           </div>
                         </div>

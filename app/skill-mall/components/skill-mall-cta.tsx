@@ -3,8 +3,10 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function SkillMallCta() {
+  const { t } = useLanguage()
   return (
     <section className="w-full py-20 md:py-32 lg:py-20">
       <div className="container px-4 md:px-6">
@@ -31,10 +33,10 @@ export default function SkillMallCta() {
             </motion.div>
             
             <h2 className="font-hero text-3xl md:text-4xl lg:text-5xl font-bold tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-              开启你的技能提升之旅
+              {t.skillMall.cta.title}
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              加入数万名学习者，在AI驱动的个性化学习平台上，掌握未来所需的核心技能
+              {t.skillMall.cta.subtitle}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -43,7 +45,7 @@ export default function SkillMallCta() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button size="lg" className="rounded-full px-8 py-6 text-lg font-semibold">
-                  立即开始学习
+                  {t.skillMall.cta.startLearningButton}
                   <ArrowRight className="ml-2 size-5" />
                 </Button>
               </motion.div>
@@ -53,7 +55,7 @@ export default function SkillMallCta() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-lg font-semibold">
-                  了解更多
+                  {t.skillMall.cta.learnMoreButton}
                 </Button>
               </motion.div>
             </div>
@@ -65,7 +67,7 @@ export default function SkillMallCta() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="mt-12 text-sm text-muted-foreground"
             >
-              <p>🎯 个性化学习路径 • 🤖 AI智能辅导 • 📊 实时进度跟踪 • 🏆 权威技能认证</p>
+              <p>{t.skillMall.cta.features}</p>
             </motion.div>
           </div>
         </motion.div>
