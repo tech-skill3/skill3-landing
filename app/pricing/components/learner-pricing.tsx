@@ -6,38 +6,34 @@ import { ShoppingCart, CreditCard, Coins, Zap, Star, Gift } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent} from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function LearnerPricing() {
+  const { t } = useLanguage()
+
   const paymentMethods = [
     {
       icon: CreditCard,
-      title: "法币支付",
-      description: "支持主流信用卡、借记卡及移动支付",
+      title: t.pricing.learner.paymentMethods.fiat.title,
+      description: t.pricing.learner.paymentMethods.fiat.description,
       color: "blue"
     },
     {
       icon: Coins,
-      title: "加密货币",
-      description: "支持主流加密货币支付",
+      title: t.pricing.learner.paymentMethods.crypto.title,
+      description: t.pricing.learner.paymentMethods.crypto.description,
       color: "orange"
     },
     {
       icon: Gift,
-      title: "$SKILL 代币",
-      description: "使用平台代币享受专属折扣",
+      title: t.pricing.learner.paymentMethods.skill.title,
+      description: t.pricing.learner.paymentMethods.skill.description,
       color: "purple",
-      badge: "即将推出"
+      badge: t.pricing.learner.paymentMethods.skill.badge
     }
   ]
 
-  const features = [
-    "创作者独立定价，价格透明",
-    "即买即用，无需订阅",
-    "支持多种支付方式",
-    "永久访问已购买技能",
-    "社区评价与推荐系统",
-    "技能学习进度追踪"
-  ]
+  const features = t.pricing.learner.features
 
   return (
     <section className="py-16 bg-white">
@@ -49,10 +45,10 @@ export default function LearnerPricing() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            学习者定价 (Learner Pricing)
+            {t.pricing.learner.title}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            在 Skill Mall 中按需购买 AI 技能体，由创作者独立定价，支持多种支付方式
+            {t.pricing.learner.subtitle}
           </p>
         </motion.div>
 
@@ -67,12 +63,11 @@ export default function LearnerPricing() {
                 <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center mr-4">
                   <ShoppingCart className="w-6 h-6 text-indigo-600" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">按需购买模式</h3>
-              </div>
-              <p className="text-gray-600 mb-6">
-                无需订阅费用，只为您真正需要的技能付费。每个 AI 技能体都由专业创作者精心设计，
-                价格由创作者根据技能复杂度和价值独立制定。
-              </p>
+                <h3 className="text-2xl font-bold text-gray-900">{t.pricing.learner.onDemandPurchase.title}</h3> 
+               </div> 
+               <p className="text-gray-600 mb-6"> 
+                 {t.pricing.learner.onDemandPurchase.description}
+               </p>
               <ul className="space-y-3">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-center text-gray-700">
@@ -90,7 +85,7 @@ export default function LearnerPricing() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">支付方式</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{t.pricing.learner.paymentMethods.title}</h3>
               {paymentMethods.map((method, index) => (
                 <Card key={index} className="border-2 hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-6">
@@ -130,33 +125,32 @@ export default function LearnerPricing() {
           className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center"
         >
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">$SKILL 代币优势</h3>
+            <h3 className="text-2xl font-bold mb-4">{t.pricing.learner.skillTokens.title}</h3>
             <p className="text-blue-100 mb-6">
-              未来使用 $SKILL 代币支付将享受专属折扣和额外权益，
-              包括优先访问新技能、社区投票权和创作者分红等。
+              {t.pricing.learner.skillTokens.description}
             </p>
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="bg-white/10 rounded-xl p-4">
                 <Zap className="w-8 h-8 text-yellow-300 mx-auto mb-2" />
-                <h4 className="font-semibold mb-1">专属折扣</h4>
-                <p className="text-blue-100 text-sm">使用代币享受额外优惠</p>
+                <h4 className="font-semibold mb-1">{t.pricing.learner.skillTokens.advantages.discount.title}</h4>
+                <p className="text-blue-100 text-sm">{t.pricing.learner.skillTokens.advantages.discount.description}</p>
               </div>
               <div className="bg-white/10 rounded-xl p-4">
                 <Star className="w-8 h-8 text-yellow-300 mx-auto mb-2" />
-                <h4 className="font-semibold mb-1">优先访问</h4>
-                <p className="text-blue-100 text-sm">抢先体验最新技能</p>
+                <h4 className="font-semibold mb-1">{t.pricing.learner.skillTokens.advantages.priority.title}</h4>
+                <p className="text-blue-100 text-sm">{t.pricing.learner.skillTokens.advantages.priority.description}</p>
               </div>
               <div className="bg-white/10 rounded-xl p-4">
                 <Gift className="w-8 h-8 text-yellow-300 mx-auto mb-2" />
-                <h4 className="font-semibold mb-1">社区权益</h4>
-                <p className="text-blue-100 text-sm">参与治理和分红</p>
+                <h4 className="font-semibold mb-1">{t.pricing.learner.skillTokens.advantages.community.title}</h4>
+                <p className="text-blue-100 text-sm">{t.pricing.learner.skillTokens.advantages.community.description}</p>
               </div>
             </div>
             <Button 
               size="lg" 
               className="bg-white text-blue-600 hover:bg-gray-50 font-semibold px-8 py-3 rounded-xl"
             >
-              探索 Skill Mall
+              {t.pricing.learner.skillTokens.exploreButton}
             </Button>
           </div>
         </motion.div>

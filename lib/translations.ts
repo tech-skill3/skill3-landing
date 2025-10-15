@@ -339,6 +339,225 @@ interface TranslationStructure {
       }
     }
   }
+  pricing: {
+    metadata: {
+      title: string
+      description: string
+    }
+    hero: {
+      title: string
+      subtitle: string
+    }
+    enterprise: {
+      title: string
+      subtitle: string
+      description: string
+      plans: {
+        starter: {
+          name: string
+          price: string
+          period: string
+          description: string
+          features: string[]
+          button: string
+        }
+        professional: {
+          name: string
+          price: string
+          period: string
+          description: string
+          features: string[]
+          button: string
+          popular: string
+        }
+        enterprise: {
+          name: string
+          price: string
+          period: string
+          description: string
+          features: string[]
+          button: string
+        }
+      }
+    }
+    value: {
+      title: string
+      subtitle: string
+      cards: {
+        kpiOriented: {
+          title: string
+          description: string
+        }
+        resultLinked: {
+          title: string
+          description: string
+        }
+        riskSharing: {
+          title: string
+          description: string
+        }
+      }
+      oaas: {
+        title: string
+        subtitle: string
+        description: string
+        features: string[]
+        cta: {
+          title: string
+          description: string
+          pricing: string
+          pricingSubtitle: string
+          button: string
+        }
+      }
+    }
+    learner: {
+      title: string
+      subtitle: string
+      onDemandPurchase: {
+        title: string
+        description: string
+      }
+      paymentMethods: {
+        title: string
+        fiat: {
+          title: string
+          description: string
+        }
+        crypto: {
+          title: string
+          description: string
+        }
+        skill: {
+          title: string
+          description: string
+          badge: string
+        }
+      }
+      features: string[]
+      skillTokens: {
+        title: string
+        subtitle: string
+        description: string
+        advantages: {
+          discount: {
+            title: string
+            description: string
+          }
+          priority: {
+            title: string
+            description: string
+          }
+          community: {
+            title: string
+            description: string
+          }
+        }
+        exploreButton: string
+      }
+    }
+    creator: {
+      title: string
+      subtitle: string
+      revenueShare: {
+        title: string
+        percentage: string
+        description: string
+      }
+      platformFee: {
+        title: string
+        percentage: string
+        description: string
+      }
+      note: string
+      joinButton: string
+      features: {
+        title: string
+        items: {
+          aiTools: {
+            title: string
+            description: string
+          }
+          marketing: {
+            title: string
+            description: string
+          }
+          analytics: {
+            title: string
+            description: string
+          }
+          community: {
+            title: string
+            description: string
+          }
+          support: {
+            title: string
+            description: string
+          }
+          monetization: {
+            title: string
+            description: string
+          }
+        }
+      }
+    }
+    addons: {
+      title: string
+      subtitle: string
+      description: string
+      badge: string
+      buyNow: string
+      addService: string
+      services: {
+        voiceCoaching: {
+          title: string
+          description: string
+          price: string
+          features: string[]
+          button: string
+        }
+        digitalHuman: {
+          title: string
+          description: string
+          price: string
+          features: string[]
+          button: string
+        }
+        extraExams: {
+          title: string
+          description: string
+          price: string
+          features: string[]
+          button: string
+        }
+        verifyPro: {
+          title: string
+          description: string
+          price: string
+          features: string[]
+          button: string
+        }
+      }
+      additionalInfo: {
+        title: string
+        description: string
+        features: {
+          instant: {
+            title: string
+            description: string
+          }
+          reports: {
+            title: string
+            description: string
+          }
+          ai: {
+            title: string
+            description: string
+          }
+        }
+      }
+    }
+  }
   creatorHub: {
     hero: {
       badge: string
@@ -746,6 +965,74 @@ interface TranslationStructure {
       getCustomizedPlan: string
     }
   }
+  aboutUsPage: {
+    badge: string
+    title: string
+    subtitle: string
+    joinUsButton: string
+    learnMoreButton: string
+    learnDetailsButton: string
+    learnMoreAdvantagesButton: string
+    visionMission: {
+      title: string
+      vision: {
+        title: string
+        description: string
+      }
+      mission: {
+        title: string
+        description: string
+      }
+    }
+    advantages: {
+      title: string
+      userBase: {
+        title: string
+        description: string
+      }
+      learnerData: {
+        title: string
+        description: string
+      }
+      web2Foundation: {
+        title: string
+        description: string
+      }
+    }
+    asymmetricAdvantages: {
+      title: string
+      aiTechnology: {
+        title: string
+        description: string
+      }
+      blockchainInnovation: {
+        title: string
+        description: string
+      }
+      ecosystemSynergy: {
+        title: string
+        description: string
+      }
+    }
+    roadmap: {
+      title: string
+      phase1: {
+        title: string
+        period: string
+        description: string
+      }
+      phase2: {
+        title: string
+        period: string
+        description: string
+      }
+      phase3: {
+        title: string
+        period: string
+        description: string
+      }
+    }
+  }
 }
 
 export const translations: Record<Language, TranslationStructure> = {
@@ -1088,6 +1375,279 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       }
     },
+    pricing: {
+      metadata: {
+        title: 'Skill3 Ecosystem Pricing',
+        description: 'Flexible pricing plans for enterprises, learners, and creators to meet different role needs'
+      },
+      hero: {
+        title: 'Skill3 Ecosystem Pricing',
+        subtitle: 'Flexible pricing plans for enterprises, learners, and creators to meet different role needs'
+      },
+      enterprise: {
+        title: 'Enterprise Solutions',
+        subtitle: 'Professional training solutions for teams',
+        description: 'Choose the right plan for your organization\'s training needs',
+        plans: {
+          starter: {
+            name: 'Starter',
+            price: '¥999',
+            period: '/month',
+            description: 'Perfect for small teams getting started',
+            features: [
+              'Up to 50 employees',
+              'Basic AI training modules',
+              'Email support',
+              'Monthly progress reports',
+              'Standard integrations'
+            ],
+            button: 'Start Free Trial'
+          },
+          professional: {
+            name: 'Professional',
+            price: '¥2,999',
+            period: '/month',
+            description: 'Advanced features for growing organizations',
+            features: [
+              'Up to 200 employees',
+              'Advanced AI training modules',
+              'Priority support',
+              'Real-time analytics',
+              'Custom integrations',
+              'Dedicated account manager'
+            ],
+            button: 'Contact Sales',
+            popular: 'Most Popular'
+          },
+          enterprise: {
+            name: 'Enterprise',
+            price: 'Custom',
+            period: '',
+            description: 'Tailored solutions for large organizations',
+            features: [
+              'Unlimited employees',
+              'Custom AI training modules',
+              '24/7 premium support',
+              'Advanced analytics & reporting',
+              'Full API access',
+              'On-premise deployment',
+              'Custom SLA'
+            ],
+            button: 'Contact Sales'
+          }
+        }
+      },
+      value: {
+        title: 'Value-Based Pricing',
+        subtitle: 'Pay for results, not just training',
+        cards: {
+          kpiOriented: {
+            title: 'KPI-Oriented',
+            description: 'Training programs directly linked to measurable business outcomes and performance indicators'
+          },
+          resultLinked: {
+            title: 'Result-Linked',
+            description: 'Payment tied to actual skill improvement and business impact, ensuring ROI'
+          },
+          riskSharing: {
+            title: 'Risk Sharing',
+            description: 'We share the risk with you - pay only when training delivers measurable results'
+          }
+        },
+        oaas: {
+          title: 'Outcome as a Service (OaaS)',
+          subtitle: 'Revolutionary training model',
+          description: 'Our OaaS model ensures you only pay for successful outcomes. Using AI-driven assessment and blockchain verification, we guarantee measurable skill improvement.',
+          features: [
+            'AI-powered skill assessment',
+            'Blockchain-verified results',
+            'Pay-for-outcome model',
+            'Guaranteed ROI',
+            'Risk-free training investment'
+          ],
+          cta: {
+            title: 'Ready to transform your training ROI?',
+            description: 'Join leading companies using outcome-based training',
+            pricing: 'Starting from ¥0',
+            pricingSubtitle: 'Pay only for results',
+            button: 'Get Custom Quote'
+          }
+        }
+      },
+      learner: {
+        title: 'For Learners',
+        subtitle: 'Flexible learning plans to accelerate your skill development',
+        onDemandPurchase: {
+          title: 'On-Demand Purchase Model',
+          description: 'No subscription fees required. Pay only for the skills you truly need. Each AI skill is carefully designed by professional creators, with prices set independently by creators based on skill complexity and value.'
+        },
+        paymentMethods: {
+          title: 'Payment Methods',
+          fiat: {
+            title: 'Fiat Currency',
+            description: 'Pay with traditional currencies like USD, EUR, etc.'
+          },
+          crypto: {
+            title: 'Cryptocurrency',
+            description: 'Pay with popular cryptocurrencies like BTC, ETH, USDT'
+          },
+          skill: {
+            title: '$SKILL Token',
+            description: 'Use our native token for exclusive benefits',
+            badge: 'Recommended'
+          }
+        },
+        features: [
+          'AI-powered personalized learning paths',
+          'Interactive skill assessments',
+          'Real-time progress tracking',
+          'Community learning support',
+          'Certificate generation',
+          'Mobile learning access'
+        ],
+        skillTokens: {
+          title: '$SKILL Token Benefits',
+          subtitle: 'Unlock exclusive advantages with our native token',
+          description: 'Earn and use $SKILL tokens to enhance your learning experience with exclusive discounts, priority access, and community benefits.',
+          advantages: {
+            discount: {
+              title: 'Exclusive Discounts',
+              description: 'Get up to 30% off on premium courses and services'
+            },
+            priority: {
+              title: 'Priority Access',
+              description: 'Early access to new courses and beta features'
+            },
+            community: {
+              title: 'Community Benefits',
+              description: 'Access to exclusive events and networking opportunities'
+            }
+          },
+          exploreButton: 'Explore Skill Mall'
+        }
+      },
+      creator: {
+        title: 'For Creators',
+        subtitle: 'Monetize your expertise with our comprehensive creator platform',
+        revenueShare: {
+          title: 'Revenue Share',
+          percentage: '85%',
+          description: 'You keep 85% of course sales revenue'
+        },
+        platformFee: {
+          title: 'Platform Service Fee',
+          percentage: '15%',
+          description: 'Covers hosting, payment processing, and platform maintenance'
+        },
+        note: 'Start earning from day one with our transparent revenue model',
+        joinButton: 'Become a Creator',
+        features: {
+          title: 'Creator Tools & Support',
+          items: {
+            aiTools: {
+              title: 'AI Creation Tools',
+              description: 'Advanced AI assistants for content creation and optimization'
+            },
+            marketing: {
+              title: 'Marketing Support',
+              description: 'Built-in promotion tools and marketing assistance'
+            },
+            analytics: {
+              title: 'Advanced Analytics',
+              description: 'Detailed insights into student engagement and revenue'
+            },
+            community: {
+              title: 'Creator Community',
+              description: 'Connect with other creators and share best practices'
+            },
+            support: {
+              title: '24/7 Support',
+              description: 'Dedicated creator success team and technical support'
+            },
+            monetization: {
+              title: 'Multiple Revenue Streams',
+              description: 'Course sales, NFT royalties, and platform incentives'
+            }
+          }
+        }
+      },
+      addons: {
+        title: 'Add-on Services',
+        subtitle: 'Choose on-demand, flexible expansion',
+        description: 'Enhance your training experience with additional services',
+        badge: 'Add-ons',
+        buyNow: 'Buy Now',
+        addService: 'Add Service',
+        services: {
+          voiceCoaching: {
+            title: 'AI Voice Coaching',
+            description: 'Personalized voice training with AI feedback',
+            price: '¥299/month',
+            features: [
+              'Real-time pronunciation analysis',
+              'Personalized improvement suggestions',
+              'Progress tracking',
+              'Multi-language support'
+            ],
+            button: 'Add to Plan'
+          },
+          digitalHuman: {
+            title: 'Digital Human Instructor',
+            description: 'Interactive AI-powered virtual instructors',
+            price: '¥599/month',
+            features: [
+              '24/7 available virtual instructor',
+              'Natural conversation interface',
+              'Customizable appearance',
+              'Multi-scenario training'
+            ],
+            button: 'Add to Plan'
+          },
+          extraExams: {
+            title: 'Additional Exams',
+            description: 'Extra assessments and retake opportunities',
+            price: '¥99/exam',
+            features: [
+              'Unlimited retakes',
+              'Detailed performance analysis',
+              'Instant results',
+              'Certificate generation'
+            ],
+            button: 'Purchase'
+          },
+          verifyPro: {
+            title: 'Verify Pro Reports',
+            description: 'Advanced skill verification and reporting',
+            price: '¥199/report',
+            features: [
+              'Comprehensive skill assessment',
+              'Blockchain-verified certificates',
+              'Detailed competency mapping',
+              'Industry benchmarking'
+            ],
+            button: 'Get Report'
+          }
+        },
+        additionalInfo: {
+          title: 'Additional Services',
+          description: 'Enhance your learning experience with our premium add-on services',
+          features: {
+            instant: {
+              title: 'Instant Access',
+              description: 'Get immediate access to all premium features'
+            },
+            reports: {
+              title: 'Detailed Reports',
+              description: 'Comprehensive analytics and progress tracking'
+            },
+            ai: {
+              title: 'AI Assistance',
+              description: '24/7 AI-powered learning support'
+            }
+          }
+        }
+      }
+    },
     creatorHub: {
       hero: {
         badge: 'Creator Hub',
@@ -1329,6 +1889,75 @@ export const translations: Record<Language, TranslationStructure> = {
             question: 'How long does it take to see results?',
             answer: 'Most creators see their first earnings within 30 days of publishing their first course.'
           }
+        }
+      }
+    },
+
+    aboutUsPage: {
+      badge: 'About Us',
+      title: 'Redefining Skill Verification and Value Creation',
+      subtitle: 'We are committed to building a transparent, trustworthy, and efficient skill ecosystem through AI and blockchain technology.',
+      joinUsButton: 'Join Us',
+      learnMoreButton: 'Learn More',
+      learnDetailsButton: 'Learn Details',
+      learnMoreAdvantagesButton: 'Learn More Advantages',
+      visionMission: {
+        title: 'Vision & Mission',
+        vision: {
+          title: 'Vision',
+          description: 'To become the world\'s leading skill verification and value creation platform, enabling everyone to showcase their abilities and achieve their potential.'
+        },
+        mission: {
+          title: 'Mission',
+          description: 'Through AI and blockchain technology, we create a transparent, fair, and efficient skill ecosystem that connects learners, creators, and enterprises.'
+        }
+      },
+      advantages: {
+        title: 'Zevolve Group Advantages',
+        userBase: {
+          title: 'Massive User Base',
+          description: 'With over 10 million registered users worldwide, we have built a vibrant learning and creation community.'
+        },
+        learnerData: {
+          title: 'Massive Learner Data',
+          description: 'Accumulated learning behavior data from millions of users, providing strong support for AI algorithm optimization.'
+        },
+        web2Foundation: {
+          title: 'Web2 Business Foundation',
+          description: 'Mature Web2 business model and operational experience, providing solid foundation for Web3 transformation.'
+        }
+      },
+      asymmetricAdvantages: {
+        title: 'Asymmetric Competitive Advantages',
+        aiTechnology: {
+          title: 'AI Technology Leadership',
+          description: 'Industry-leading AI technology stack, providing personalized learning experiences and intelligent skill assessment.'
+        },
+        blockchainInnovation: {
+          title: 'Blockchain Innovation',
+          description: 'Pioneering the application of blockchain technology in skill verification, creating tamper-proof skill credentials.'
+        },
+        ecosystemSynergy: {
+          title: 'Ecosystem Synergy',
+          description: 'Comprehensive ecosystem covering learning, creation, verification, and application, forming strong network effects.'
+        }
+      },
+      roadmap: {
+        title: 'Development Roadmap',
+        phase1: {
+          title: 'Phase 1: Foundation Building',
+          period: '2024 Q1-Q2',
+          description: 'Complete platform infrastructure construction and launch core features.'
+        },
+        phase2: {
+          title: 'Phase 2: Ecosystem Expansion',
+          period: '2024 Q3-Q4',
+          description: 'Expand creator ecosystem and establish partnerships with enterprises.'
+        },
+        phase3: {
+          title: 'Phase 3: Global Expansion',
+          period: '2025 Q1-Q2',
+          description: 'Enter international markets and build global skill verification network.'
         }
       }
     },
@@ -1893,6 +2522,278 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       }
     },
+    pricing: {
+      metadata: {
+        title: 'Skill3 生态定价体系',
+        description: '为企业、学习者和创作者提供灵活的定价方案，满足不同角色的需求'
+      },
+      hero: {
+        title: 'Skill3 生态定价体系',
+        subtitle: '为企业、学习者和创作者提供灵活的定价方案，满足不同角色的需求'
+      },
+      enterprise: {
+        title: '企业解决方案',
+        subtitle: '专业的团队培训解决方案',
+        description: '为您的组织选择合适的培训计划',
+        plans: {
+          starter: {
+            name: '入门版',
+            price: '¥999',
+            period: '/月',
+            description: '适合初创团队的完美选择',
+            features: [
+              '支持50名员工',
+              '基础AI培训模块',
+              '邮件支持',
+              '月度进度报告',
+              '标准集成'
+            ],
+            button: '开始免费试用'
+          },
+          professional: {
+            name: '专业版',
+            price: '¥2,999',
+            period: '/月',
+            description: '为成长型组织提供高级功能',
+            features: [
+              '支持200名员工',
+              '高级AI培训模块',
+              '优先支持',
+              '实时分析',
+              '自定义集成',
+              '专属客户经理'
+            ],
+            button: '联系销售',
+            popular: '最受欢迎'
+          },
+          enterprise: {
+            name: '企业版',
+            price: '定制',
+            period: '',
+            description: '为大型组织量身定制的解决方案',
+            features: [
+              '无限员工数量',
+              '定制AI培训模块',
+              '7x24小时高级支持',
+              '高级分析与报告',
+              '完整API访问',
+              '本地部署',
+              '定制SLA'
+            ],
+            button: '联系销售'
+          }
+        }
+      },
+      value: {
+        title: '价值定价说明',
+        subtitle: '以成果为导向的培训投资',
+        cards: {
+          kpiOriented: {
+            title: 'KPI导向',
+            description: '培训直接与业务KPI挂钩，确保可衡量的成果'
+          },
+          resultLinked: {
+            title: '结果关联',
+            description: '付费与实际达成的结果挂钩，而非仅仅完成培训'
+          },
+          riskSharing: {
+            title: '风险共担',
+            description: '我们与您共担风险 - 只有达成目标才付费'
+          }
+        },
+        oaas: {
+          title: '成果即服务 (OaaS)',
+          subtitle: '革命性的培训模式',
+          description: '通过我们创新的OaaS模式，将您的培训投资转化为有保障的业务成果。',
+          features: [
+            '基于智能合约的付费系统',
+            'AI驱动的成果验证',
+            '透明的进度跟踪',
+            '零风险培训投资'
+          ],
+          cta: {
+            title: '准备好转变您的培训ROI了吗？',
+            description: '加入已实现平均300% ROI提升的领先企业行列',
+            pricing: '起价 ¥5,000',
+            pricingSubtitle: '每达成一个成果',
+            button: '获取定制报价'
+          }
+        }
+      },
+      learner: {
+        title: '学习者专区',
+        subtitle: '灵活的学习计划，加速您的技能发展',
+        onDemandPurchase: {
+          title: '按需购买模式',
+          description: '无需订阅费用，只为您真正需要的技能付费。每个 AI 技能体都由专业创作者精心设计，价格由创作者根据技能复杂度和价值独立制定。'
+        },
+        paymentMethods: {
+          title: '支付方式',
+          fiat: {
+            title: '法定货币',
+            description: '使用传统货币如人民币、美元、欧元等支付'
+          },
+          crypto: {
+            title: '加密货币',
+            description: '使用主流加密货币如BTC、ETH、USDT支付'
+          },
+          skill: {
+            title: '$SKILL 代币',
+            description: '使用我们的原生代币享受专属优势',
+            badge: '推荐'
+          }
+        },
+        features: [
+          'AI驱动的个性化学习路径',
+          '互动式技能评估',
+          '实时进度跟踪',
+          '社区学习支持',
+          '证书生成',
+          '移动端学习访问'
+        ],
+        skillTokens: {
+          title: '$SKILL 代币优势',
+          subtitle: '通过我们的原生代币解锁专属优势',
+          description: '赚取并使用 $SKILL 代币，通过专属折扣、优先访问和社区权益增强您的学习体验。',
+          advantages: {
+            discount: {
+              title: '专属折扣',
+              description: '高级课程和服务享受高达30%的折扣'
+            },
+            priority: {
+              title: '优先访问',
+              description: '抢先体验新课程和测试版功能'
+            },
+            community: {
+              title: '社区权益',
+              description: '参与专属活动和网络交流机会'
+            }
+          },
+          exploreButton: '探索 Skill Mall'
+        }
+      },
+      creator: {
+        title: '创作者专区',
+        subtitle: '通过我们全面的创作者平台将您的专业知识变现',
+        revenueShare: {
+          title: '收入分成',
+          percentage: '85%',
+          description: '您保留课程销售收入的85%'
+        },
+        platformFee: {
+          title: '平台服务费',
+          percentage: '15%',
+          description: '涵盖托管、支付处理和平台维护'
+        },
+        note: '通过我们透明的收入模式从第一天开始赚钱',
+        joinButton: '成为创作者',
+        features: {
+          title: '创作者工具与支持',
+          items: {
+            aiTools: {
+              title: 'AI创作工具',
+              description: '用于内容创作和优化的高级AI助手'
+            },
+            marketing: {
+              title: '营销支持',
+              description: '内置推广工具和营销协助'
+            },
+            analytics: {
+              title: '高级分析',
+              description: '学生参与度和收入的详细洞察'
+            },
+            community: {
+              title: '创作者社区',
+              description: '与其他创作者联系并分享最佳实践'
+            },
+            support: {
+              title: '7x24小时支持',
+              description: '专属创作者成功团队和技术支持'
+            },
+            monetization: {
+              title: '多元收入来源',
+              description: '课程销售、NFT版税和平台激励'
+            }
+          }
+        }
+      },
+      addons: {
+        title: '增值服务',
+        subtitle: '按需选择，灵活扩展',
+        description: '通过额外服务增强您的培训体验',
+        badge: '推荐',
+        buyNow: '立即购买',
+        addService: '添加服务',
+        services: {
+          voiceCoaching: {
+            title: 'AI语音陪练',
+            description: '个性化语音训练与AI反馈',
+            price: '¥299/月',
+            features: [
+              '实时发音分析',
+              '个性化改进建议',
+              '进度跟踪',
+              '多语言支持'
+            ],
+            button: '添加到计划'
+          },
+          digitalHuman: {
+            title: '数字人导师',
+            description: '交互式AI驱动的虚拟导师',
+            price: '¥599/月',
+            features: [
+              '7x24小时虚拟导师',
+              '自然对话界面',
+              '可定制外观',
+              '多场景训练'
+            ],
+            button: '添加到计划'
+          },
+          extraExams: {
+            title: '额外考试/补考',
+            description: '额外的评估和重考机会',
+            price: '¥99/次',
+            features: [
+              '无限重考',
+              '详细性能分析',
+              '即时结果',
+              '证书生成'
+            ],
+            button: '购买'
+          },
+          verifyPro: {
+            title: 'Verify Pro报告',
+            description: '高级技能验证和报告',
+            price: '¥199/份',
+            features: [
+              '全面技能评估',
+              '区块链验证证书',
+              '详细能力映射',
+              '行业基准对比'
+            ],
+            button: '获取报告'
+          }
+        },
+        additionalInfo: {
+          title: '附加服务',
+          description: '通过我们的高级增值服务提升您的学习体验',
+          features: {
+            instant: {
+              title: '即时访问',
+              description: '立即获得所有高级功能的访问权限'
+            },
+            reports: {
+              title: '详细报告',
+              description: '全面的分析和进度跟踪'
+            },
+            ai: {
+              title: 'AI助手',
+              description: '7x24小时AI驱动的学习支持'
+            }
+          }
+        }
+      }
+    },
     creatorHub: {
       hero: {
         badge: '创作者中心',
@@ -2137,6 +3038,76 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       }
     },
+
+    aboutUsPage: {
+      badge: '关于我们',
+      title: '重新定义技能验证与价值创造',
+      subtitle: '我们致力于通过AI和区块链技术，构建一个透明、可信、高效的技能生态系统。',
+      joinUsButton: '加入我们',
+      learnMoreButton: '了解更多',
+      learnDetailsButton: '了解详情',
+      learnMoreAdvantagesButton: '了解更多优势',
+      visionMission: {
+        title: '愿景与使命',
+        vision: {
+          title: '愿景 Vision',
+          description: '成为全球领先的技能验证与价值创造平台，让每个人都能展示自己的能力并实现潜力。'
+        },
+        mission: {
+          title: '使命 Mission',
+          description: '通过AI和区块链技术，创造一个透明、公平、高效的技能生态系统，连接学习者、创作者和企业。'
+        }
+      },
+      advantages: {
+        title: 'Zevolve 集团优势',
+        userBase: {
+          title: '庞大用户基础',
+          description: '全球超过1000万注册用户，构建了充满活力的学习与创作社区。'
+        },
+        learnerData: {
+          title: '海量学员数据',
+          description: '积累了数百万用户的学习行为数据，为AI算法优化提供强大支撑。'
+        },
+        web2Foundation: {
+          title: 'Web2业务基础',
+          description: '成熟的Web2商业模式和运营经验，为Web3转型提供坚实基础。'
+        }
+      },
+      asymmetricAdvantages: {
+        title: '非对称竞争优势',
+        aiTechnology: {
+          title: 'AI技术领先',
+          description: '行业领先的AI技术栈，提供个性化学习体验和智能技能评估。'
+        },
+        blockchainInnovation: {
+          title: '区块链创新',
+          description: '率先将区块链技术应用于技能验证，创造不可篡改的技能凭证。'
+        },
+        ecosystemSynergy: {
+          title: '生态协同效应',
+          description: '涵盖学习、创作、验证、应用的完整生态系统，形成强大的网络效应。'
+        }
+      },
+      roadmap: {
+        title: '发展路线图',
+        phase1: {
+          title: '第一阶段：基础建设',
+          period: '2024年Q1-Q2',
+          description: '完成平台基础设施建设，推出核心功能。'
+        },
+        phase2: {
+          title: '第二阶段：生态扩展',
+          period: '2024年Q3-Q4',
+          description: '扩展创作者生态，建立企业合作伙伴关系。'
+        },
+        phase3: {
+          title: '第三阶段：全球扩张',
+          period: '2025年Q1-Q2',
+          description: '进入国际市场，构建全球技能验证网络。'
+        }
+      }
+    },
+
     newsletter: {
       title: 'Newsletter订阅',
       subtitle: '订阅我们的邮件，获取最新动态',
@@ -2358,6 +3329,10 @@ export const translations: Record<Language, TranslationStructure> = {
       }
     }
   }
+}
+
+export function getTranslations(language: Language): TranslationStructure {
+  return translations[language]
 }
 
 export type TranslationKeys = TranslationStructure

@@ -12,39 +12,45 @@ import {
   Zap,
   Plus
 } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function AddonsSection() {
+  const { t } = useLanguage();
   const addons = [
     {
       icon: <Mic className="w-6 h-6" />,
-      title: "语音陪练",
-      price: "¥49/月",
-      description: "AI语音交互陪练，提升口语表达能力",
-      features: ["智能语音识别", "发音评估", "口语练习", "进度跟踪"],
+      title: t.pricing.addons.services.voiceCoaching.title,
+      price: t.pricing.addons.services.voiceCoaching.price,
+      description: t.pricing.addons.services.voiceCoaching.description,
+      features: t.pricing.addons.services.voiceCoaching.features,
+      button: t.pricing.addons.services.voiceCoaching.button,
       popular: false
     },
     {
       icon: <Bot className="w-6 h-6" />,
-      title: "数字人",
-      price: "¥99/月",
-      description: "个性化AI数字人形象，提供沉浸式学习体验",
-      features: ["自定义形象", "情感表达", "互动对话", "学习陪伴"],
+      title: t.pricing.addons.services.digitalHuman.title,
+      price: t.pricing.addons.services.digitalHuman.price,
+      description: t.pricing.addons.services.digitalHuman.description,
+      features: t.pricing.addons.services.digitalHuman.features,
+      button: t.pricing.addons.services.digitalHuman.button,
       popular: true
     },
     {
       icon: <FileText className="w-6 h-6" />,
-      title: "额外考试/补考",
-      price: "¥29/次",
-      description: "月度考试额外次数或补考机会",
-      features: ["灵活安排", "即时反馈", "详细报告", "SBT认证"],
+      title: t.pricing.addons.services.extraExams.title,
+      price: t.pricing.addons.services.extraExams.price,
+      description: t.pricing.addons.services.extraExams.description,
+      features: t.pricing.addons.services.extraExams.features,
+      button: t.pricing.addons.services.extraExams.button,
       popular: false
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
-      title: "Verify Pro报告",
-      price: "¥199/包",
-      description: "专业AI质检报告，包含详细学习分析",
-      features: ["深度分析", "学习建议", "进度预测", "行业对比"],
+      title: t.pricing.addons.services.verifyPro.title,
+      price: t.pricing.addons.services.verifyPro.price,
+      description: t.pricing.addons.services.verifyPro.description,
+      features: t.pricing.addons.services.verifyPro.features,
+      button: t.pricing.addons.services.verifyPro.button,
       popular: false
     }
   ]
@@ -63,14 +69,13 @@ export default function AddonsSection() {
         >
           <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium bg-purple-100 text-purple-700 border-purple-200">
             <Plus className="w-4 h-4 mr-2" />
-            增值服务
+            {t.pricing.addons.badge}
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            按需选择，灵活扩展
+            {t.pricing.addons.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            根据你的学习需求，选择性购买增值服务。
-            <span className="text-purple-600 font-semibold">用多少付多少，经济实惠</span>
+            {t.pricing.addons.description}
           </p>
         </motion.div>
 
@@ -122,7 +127,7 @@ export default function AddonsSection() {
                       variant={addon.popular ? "default" : "outline"}
                       size="sm"
                     >
-                      {addon.popular ? '立即购买' : '添加服务'}
+                      {addon.popular ? t.pricing.addons.buyNow : t.pricing.addons.addService}
                     </Button>
                   </div>
 
@@ -152,10 +157,9 @@ export default function AddonsSection() {
           className="mt-16 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20 rounded-3xl p-8 md:p-12"
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">灵活组合，随心选择</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">{t.pricing.addons.additionalInfo.title}</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              增值服务可与订阅计划自由组合，按月订阅或按次购买，
-              满足你不同的学习需求和预算考虑。
+              {t.pricing.addons.additionalInfo.description}
             </p>
           </div>
 
@@ -164,22 +168,22 @@ export default function AddonsSection() {
               <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center mx-auto mb-3">
                 <Zap className="w-6 h-6" />
               </div>
-              <h4 className="font-semibold mb-2">即时生效</h4>
-              <p className="text-sm text-muted-foreground">购买后立即可用，无需等待</p>
+              <h4 className="font-semibold mb-2">{t.pricing.addons.additionalInfo.features.instant.title}</h4>
+              <p className="text-sm text-muted-foreground">{t.pricing.addons.additionalInfo.features.instant.description}</p>
             </div>
             <div>
               <div className="w-12 h-12 rounded-xl bg-pink-100 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 flex items-center justify-center mx-auto mb-3">
                 <BarChart3 className="w-6 h-6" />
               </div>
-              <h4 className="font-semibold mb-2">详细报告</h4>
-              <p className="text-sm text-muted-foreground">专业的数据分析和学习报告</p>
+              <h4 className="font-semibold mb-2">{t.pricing.addons.additionalInfo.features.reports.title}</h4>
+              <p className="text-sm text-muted-foreground">{t.pricing.addons.additionalInfo.features.reports.description}</p>
             </div>
             <div>
               <div className="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mx-auto mb-3">
                 <Bot className="w-6 h-6" />
               </div>
-              <h4 className="font-semibold mb-2">AI加持</h4>
-              <p className="text-sm text-muted-foreground">先进的AI技术提供个性化体验</p>
+              <h4 className="font-semibold mb-2">{t.pricing.addons.additionalInfo.features.ai.title}</h4>
+              <p className="text-sm text-muted-foreground">{t.pricing.addons.additionalInfo.features.ai.description}</p>
             </div>
           </div>
         </motion.div>

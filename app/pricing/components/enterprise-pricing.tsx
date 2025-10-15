@@ -5,88 +5,43 @@ import { motion } from "framer-motion"
 import { Check, X, Star, Zap, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function EnterprisePricing() {
+  const { t } = useLanguage();
   const plans = [
     {
-      name: "标准版",
+      name: t.pricing.enterprise.plans.starter.name,
       subtitle: "Standard",
-      description: "效率工具与基础培训",
+      description: t.pricing.enterprise.plans.starter.description,
       icon: <Zap className="w-6 h-6" />,
-      pricing: "按年订阅 (按席位)",
+      pricing: t.pricing.enterprise.plans.starter.price + t.pricing.enterprise.plans.starter.period,
       popular: false,
-      features: {
-        "AI 智课师 (技能体构建)": "基础版",
-        "AI 陪练师 (模拟对抗)": "限制使用次数/席位",
-        "AI 督导师 (ROI量化分析)": "基础分析报告",
-        "成果证明引擎 (OaaS)": false,
-        "技能证明协议 (Skill SBT签发)": false,
-        "验证人才库访问": false
-      }
+      features: t.pricing.enterprise.plans.starter.features,
+      button: t.pricing.enterprise.plans.starter.button
     },
     {
-      name: "专业版",
-      subtitle: "Professional",
-      description: "AI 驱动的效果交付",
+      name: t.pricing.enterprise.plans.professional.name,
+      subtitle: "Professional", 
+      description: t.pricing.enterprise.plans.professional.description,
       icon: <Star className="w-6 h-6" />,
-      pricing: "按年订阅 (按席位)",
+      pricing: t.pricing.enterprise.plans.professional.price + t.pricing.enterprise.plans.professional.period,
       popular: true,
-      features: {
-        "AI 智课师 (技能体构建)": "专业版",
-        "AI 陪练师 (模拟对抗)": "不限次数",
-        "AI 督导师 (ROI量化分析)": "深度数据洞察与ROI报告",
-        "成果证明引擎 (OaaS)": "标准版",
-        "技能证明协议 (Skill SBT签发)": true,
-        "验证人才库访问": "标准访问"
-      }
+      features: t.pricing.enterprise.plans.professional.features,
+      button: t.pricing.enterprise.plans.professional.button,
+      popularLabel: t.pricing.enterprise.plans.professional.popular
     },
     {
-      name: "旗舰版",
+      name: t.pricing.enterprise.plans.enterprise.name,
       subtitle: "Enterprise",
-      description: "定制化与 ROI 保障",
+      description: t.pricing.enterprise.plans.enterprise.description,
       icon: <Shield className="w-6 h-6" />,
-      pricing: "联系销售获取报价",
+      pricing: t.pricing.enterprise.plans.enterprise.price,
       popular: false,
-      features: {
-        "AI 智课师 (技能体构建)": "企业级定制与私有化",
-        "AI 陪练师 (模拟对抗)": "高并发支持与定制场景",
-        "AI 督导师 (ROI量化分析)": "对接企业BI与CRM系统",
-        "成果证明引擎 (OaaS)": "高级版 (支持智能合约对赌)",
-        "技能证明协议 (Skill SBT签发)": "深度集成预言机网络",
-        "验证人才库访问": "优先访问与定制化画像"
-      }
+      features: t.pricing.enterprise.plans.enterprise.features,
+      button: t.pricing.enterprise.plans.enterprise.button
     }
   ]
-
-  const featureCategories = [
-    {
-      title: "AI 技能训战核心模块",
-      features: [
-        "AI 智课师 (技能体构建)",
-        "AI 陪练师 (模拟对抗)",
-        "AI 督导师 (ROI量化分析)",
-        "成果证明引擎 (OaaS)"
-      ]
-    },
-    {
-      title: "Web3 集成与协议服务",
-      features: [
-        "技能证明协议 (Skill SBT签发)",
-        "验证人才库访问"
-      ]
-    }
-  ]
-
-  const renderFeatureValue = (value: string | boolean) => {
-    if (typeof value === "boolean") {
-      return value ? (
-        <Check className="w-5 h-5 text-green-500 mx-auto" />
-      ) : (
-        <X className="w-5 h-5 text-gray-400 mx-auto" />
-      )
-    }
-    return <span className="text-sm text-center">{value}</span>
-  }
 
   return (
     <section className="py-24 bg-gradient-to-b from-background to-muted/20">
@@ -97,9 +52,9 @@ export default function EnterprisePricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4">企业服务定价</h2>
-          <p className="text-xl text-muted-foreground mb-2">AI 训战平台</p>
-          <p className="text-lg text-muted-foreground">SaaS 订阅费 + 价值定价</p>
+          <h2 className="text-4xl font-bold mb-4">{t.pricing.enterprise.title}</h2>
+          <p className="text-xl text-muted-foreground mb-2">{t.pricing.enterprise.subtitle}</p>
+          <p className="text-lg text-muted-foreground">{t.pricing.enterprise.description}</p>
         </motion.div>
 
         {/* 套餐卡片概览 */}
@@ -114,7 +69,7 @@ export default function EnterprisePricing() {
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
-                    推荐
+                    {plan.popularLabel}
                   </span>
                 </div>
               )}
@@ -136,66 +91,37 @@ export default function EnterprisePricing() {
                   className={`w-full ${plan.popular ? 'bg-primary hover:bg-primary/90' : ''}`}
                   variant={plan.popular ? 'default' : 'outline'}
                 >
-                  {plan.name === "旗舰版" ? "联系销售" : "开始使用"}
+                  {plan.button}
                 </Button>
               </CardContent>
             </Card>
           ))}
         </motion.div>
 
-        {/* 详细功能对比表格 */}
+        {/* 功能列表展示 */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-background rounded-lg border shadow-sm overflow-hidden"
+          className="grid md:grid-cols-3 gap-8"
         >
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b bg-muted/50">
-                  <th className="text-left p-6 font-semibold">功能/服务</th>
-                  {plans.map((plan, index) => (
-                    <th key={index} className="text-center p-6 font-semibold min-w-[200px]">
-                      <div className="flex flex-col items-center">
-                        <span className="text-lg">{plan.name}</span>
-                        <span className="text-sm text-muted-foreground font-normal">{plan.subtitle}</span>
-                      </div>
-                    </th>
+          {plans.map((plan, index) => (
+            <Card key={index} className="h-full">
+              <CardHeader>
+                <CardTitle className="text-xl">{plan.name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm">{feature}</span>
+                    </li>
                   ))}
-                </tr>
-              </thead>
-              <tbody>
-                {featureCategories.map((category, categoryIndex) => (
-                  <React.Fragment key={categoryIndex}>
-                    <tr className="border-b bg-muted/20">
-                      <td colSpan={4} className="p-4 font-semibold text-primary">
-                        {category.title}
-                      </td>
-                    </tr>
-                    {category.features.map((feature, featureIndex) => (
-                      <tr key={featureIndex} className="border-b hover:bg-muted/30 transition-colors">
-                        <td className="p-4 font-medium">{feature}</td>
-                        {plans.map((plan, planIndex) => (
-                          <td key={planIndex} className="p-4 text-center">
-                            {renderFeatureValue(plan.features[feature as keyof typeof plan.features])}
-                          </td>
-                        ))}
-                      </tr>
-                    ))}
-                  </React.Fragment>
-                ))}
-                <tr className="border-b bg-muted/20">
-                  <td className="p-4 font-semibold text-primary">价格</td>
-                  {plans.map((plan, index) => (
-                    <td key={index} className="p-4 text-center">
-                      <span className="font-semibold text-primary">{plan.pricing}</span>
-                    </td>
-                  ))}
-                </tr>
-              </tbody>
-            </table>
-          </div>
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
         </motion.div>
       </div>
     </section>
