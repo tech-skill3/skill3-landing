@@ -5,7 +5,6 @@ import ValuePricing from "./components/value-pricing"
 import LearnerPricing from "./components/learner-pricing"
 import CreatorPricing from "./components/creator-pricing"
 import PricingHero from "./components/pricing-hero"
-import AddonsSection from "./components/addons-section"
 
 export function generateMetadata(): Metadata {
   const t = getTranslations('zh')

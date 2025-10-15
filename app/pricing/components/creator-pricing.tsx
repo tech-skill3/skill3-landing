@@ -4,7 +4,6 @@ import React from "react"
 import { motion } from "framer-motion"
 import { PieChart, TrendingUp, Users, DollarSign, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Progress } from "@/components/ui/progress"
 import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function CreatorPricing() {
