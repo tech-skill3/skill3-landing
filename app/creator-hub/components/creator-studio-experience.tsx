@@ -12,29 +12,28 @@ import {
   Zap,
   DollarSign
 } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function CreatorStudioExperience() {
+  const { t } = useLanguage()
 
   const features = [
     {
       icon: CheckCircle,
-      title: "无需编程或区块链知识",
-      description: "零技术门槛，专注内容创作"
+      ...t.creatorHub.creatorStudio.features.aiAssistant
     },
     {
       icon: Upload,
-      title: "拖拽式上传课程资料",
-      description: "支持视频、文档、音频等多种格式"
+      ...t.creatorHub.creatorStudio.features.contentCreation
     },
     {
       icon: Sparkles,
-      title: "AI自动生成交互导师",
-      description: "智能分析内容，生成个性化AI助教"
+      ...t.creatorHub.creatorStudio.features.analytics
     },
     {
       icon: DollarSign,
-      title: "60%收益即时到账",
-      description: "智能合约自动分成，实时结算"
+      title: t.creatorHub.tripleIncentive.incentives.financial.features.instantSettlement.title,
+      description: t.creatorHub.tripleIncentive.incentives.financial.features.instantSettlement.description
     }
   ]
 
@@ -73,15 +72,15 @@ export default function CreatorStudioExperience() {
           className="text-center mb-16"
         >
           <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-            ⭐ AI智课师体验窗口
+            {t.creatorHub.creatorStudio.badge}
           </Badge>
           
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            AI智课师·零代码创作直播室
+            {t.creatorHub.creatorStudio.title}
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            体验革命性的AI驱动内容创作流程，从上传到变现一站式完成
+            {t.creatorHub.creatorStudio.subtitle}
           </p>
         </motion.div>
 
@@ -95,7 +94,7 @@ export default function CreatorStudioExperience() {
           {/* 左侧：零门槛介绍说明 */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">零门槛介绍说明</h3>
+              <h3 className="text-2xl font-semibold mb-6">{t.creatorHub.creatorStudio.introTitle}</h3>
               
               <div className="space-y-6">
                 {features.map((feature, index) => (
@@ -125,7 +124,7 @@ export default function CreatorStudioExperience() {
             <motion.div variants={itemVariants}>
               <Button size="lg" className="w-full sm:w-auto">
                 <Zap className="w-4 h-4 mr-2" />
-                点击体验 →
+                {t.creatorHub.creatorStudio.tryNowButton}
               </Button>
             </motion.div>
           </motion.div>
@@ -134,7 +133,7 @@ export default function CreatorStudioExperience() {
           <motion.div variants={itemVariants} className="space-y-6">
             <div className="flex items-center space-x-2 mb-4">
               <Smartphone className="w-5 h-5 text-primary" />
-              <h3 className="text-xl font-semibold">实时创作窗口</h3>
+              <h3 className="text-xl font-semibold">{t.creatorHub.creatorStudio.liveCreationTitle}</h3>
             </div>
 
             <Card className="border-2 border-dashed border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">

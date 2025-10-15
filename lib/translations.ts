@@ -339,6 +339,226 @@ interface TranslationStructure {
       }
     }
   }
+  creatorHub: {
+    hero: {
+      badge: string
+      title: string
+      subtitle: string
+      features: {
+        aiTeacher: {
+          label: string
+          description: string
+        }
+        nftRights: {
+          label: string
+          description: string
+        }
+        tripleIncentive: {
+          label: string
+          description: string
+        }
+      }
+      startCreatingButton: string
+      learnMoreButton: string
+    }
+    successStories: {
+      title: string
+      subtitle: string
+      description: string
+      joinButton: string
+      stories: {
+        story1: {
+          name: string
+          title: string
+          achievement: string
+          result: string
+          period: string
+          description: string
+          tags: string[]
+        }
+        story2: {
+          name: string
+          title: string
+          achievement: string
+          result: string
+          period: string
+          description: string
+          tags: string[]
+        }
+        story3: {
+          name: string
+          title: string
+          achievement: string
+          result: string
+          period: string
+          description: string
+          tags: string[]
+        }
+      }
+    }
+    revenueExplanation: {
+      title: string
+      subtitle: string
+      revenueTypes: {
+        courseRevenue: {
+          title: string
+          description: string
+        }
+        nftRevenue: {
+          title: string
+          description: string
+        }
+        incentiveRevenue: {
+          title: string
+          description: string
+        }
+      }
+      settlement: {
+        title: string
+        description: string
+        frequency: string
+        method: string
+      }
+      calculator: {
+        title: string
+        inputs: {
+          students: string
+          price: string
+          completion: string
+        }
+        results: {
+          monthlyRevenue: string
+          yearlyRevenue: string
+          nftValue: string
+          totalRevenue: string
+        }
+        calculateButton: string
+      }
+    }
+    tripleIncentive: {
+      badge: string
+      title: string
+      subtitle: string
+      incentives: {
+        financial: {
+          title: string
+          description: string
+          features: {
+            leadingShare: {
+              title: string
+              description: string
+            }
+            instantSettlement: {
+              title: string
+              description: string
+            }
+          }
+        }
+        reputation: {
+          title: string
+          description: string
+          features: {
+            createToEarn: {
+              title: string
+              description: string
+            }
+            airdropEligibility: {
+              title: string
+              description: string
+            }
+          }
+        }
+        growth: {
+          title: string
+          description: string
+          features: {
+            skillAgent: {
+              title: string
+              description: string
+            }
+            ipProtection: {
+              title: string
+              description: string
+            }
+          }
+        }
+      }
+    }
+    creatorStudio: {
+      badge: string
+      title: string
+      subtitle: string
+      introTitle: string
+      liveCreationTitle: string
+      features: {
+        aiAssistant: {
+          title: string
+          description: string
+        }
+        contentCreation: {
+          title: string
+          description: string
+        }
+        analytics: {
+          title: string
+          description: string
+        }
+      }
+      tryNowButton: string
+    }
+    faq: {
+      title: string
+      subtitle: string
+      whyNowTitle: string
+      whyNowDescription: string
+      painPoints: {
+        title: string
+        description: string
+        icon: string
+      }[]
+      whyNowReasons: {
+        title: string
+        description: string
+        icon: string
+      }[]
+      stats: {
+        marketSize: {
+          value: string
+          label: string
+        }
+        growth: {
+          value: string
+          label: string
+        }
+        creators: {
+          value: string
+          label: string
+        }
+      }
+      questions: {
+        q1: {
+          question: string
+          answer: string
+        }
+        q2: {
+          question: string
+          answer: string
+        }
+        q3: {
+          question: string
+          answer: string
+        }
+        q4: {
+          question: string
+          answer: string
+        }
+        q5: {
+          question: string
+          answer: string
+        }
+      }
+    }
+  }
   solutions: {
     hero: {
       badge: string
@@ -868,6 +1088,251 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       }
     },
+    creatorHub: {
+      hero: {
+        badge: 'Creator Hub',
+        title: 'AI Smart Teacher',
+        subtitle: 'Create AI-powered courses and earn triple rewards through our innovative creator ecosystem',
+        features: {
+          aiTeacher: {
+            label: 'AI Smart Teacher',
+            description: 'Zero-code AI teaching assistant creation'
+          },
+          nftRights: {
+            label: 'NFT Rights Protection',
+            description: 'Blockchain technology protects intellectual property'
+          },
+          tripleIncentive: {
+            label: 'Triple Incentive System',
+            description: '60% revenue share + SP points + NFT benefits'
+          }
+        },
+        startCreatingButton: 'Start Creating',
+        learnMoreButton: 'Learn More'
+      },
+      successStories: {
+        title: 'Successful Creator Stories',
+        subtitle: 'Join the ranks of successful creators',
+        description: 'Every day, new experts achieve knowledge monetization breakthroughs through AI Smart Teacher. Your success story could be next.',
+        joinButton: 'Join Successful Creators',
+        stories: {
+          story1: {
+            name: 'Alex Kim',
+            title: 'AI Programming Expert',
+            achievement: 'Monthly Revenue',
+            result: '$15,000',
+            period: '6 months',
+            description: 'Created 12 AI programming courses with over 5,000 students enrolled',
+            tags: ['AI Programming', 'Machine Learning', 'Python']
+          },
+          story2: {
+            name: 'Sarah Chen',
+            title: 'Digital Marketing Specialist',
+            achievement: 'Student Count',
+            result: '8,500+',
+            period: '1 year',
+            description: 'Built comprehensive digital marketing curriculum with high completion rates',
+            tags: ['Digital Marketing', 'Social Media', 'Analytics']
+          },
+          story3: {
+            name: 'David Wilson',
+            title: 'Blockchain Developer',
+            achievement: 'Course Rating',
+            result: '4.9/5.0',
+            period: '8 months',
+            description: 'Developed cutting-edge blockchain and DeFi courses with excellent reviews',
+            tags: ['Blockchain', 'DeFi', 'Smart Contracts']
+          }
+        }
+      },
+      revenueExplanation: {
+        title: 'Revenue Explanation',
+        subtitle: 'Revenue Guarantee',
+        revenueTypes: {
+          courseRevenue: {
+            title: 'Course Revenue',
+            description: 'Earn 70% of course sales revenue with transparent settlement'
+          },
+          nftRevenue: {
+            title: 'NFT Revenue',
+            description: 'Receive NFT rights protection and secondary market royalties'
+          },
+          incentiveRevenue: {
+            title: 'Incentive Revenue',
+            description: 'Get additional rewards based on course quality and student engagement'
+          }
+        },
+        settlement: {
+          title: 'Settlement Details',
+          description: 'Transparent and timely revenue settlement',
+          frequency: 'Monthly Settlement',
+          method: 'Cryptocurrency/Bank Transfer'
+        },
+        calculator: {
+          title: 'Revenue Calculator',
+          inputs: {
+            students: 'Number of Students',
+            price: 'Course Price ($)',
+            completion: 'Completion Rate (%)'
+          },
+          results: {
+            monthlyRevenue: 'Monthly Revenue',
+            yearlyRevenue: 'Annual Revenue',
+            nftValue: 'NFT Value',
+            totalRevenue: 'Total Revenue'
+          },
+          calculateButton: 'Calculate Revenue'
+        }
+      },
+      tripleIncentive: {
+        badge: '💰 Triple Incentive System',
+        title: 'Triple Incentive System',
+        subtitle: 'Comprehensive reward system for creators',
+        incentives: {
+          financial: {
+            title: 'Financial Incentives',
+            description: 'Direct revenue sharing and performance bonuses',
+            features: {
+              leadingShare: {
+                title: 'Leading Revenue Share',
+                description: 'Industry-leading 60% revenue share ratio'
+              },
+              instantSettlement: {
+                title: 'Instant Settlement',
+                description: 'Smart contract auto-settlement, real-time earnings'
+              }
+            }
+          },
+          reputation: {
+            title: 'Reputation Building',
+            description: 'Build your brand and establish industry authority',
+            features: {
+              createToEarn: {
+                title: 'Create-to-Earn',
+                description: 'Create to mine, continuously earn SP points'
+              },
+              airdropEligibility: {
+                title: 'Airdrop Eligibility',
+                description: 'Priority access to platform token airdrops'
+              }
+            }
+          },
+          growth: {
+            title: 'Growth Support',
+            description: 'Platform promotion and marketing support for your courses',
+            features: {
+              skillAgent: {
+                title: 'Skill Agent',
+                description: 'AI skill NFT, permanent asset ownership'
+              },
+              ipProtection: {
+                title: 'IP Protection',
+                description: 'Blockchain technology protects intellectual property'
+              }
+            }
+          }
+        }
+      },
+      creatorStudio: {
+        badge: '⭐ AI Smart Teacher Experience Portal',
+        title: 'AI Smart Teacher Experience Portal',
+        subtitle: 'Zero-threshold introduction',
+        introTitle: 'Zero-threshold Introduction',
+        liveCreationTitle: 'Live Creation Portal',
+        features: {
+          aiAssistant: {
+            title: 'AI Course Assistant',
+            description: 'AI-powered course creation and content optimization'
+          },
+          contentCreation: {
+            title: 'Content Creation Tools',
+            description: 'Professional tools for creating engaging course materials'
+          },
+          analytics: {
+            title: 'Analytics Dashboard',
+            description: 'Track student progress and course performance metrics'
+          }
+        },
+        tryNowButton: 'Try Now'
+      },
+      faq: {
+        title: 'Creator FAQ',
+        subtitle: 'Why choose now?',
+        whyNowTitle: 'Why Choose Now?',
+        whyNowDescription: 'The creator economy is booming and this is the perfect time to start your journey.',
+        painPoints: [
+          {
+            title: 'High Content Creation Barriers',
+            description: 'Traditional content creation requires extensive technical skills and expensive equipment',
+            icon: '🚧'
+          },
+          {
+            title: 'Limited Monetization Options',
+            description: 'Creators struggle to find sustainable revenue streams beyond basic course sales',
+            icon: '💸'
+          },
+          {
+            title: 'Lack of IP Protection',
+            description: 'Content creators face challenges in protecting their intellectual property rights',
+            icon: '🔒'
+          }
+        ],
+        whyNowReasons: [
+          {
+            title: 'AI-Powered Creation Tools',
+            description: 'Advanced AI assistants dramatically reduce content creation time and complexity',
+            icon: '🤖'
+          },
+          {
+            title: 'Growing Market Demand',
+            description: 'Online education market is experiencing unprecedented growth with increasing demand',
+            icon: '📈'
+          },
+          {
+            title: 'Web3 Innovation',
+            description: 'Blockchain technology enables new monetization models and IP protection mechanisms',
+            icon: '⛓️'
+          }
+        ],
+        stats: {
+          marketSize: {
+            value: '$104B',
+            label: 'Creator Economy Market Size'
+          },
+          growth: {
+            value: '165%',
+            label: 'Annual Growth Rate'
+          },
+          creators: {
+            value: '2,500+',
+            label: 'Active Creators'
+          }
+        },
+        questions: {
+          q1: {
+            question: 'How do I get started as a creator?',
+            answer: 'Sign up, complete your profile, and start creating your first course with our AI assistant guidance.'
+          },
+          q2: {
+            question: 'What are the revenue sharing terms?',
+            answer: 'Creators receive 70% of course revenue, plus additional incentives based on performance and quality metrics.'
+          },
+          q3: {
+            question: 'How does NFT rights protection work?',
+            answer: 'Your course content is protected by NFT technology, ensuring ownership rights and enabling royalty collection.'
+          },
+          q4: {
+            question: 'What support do creators receive?',
+            answer: 'Access to AI tools, marketing support, analytics, and dedicated creator success team assistance.'
+          },
+          q5: {
+            question: 'How long does it take to see results?',
+            answer: 'Most creators see their first earnings within 30 days of publishing their first course.'
+          }
+        }
+      }
+    },
+
     newsletter: {
       title: 'Newsletter Subscription',
       subtitle: 'Subscribe to our newsletter for the latest updates',
@@ -1424,6 +1889,250 @@ export const translations: Record<Language, TranslationStructure> = {
             difficulty: '专家',
             sbtType: 'DeFi协议开发者',
             category: '金融'
+          }
+        }
+      }
+    },
+    creatorHub: {
+      hero: {
+        badge: '创作者中心',
+        title: '成为AI时代的技能创作者',
+        subtitle: '利用AI技术创建高质量技能课程，获得多重收益激励',
+        features: {
+          aiTeacher: {
+            label: 'AI智课师辅助',
+            description: '零代码创建智能教学助手'
+          },
+          nftRights: {
+            label: 'NFT版权保护',
+            description: '区块链技术保护知识产权'
+          },
+          tripleIncentive: {
+            label: '三重激励机制',
+            description: '60%分成+SP积分+NFT权益'
+          }
+        },
+        startCreatingButton: '开始创作',
+        learnMoreButton: '了解更多'
+      },
+      successStories: {
+        title: '创作者成功案例',
+        subtitle: '看看其他创作者如何通过我们的平台实现成功',
+        description: '每天都有新的专家通过AI智课师实现知识变现突破，下一个成功故事就是你',
+        joinButton: '加入我们',
+        stories: {
+          story1: {
+            name: '李明',
+            title: 'AI算法工程师',
+            achievement: '月收入增长',
+            result: '300%',
+            period: '6个月内',
+            description: '通过创建深度学习课程，李明在6个月内实现了月收入300%的增长，同时建立了自己的技术品牌。',
+            tags: ['深度学习', 'Python', 'TensorFlow']
+          },
+          story2: {
+            name: '王小雅',
+            title: 'UI/UX设计师',
+            achievement: '学员数量',
+            result: '10,000+',
+            period: '1年内',
+            description: '王小雅的设计思维课程吸引了超过10,000名学员，她的NFT设计作品也获得了可观的版权收益。',
+            tags: ['UI设计', 'Figma', '设计思维']
+          },
+          story3: {
+            name: '张博士',
+            title: '区块链专家',
+            achievement: '被动收入',
+            result: '50,000元/月',
+            period: '持续增长',
+            description: '张博士的智能合约开发课程为他带来了稳定的被动收入，同时通过激励机制获得额外奖励。',
+            tags: ['智能合约', 'Solidity', 'Web3']
+          }
+        }
+      },
+      revenueExplanation: {
+        title: '收益模式详解',
+        subtitle: '了解创作者如何通过多种方式获得收益',
+        revenueTypes: {
+          courseRevenue: {
+            title: '课程销售收益',
+            description: '学员购买课程时获得直接收益，平台抽成低至15%'
+          },
+          nftRevenue: {
+            title: 'NFT版权收益',
+            description: '课程内容自动生成NFT，享受二次交易版权收益'
+          },
+          incentiveRevenue: {
+            title: '激励奖励收益',
+            description: '基于课程质量和学员反馈获得平台激励奖励'
+          }
+        },
+        settlement: {
+          title: '结算方式',
+          description: '收益每月结算一次，支持多种提现方式',
+          frequency: '月度结算',
+          method: '智能合约自动结算'
+        },
+        calculator: {
+          title: '收益计算器',
+          inputs: {
+            students: '预期学员数',
+            price: '课程定价（元）',
+            completion: '完成率（%）'
+          },
+          results: {
+            monthlyRevenue: '月收入',
+            yearlyRevenue: '年收入',
+            nftValue: 'NFT价值',
+            totalRevenue: '总收益'
+          },
+          calculateButton: '计算收益'
+        }
+      },
+      tripleIncentive: {
+        badge: '💰 三重激励体系',
+        title: '三重激励机制',
+        subtitle: '多维度激励体系，最大化创作者收益',
+        incentives: {
+          financial: {
+            title: '经济激励',
+            description: '课程销售分成、NFT版权收益、平台奖励金',
+            features: {
+              leadingShare: {
+                title: '领先分成比例',
+                description: '行业最高的60%收入分成比例'
+              },
+              instantSettlement: {
+                title: '即时到账',
+                description: '智能合约自动结算，实时收益'
+              }
+            }
+          },
+          reputation: {
+            title: '声誉激励',
+            description: '专家认证、排行榜展示、社区影响力提升',
+            features: {
+              createToEarn: {
+                title: 'Create-to-Earn',
+                description: '创作即挖矿，持续获得SP积分'
+              },
+              airdropEligibility: {
+                title: '空投凭证',
+                description: '优先获得平台代币空投资格'
+              }
+            }
+          },
+          growth: {
+            title: '成长激励',
+            description: 'AI工具升级、优先推荐、专属培训资源',
+            features: {
+              skillAgent: {
+                title: 'Skill Agent',
+                description: 'AI技能体NFT，永久资产确权'
+              },
+              ipProtection: {
+                title: 'IP确权',
+                description: '区块链技术保护知识产权'
+              }
+            }
+          }
+        }
+      },
+      creatorStudio: {
+        badge: '⭐ AI智课师体验窗口',
+        title: '创作者工作室',
+        subtitle: '一站式课程创作平台',
+        introTitle: '零门槛介绍说明',
+        liveCreationTitle: '实时创作窗口',
+        features: {
+          aiAssistant: {
+            title: 'AI智能助手',
+            description: 'AI辅助的课程内容生成和优化工具'
+          },
+          contentCreation: {
+            title: '内容创作',
+            description: '专业的视频录制和编辑工具'
+          },
+          analytics: {
+            title: '数据分析',
+            description: '详细的学员行为和收益分析'
+          }
+        },
+        tryNowButton: '立即体验'
+      },
+      faq: {
+        title: '常见问题',
+        subtitle: '关于创作者中心的常见问题解答',
+        whyNowTitle: '为什么现在是成为创作者的最佳时机？',
+        whyNowDescription: 'AI技术的发展降低了内容创作门槛，同时市场对高质量技能培训的需求急剧增长。',
+        painPoints: [
+          {
+            title: '内容创作门槛高',
+            description: '传统内容创作需要大量技术技能和昂贵设备',
+            icon: '🚧'
+          },
+          {
+            title: '变现渠道有限',
+            description: '创作者难以找到除基础课程销售外的可持续收入来源',
+            icon: '💸'
+          },
+          {
+            title: '知识产权保护难',
+            description: '内容创作者面临知识产权保护的挑战',
+            icon: '🔒'
+          }
+        ],
+        whyNowReasons: [
+          {
+            title: 'AI赋能创作工具',
+            description: '先进的AI助手大幅降低内容创作时间和复杂度',
+            icon: '🤖'
+          },
+          {
+            title: '市场需求增长',
+            description: '在线教育市场正经历前所未有的增长，需求不断增加',
+            icon: '📈'
+          },
+          {
+            title: 'Web3技术创新',
+            description: '区块链技术实现新的变现模式和知识产权保护机制',
+            icon: '⛓️'
+          }
+        ],
+        stats: {
+          marketSize: {
+            value: '¥5000亿',
+            label: '在线教育市场规模'
+          },
+          growth: {
+            value: '25%',
+            label: '年增长率'
+          },
+          creators: {
+            value: '100万+',
+            label: '活跃创作者需求'
+          }
+        },
+        questions: {
+          q1: {
+            question: '我需要什么技能才能成为创作者？',
+            answer: '只要你在某个领域有专业知识或经验，就可以成为创作者。我们的AI工具会帮助你优化内容创作过程。'
+          },
+          q2: {
+            question: '创作课程需要多长时间？',
+            answer: '借助AI辅助工具，一门基础课程通常可以在1-2周内完成创作，包括内容编写、视频录制和互动元素设计。'
+          },
+          q3: {
+            question: '如何保护我的知识产权？',
+            answer: '我们使用NFT技术为每门课程生成唯一的数字版权证书，确保你的知识产权得到区块链级别的保护。'
+          },
+          q4: {
+            question: '收益如何分配？',
+            answer: '创作者可获得课程销售收入的85%，同时享受NFT二次交易收益和平台激励奖励。'
+          },
+          q5: {
+            question: '平台提供哪些支持？',
+            answer: '我们提供AI创作工具、营销推广支持、技术培训、社区交流和专属客服等全方位支持。'
           }
         }
       }

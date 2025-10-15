@@ -12,50 +12,41 @@ import {
   ArrowRight,
   Star
 } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function SuccessStories() {
+  const { t } = useLanguage()
+
   const stories = [
     {
-      name: "Jenny",
-      background: "8年投行",
-      achievement: "金融AI NFT",
-      result: "$45,000被动收入",
-      icon: Building,
+      icon: "👨‍💼",
+      background: "bg-gradient-to-br from-blue-50 to-indigo-100",
+      ...t.creatorHub.successStories.stories.story1,
       stats: {
-        revenue: "$45,000",
-        period: "月被动收入",
-        growth: "+320%"
-      },
-      description: "将8年投行经验转化为AI智课师，创建金融分析NFT课程",
-      tags: ["金融", "AI NFT", "被动收入"]
+        revenue: "¥50万",
+        period: "6个月",
+        growth: "+300%"
+      }
     },
     {
-      name: "Kris",
-      background: "Python课程",
-      achievement: "150+企业客户",
-      result: "月收益增长800%",
-      icon: Users,
+      icon: "👩‍🎨",
+      background: "bg-gradient-to-br from-purple-50 to-pink-100",
+      ...t.creatorHub.successStories.stories.story2,
       stats: {
-        revenue: "800%",
-        period: "月收益增长",
-        growth: "150+"
-      },
-      description: "Python编程课程吸引150+企业客户，实现收益爆发式增长",
-      tags: ["编程", "企业培训", "技能变现"]
+        revenue: "¥80万",
+        period: "8个月",
+        growth: "+450%"
+      }
     },
     {
-      name: "Dr.Li",
-      background: "医疗知识",
-      achievement: "Web3资产",
-      result: "IP保护完成",
-      icon: Shield,
+      icon: "👨‍💻",
+      background: "bg-gradient-to-br from-green-50 to-emerald-100",
+      ...t.creatorHub.successStories.stories.story3,
       stats: {
-        revenue: "100%",
-        period: "IP保护率",
-        growth: "永久"
-      },
-      description: "医疗专业知识转化为Web3资产，实现知识产权永久保护",
-      tags: ["医疗", "Web3", "IP保护"]
+        revenue: "¥120万",
+        period: "1年",
+        growth: "+600%"
+      }
     }
   ]
 
@@ -94,15 +85,15 @@ export default function SuccessStories() {
           className="text-center mb-16"
         >
           <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-            🏆 成功创作者案例
+            {t.creatorHub.successStories.title}
           </Badge>
           
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            真实创作者的成功故事
+            {t.creatorHub.successStories.title}
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            看看其他专家如何通过AI智课师实现知识变现突破
+            {t.creatorHub.successStories.subtitle}
           </p>
         </motion.div>
 
@@ -124,8 +115,8 @@ export default function SuccessStories() {
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
                     {/* 创作者信息 */}
                     <div className="flex items-center space-x-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                        <story.icon className="h-6 w-6 text-primary" />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-2xl">
+                        {story.icon}
                       </div>
                       <div>
                         <h3 className="font-semibold text-lg">{story.name}</h3>
@@ -190,16 +181,16 @@ export default function SuccessStories() {
         >
           <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
             <CardContent className="p-8">
-              <div className="flex items-center justify-center space-x-2 mb-4">
-                <Star className="w-5 h-5 text-primary" />
-                <h3 className="text-xl font-semibold">加入成功创作者行列</h3>
-                <Star className="w-5 h-5 text-primary" />
-              </div>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                 <Star className="w-5 h-5 text-primary" />
+                 <h3 className="text-xl font-semibold">{t.creatorHub.successStories.subtitle}</h3>
+                 <Star className="w-5 h-5 text-primary" />
+               </div>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                每天都有新的专家通过AI智课师实现知识变现突破，下一个成功故事就是你
-              </p>
+                 {t.creatorHub.successStories.description}
+               </p>
               <Button size="lg" className="group">
-                查看更多成功案例
+                {t.creatorHub.successStories.joinButton}
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </CardContent>

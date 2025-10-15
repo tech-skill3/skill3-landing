@@ -11,28 +11,22 @@ import {
   BarChart3,
   Shield,
 } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function RevenueExplanation() {
+  const { t } = useLanguage()
+
   const revenueModels = [
     {
-      type: "首次销售分成",
-      creatorShare: "70%",
-      platformShare: "30%",
-      description: "用户首次购买你的技能代理时",
+      ...t.creatorHub.revenueExplanation.revenueTypes.courseRevenue,
       icon: <DollarSign className="w-5 h-5" />
     },
     {
-      type: "版税分成",
-      creatorShare: "50%",
-      platformShare: "50%",
-      description: "用户续费或订阅时的分成",
+      ...t.creatorHub.revenueExplanation.revenueTypes.nftRevenue,
       icon: <TrendingUp className="w-5 h-5" />
     },
     {
-      type: "订阅收益",
-      creatorShare: "60%",
-      platformShare: "40%",
-      description: "企业版和高级功能订阅",
+      ...t.creatorHub.revenueExplanation.revenueTypes.incentiveRevenue,
       icon: <BarChart3 className="w-5 h-5" />
     }
   ]
@@ -40,22 +34,22 @@ export default function RevenueExplanation() {
   const benefits = [
     {
       icon: <Calendar className="w-5 h-5" />,
-      title: "每月15日结算",
-      description: "固定时间自动结算，确保资金及时到账"
+      title: t.creatorHub.revenueExplanation.settlement.frequency,
+      description: t.creatorHub.revenueExplanation.settlement.description
     },
     {
       icon: <CreditCard className="w-5 h-5" />,
-      title: "多种结算方式",
+      title: t.creatorHub.revenueExplanation.settlement.method,
       description: "支持加密货币、法币等多种结算方式"
     },
     {
       icon: <Shield className="w-5 h-5" />,
-      title: "收益有保障",
+      title: "收益保障",
       description: "平台承诺收益透明，数据可实时查看"
     },
     {
       icon: <BarChart3 className="w-5 h-5" />,
-      title: "数据完全透明",
+      title: "数据透明",
       description: "实时查看销售数据，收益趋势分析"
     }
   ]
@@ -73,14 +67,13 @@ export default function RevenueExplanation() {
         >
           <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium bg-green-100 text-green-700 border-green-200">
             <DollarSign className="w-4 h-4 mr-2" />
-            收益说明
+            💰 收益说明
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            公平透明的收益机制
+            {t.creatorHub.revenueExplanation.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            我们致力于为创作者提供最公平的收益分配机制。
-            <span className="text-green-600 font-semibold">你的创作价值，得到应有回报</span>
+            {t.creatorHub.revenueExplanation.subtitle}
           </p>
         </motion.div>
 
@@ -99,15 +92,15 @@ export default function RevenueExplanation() {
                   <div className="w-14 h-14 rounded-xl bg-green-100 dark:bg-green-900/20 text-green-600 dark:text-green-400 flex items-center justify-center mx-auto mb-6">
                     {model.icon}
                   </div>
-                  <h3 className="text-lg font-semibold mb-3">{model.type}</h3>
+                  <h3 className="text-lg font-semibold mb-3">{model.title}</h3>
                   <div className="flex justify-center items-center gap-4 mb-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-green-600">{model.creatorShare}</div>
+                      <div className="text-2xl font-bold text-green-600">70%</div>
                       <div className="text-sm text-muted-foreground">创作者</div>
                     </div>
                     <div className="text-gray-300 dark:text-gray-600">|</div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-gray-600">{model.platformShare}</div>
+                      <div className="text-2xl font-bold text-gray-600">30%</div>
                       <div className="text-sm text-muted-foreground">平台</div>
                     </div>
                   </div>
@@ -162,7 +155,7 @@ export default function RevenueExplanation() {
           className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 rounded-3xl p-8 md:p-12"
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">收益计算器</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">{t.creatorHub.revenueExplanation.calculator.title}</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               简单估算你的潜在收益（示例数据）
             </p>
@@ -171,17 +164,17 @@ export default function RevenueExplanation() {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center p-6 bg-white/50 dark:bg-black/20 rounded-xl">
               <div className="text-3xl font-bold text-green-600 mb-2">¥2,100</div>
-              <div className="text-sm text-muted-foreground">月均收益</div>
+              <div className="text-sm text-muted-foreground">{t.creatorHub.revenueExplanation.calculator.results.monthlyRevenue}</div>
               <div className="text-xs text-muted-foreground mt-1">基于每月10个销售</div>
             </div>
             <div className="text-center p-6 bg-white/50 dark:bg-black/20 rounded-xl">
               <div className="text-3xl font-bold text-blue-600 mb-2">¥25,200</div>
-              <div className="text-sm text-muted-foreground">年化收益</div>
+              <div className="text-sm text-muted-foreground">{t.creatorHub.revenueExplanation.calculator.results.yearlyRevenue}</div>
               <div className="text-xs text-muted-foreground mt-1">基于持续销售</div>
             </div>
             <div className="text-center p-6 bg-white/50 dark:bg-black/20 rounded-xl">
               <div className="text-3xl font-bold text-purple-600 mb-2">¥50,000+</div>
-              <div className="text-sm text-muted-foreground">潜在收益</div>
+              <div className="text-sm text-muted-foreground">{t.creatorHub.revenueExplanation.calculator.results.totalRevenue}</div>
               <div className="text-xs text-muted-foreground mt-1">优秀作品预期</div>
             </div>
           </div>

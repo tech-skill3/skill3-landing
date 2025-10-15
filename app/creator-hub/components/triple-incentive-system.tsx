@@ -13,60 +13,60 @@ import {
   Gift,
   Crown,
 } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function TripleIncentiveSystem() {
+  const { t } = useLanguage()
+
   const incentives = [
     {
       id: 1,
-      title: "60%收入分成",
-      subtitle: "Revenue Sharing",
+      ...t.creatorHub.tripleIncentive.incentives.financial,
       icon: DollarSign,
       features: [
         {
           icon: Percent,
-          title: "领先分成比例",
-          description: "行业最高的60%收入分成比例"
+          title: t.creatorHub.tripleIncentive.incentives.financial.features.leadingShare.title,
+          description: t.creatorHub.tripleIncentive.incentives.financial.features.leadingShare.description
         },
         {
           icon: Zap,
-          title: "即时到账",
-          description: "智能合约自动结算，实时收益"
+          title: t.creatorHub.tripleIncentive.incentives.financial.features.instantSettlement.title,
+          description: t.creatorHub.tripleIncentive.incentives.financial.features.instantSettlement.description
         }
       ]
     },
     {
       id: 2,
-      title: "SP积分奖励",
-      subtitle: "Skill Points Rewards",
+      ...t.creatorHub.tripleIncentive.incentives.reputation,
       icon: Coins,
       features: [
         {
           icon: TrendingUp,
-          title: "Create-to-Earn",
-          description: "创作即挖矿，持续获得SP积分"
+          title: t.creatorHub.tripleIncentive.incentives.reputation.features.createToEarn.title,
+          description: t.creatorHub.tripleIncentive.incentives.reputation.features.createToEarn.description
         },
         {
           icon: Gift,
-          title: "空投凭证",
-          description: "优先获得平台代币空投资格"
+          title: t.creatorHub.tripleIncentive.incentives.reputation.features.airdropEligibility.title,
+          description: t.creatorHub.tripleIncentive.incentives.reputation.features.airdropEligibility.description
         }
       ]
     },
     {
       id: 3,
-      title: "NFT资产权益",
-      subtitle: "NFT Asset Rights",
+      ...t.creatorHub.tripleIncentive.incentives.growth,
       icon: Shield,
       features: [
         {
           icon: Crown,
-          title: "Skill Agent",
-          description: "AI技能体NFT，永久资产确权"
+          title: t.creatorHub.tripleIncentive.incentives.growth.features.skillAgent.title,
+          description: t.creatorHub.tripleIncentive.incentives.growth.features.skillAgent.description
         },
         {
           icon: Award,
-          title: "IP确权",
-          description: "区块链技术保护知识产权"
+          title: t.creatorHub.tripleIncentive.incentives.growth.features.ipProtection.title,
+          description: t.creatorHub.tripleIncentive.incentives.growth.features.ipProtection.description
         }
       ]
     }
@@ -106,15 +106,15 @@ export default function TripleIncentiveSystem() {
           className="text-center mb-16"
         >
           <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-            💰 三重激励体系
+            {t.creatorHub.tripleIncentive.badge}
           </Badge>
           
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            多元激励机制
+            {t.creatorHub.tripleIncentive.title}
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            创新的三重激励体系，让创作者获得全方位的价值回报
+            {t.creatorHub.tripleIncentive.subtitle}
           </p>
         </motion.div>
 
@@ -142,7 +142,7 @@ export default function TripleIncentiveSystem() {
                   {incentive.title}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-6">
-                  {incentive.subtitle}
+                  {incentive.description}
                 </p>
                 
                 {/* Features */}
