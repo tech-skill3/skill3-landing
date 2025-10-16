@@ -914,6 +914,8 @@ interface TranslationStructure {
       sbtTitle: string
       sbtSubtitle: string
       sbtStatus: {
+          skillVerificationStatus: string
+          onChainRecord: string
           verified: string
           onChain: string
           qsvScore: string
@@ -2198,7 +2200,9 @@ export const translations: Record<Language, TranslationStructure> = {
           verified: 'Verified',
           onChain: 'Immutable',
           qsvScore: 'A-Grade',
-          qsvScoreLabel: 'QSV Score'
+          qsvScoreLabel: 'QSV Score',
+          skillVerificationStatus: 'Skill Verification Status',
+          onChainRecord: 'On-Chain Record'
         },
         benefits: {
           accuracy: {
@@ -3408,7 +3412,9 @@ export const translations: Record<Language, TranslationStructure> = {
           verified: '已验证',
           onChain: '不可篡改',
           qsvScore: 'A级',
-          qsvScoreLabel: 'QSV评分'
+          qsvScoreLabel: 'QSV评分',
+          skillVerificationStatus: '技能验证状态',
+          onChainRecord: '链上记录'
         },
         benefits: {
           accuracy: {

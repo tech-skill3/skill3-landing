@@ -126,13 +126,13 @@ export default function TalentVerification() {
                     
                     <div className="space-y-4">
                       <div className="flex items-center justify-between p-3 bg-background/70 rounded-lg">
-                        <span className="text-sm font-medium">技能验证状态</span>
+                        <span className="text-sm font-medium">{t.solutions.talentVerification.sbtStatus.skillVerificationStatus}</span>
                         <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">
                           {t.solutions.talentVerification.sbtStatus.verified}
                         </Badge>
                       </div>
                       <div className="flex items-center justify-between p-3 bg-background/70 rounded-lg">
-                        <span className="text-sm font-medium">链上记录</span>
+                        <span className="text-sm font-medium">{t.solutions.talentVerification.sbtStatus.onChainRecord}</span>
                         <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
                           {t.solutions.talentVerification.sbtStatus.onChain}
                         </Badge>
