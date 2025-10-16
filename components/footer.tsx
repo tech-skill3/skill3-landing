@@ -1,7 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export default function Footer() {
+  const { t } = useLanguage()
+  
   return (
     <footer className="w-full border-t bg-background/95 backdrop-blur-sm">
       <div className="container flex flex-col gap-8 px-4 py-10 md:px-6 lg:py-16">
@@ -19,7 +22,7 @@ export default function Footer() {
                </div>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Skill-as-Asset.<br></br>Building a Trust Infrastructure for Human Capital in the AI ​​Era.
+              {t.footer.description}
             </p>
             <div className="flex gap-4">
               {/* X (Twitter) */}
@@ -111,86 +114,86 @@ export default function Footer() {
             </div>
           </div>
           <div className="space-y-4">
-            <h4 className="text-sm font-bold">Products</h4>
+            <h4 className="text-sm font-bold">{t.footer.products.title}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/ai-exhibition" className="text-muted-foreground hover:text-foreground transition-colors">
-                  AI Exhibition Platform
-                </Link>
-              </li>
-              <li>
                 <Link href="/skill-mall" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Skill Mall
+                  {t.footer.products.skillMall}
                 </Link>
               </li>
               <li>
-                <Link href="/creator-studio" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Creator Studio
+                <Link href="/creator-hub" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {t.footer.products.creatorStudio}
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-exhibition" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {t.footer.products.aiExhibitionPlatform}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="text-sm font-bold">Solutions</h4>
+            <h4 className="text-sm font-bold">{t.footer.solutions.title}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/results-as-service" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Results as a Service
+                <Link href="/solutions" className="text-muted-foreground hover:text-foreground transition-colors">
+                  {t.footer.solutions.resultsAsService}
                 </Link>
               </li>
               <li>
                 <Link href="/talent-recruitment" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Talent Recruitment
+                  {t.footer.solutions.talentRecruitment}
                 </Link>
               </li>
               <li>
                 <Link href="/industry-cases" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Industry Cases
+                  {t.footer.solutions.industryCases}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="text-sm font-bold">Company</h4>
+            <h4 className="text-sm font-bold">{t.footer.company.title}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                  About us
+                  {t.footer.company.aboutUs}
                 </Link>
               </li>
               <li>
                 <Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Join us
+                  {t.footer.company.joinUs}
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contact us
+                  {t.footer.company.contactUs}
                 </Link>
               </li>
               <li>
                 <Link href="/news" className="text-muted-foreground hover:text-foreground transition-colors">
-                  News
+                  {t.footer.company.news}
                 </Link>
               </li>
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="text-sm font-bold">Technology</h4>
+            <h4 className="text-sm font-bold">{t.footer.resources.title}</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/whitepaper" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Whitepaper
+                  {t.footer.resources.whitepaper}
                 </Link>
               </li>
               <li>
                 <Link href="/docs" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Docs
+                  {t.footer.resources.docs}
                 </Link>
               </li>
               <li>
                 <Link href="/oracle-status" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Oracle Network Status
+                  {t.footer.resources.oracleStatus}
                 </Link>
               </li>
             </ul>
@@ -202,13 +205,13 @@ export default function Footer() {
           </p>
           <div className="flex gap-4">
             <Link href="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Privacy Policy
+              {t.footer.legal.privacyPolicy}
             </Link>
             <Link href="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Terms of Service
+              {t.footer.legal.termsOfService}
             </Link>
             <Link href="/cookies" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Cookie Policy
+              {t.footer.legal.cookiePolicy}
             </Link>
           </div>
         </div>

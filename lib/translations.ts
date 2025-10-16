@@ -1033,6 +1033,70 @@ interface TranslationStructure {
       }
     }
   }
+  footer: {
+    description: string
+    navigation: {
+      products: string
+      solutions: string
+      skillMall: string
+      creatorHub: string
+      pricing: string
+      technology: string
+      whitepapers: string
+      docs: string
+      blog: string
+      aboutUs: string
+    }
+    products: {
+      title: string
+      aiExhibitionPlatform: string
+      skillMall: string
+      creatorStudio: string
+    }
+    solutions: {
+      title: string
+      resultsAsService: string
+      talentRecruitment: string
+      industryCases: string
+    }
+    company: {
+      title: string
+      aboutUs: string
+      joinUs: string
+      contactUs: string
+      news: string
+    }
+    technology: {
+      title: string
+      whitepaper: string
+      docs: string
+      oracleStatus: string
+    }
+    legal: {
+      title: string
+      privacyPolicy: string
+      termsOfService: string
+      cookiePolicy: string
+    }
+    community: {
+      title: string
+      discord: string
+      twitter: string
+      github: string
+      linkedin: string
+    }
+    resources: {
+      title: string
+      documentation: string
+      tutorials: string
+      apiReference: string
+      support: string
+      whitepaper: string
+      docs: string
+      oracleStatus: string
+    }
+    bottomText: string
+  }
 }
 
 export const translations: Record<Language, TranslationStructure> = {
@@ -2181,6 +2245,70 @@ export const translations: Record<Language, TranslationStructure> = {
         calculateButton: 'Calculate ROI',
         getCustomizedPlan: 'Get Customized ROI Plan'
       }
+    },
+    footer: {
+      description: 'Skill³ is an AI-driven learning platform that transforms skill development through immersive AI testing and skill unit monetization.',
+      navigation: {
+        products: 'Products',
+        solutions: 'Solutions',
+        skillMall: 'Skill Mall',
+        creatorHub: 'Creator Hub',
+        pricing: 'Pricing',
+        technology: 'Technology',
+        whitepapers: 'Whitepapers',
+        docs: 'Docs',
+        blog: 'Blog',
+        aboutUs: 'About Us'
+      },
+      products: {
+        title: 'Products',
+        aiExhibitionPlatform: 'AI Exhibition Platform',
+        skillMall: 'Skill Mall',
+        creatorStudio: 'Creator Studio'
+      },
+      solutions: {
+        title: 'Solutions',
+        resultsAsService: 'Results as a Service',
+        talentRecruitment: 'Talent Recruitment',
+        industryCases: 'Industry Cases'
+      },
+      company: {
+        title: 'Company',
+        aboutUs: 'About Us',
+        joinUs: 'Join Us',
+        contactUs: 'Contact Us',
+        news: 'News'
+      },
+      technology: {
+        title: 'Technology',
+        whitepaper: 'Whitepaper',
+        docs: 'Docs',
+        oracleStatus: 'Oracle Status'
+      },
+      legal: {
+        title: 'Legal',
+        privacyPolicy: 'Privacy Policy',
+        termsOfService: 'Terms of Service',
+        cookiePolicy: 'Cookie Policy'
+      },
+      community: {
+        title: 'Community',
+        discord: 'Discord',
+        twitter: 'Twitter',
+        github: 'GitHub',
+        linkedin: 'LinkedIn'
+      },
+      resources: {
+        title: 'Resources',
+        documentation: 'Documentation',
+        tutorials: 'Tutorials',
+        apiReference: 'API Reference',
+        support: 'Support',
+        whitepaper: 'Whitepaper',
+        docs: 'Docs',
+        oracleStatus: 'Oracle Status'
+      },
+      bottomText: '© 2024 Skill³. All rights reserved.'
     }
   },
   zh: {
@@ -3327,6 +3455,70 @@ export const translations: Record<Language, TranslationStructure> = {
         calculateButton: '计算ROI',
         getCustomizedPlan: '获取定制化 ROI 方案'
       }
+    },
+    footer: {
+      description: '通过AI和区块链技术，创造一个透明、公平、高效的技能生态系统，连接学习者、创作者和企业。',
+      navigation: {
+        products: '产品',
+        solutions: '解决方案',
+        skillMall: '技能商城',
+        creatorHub: '创作者中心',
+        pricing: '定价',
+        technology: '技术',
+        whitepapers: '白皮书',
+        docs: '文档',
+        blog: '博客',
+        aboutUs: '关于我们'
+      },
+      products: {
+        title: '产品',
+        aiExhibitionPlatform: 'AI展示平台',
+        skillMall: '技能商城',
+        creatorStudio: '创作者工作室'
+      },
+      solutions: {
+        title: '解决方案',
+        resultsAsService: '成果即服务',
+        talentRecruitment: '人才招聘',
+        industryCases: '行业案例'
+      },
+      company: {
+        title: '公司',
+        aboutUs: '关于我们',
+        joinUs: '加入我们',
+        contactUs: '联系我们',
+        news: '新闻'
+      },
+      technology: {
+        title: '技术',
+        whitepaper: '白皮书',
+        docs: '文档',
+        oracleStatus: '预言机状态'
+      },
+      legal: {
+        title: '法律',
+        privacyPolicy: '隐私政策',
+        termsOfService: '服务条款',
+        cookiePolicy: 'Cookie政策'
+      },
+      community: {
+        title: '社区',
+        discord: 'Discord',
+        twitter: 'Twitter',
+        github: 'GitHub',
+        linkedin: 'LinkedIn'
+      },
+      resources: {
+        title: '资源',
+        documentation: '文档',
+        tutorials: '教程',
+        apiReference: 'API参考',
+        support: '支持',
+        whitepaper: '白皮书',
+        docs: '文档',
+        oracleStatus: '预言机状态'
+      },
+      bottomText: '© 2024 Skill3. 保留所有权利。'
     }
   }
 }
