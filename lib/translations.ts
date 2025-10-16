@@ -1080,10 +1080,10 @@ interface TranslationStructure {
     }
     community: {
       title: string
-      discord: string
-      twitter: string
-      github: string
+      x: string
       linkedin: string
+      medium: string
+      telegram: string
     }
     resources: {
       title: string
@@ -2293,10 +2293,10 @@ export const translations: Record<Language, TranslationStructure> = {
       },
       community: {
         title: 'Community',
-        discord: 'Discord',
-        twitter: 'Twitter',
-        github: 'GitHub',
-        linkedin: 'LinkedIn'
+        x: 'X',
+        medium: 'Medium',
+        linkedin: 'LinkedIn',
+        telegram: 'Telegram'
       },
       resources: {
         title: 'Resources',
@@ -3503,10 +3503,10 @@ export const translations: Record<Language, TranslationStructure> = {
       },
       community: {
         title: '社区',
-        discord: 'Discord',
-        twitter: 'Twitter',
-        github: 'GitHub',
-        linkedin: 'LinkedIn'
+        x: 'X',
+        linkedin: 'LinkedIn',
+        medium: 'Medium',
+        telegram: 'Telegram'
       },
       resources: {
         title: '资源',
