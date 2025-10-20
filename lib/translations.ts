@@ -10,7 +10,9 @@ interface TranslationStructure {
     whitepapers: string
     docs: string
     blog: string
+    company: string
     aboutUs: string
+    contactUs: string
   }
   buttons: {
     bookDemo: string
@@ -1112,7 +1114,9 @@ export const translations: Record<Language, TranslationStructure> = {
       whitepapers: 'Whitepapers',
       docs: 'Docs',
       blog: 'Blog',
-      aboutUs: 'About Us'
+      company: 'Company',
+      aboutUs: 'About Us',
+      contactUs: 'Contact Us'
     },
     buttons: {
       bookDemo: 'Book Demo',
@@ -2325,7 +2329,9 @@ export const translations: Record<Language, TranslationStructure> = {
       whitepapers: '白皮书',
       docs: '文档',
       blog: '博客',
-      aboutUs: '关于我们'
+      company: '公司',
+      aboutUs: '关于我们',
+      contactUs: '联系我们'
     },
     buttons: {
       bookDemo: '预约演示',

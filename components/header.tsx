@@ -21,6 +21,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [walletModalOpen, setWalletModalOpen] = useState(false)
   const [technologyDropdownOpen, setTechnologyDropdownOpen] = useState(false)
+  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false)
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false)
 
   useEffect(() => {
@@ -36,6 +37,9 @@ export default function Header() {
       if (technologyDropdownOpen) {
         setTechnologyDropdownOpen(false)
       }
+      if (companyDropdownOpen) {
+        setCompanyDropdownOpen(false)
+      }
       if (languageDropdownOpen) {
         setLanguageDropdownOpen(false)
       }
@@ -47,7 +51,7 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll)
       document.removeEventListener("click", handleClickOutside)
     }
-  }, [technologyDropdownOpen, languageDropdownOpen])
+  }, [technologyDropdownOpen, companyDropdownOpen, languageDropdownOpen])
 
   const handleLanguageChange = (newLanguage: 'en' | 'zh') => {
     setLanguage(newLanguage)
@@ -142,13 +146,44 @@ export default function Header() {
             )}
           </div>
           
-          {/* About Us Link */}
-          <Link
-            href="/about-us"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            {t.navigation.aboutUs}
-          </Link>
+          {/* Company Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
+              className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[80px] justify-center"
+            >
+              {t.navigation.company}
+              <ChevronDown className={`size-4 transition-transform ${companyDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {companyDropdownOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                className="absolute top-full right-0 mt-2 w-48 bg-background/95 backdrop-blur-lg border rounded-lg shadow-lg z-50"
+              >
+                <div className="py-2">
+                  <Link
+                    href="/about-us"
+                    className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                    onClick={() => setCompanyDropdownOpen(false)}
+                  >
+                    {t.navigation.aboutUs}
+                  </Link>
+                  <button
+                    onClick={() => {
+                      setCompanyDropdownOpen(false)
+                      // TODO: Add contact us functionality (email link or modal)
+                    }}
+                    className="block w-full text-left px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                  >
+                    {t.navigation.contactUs}
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </div>
         </nav>
         <div className="hidden md:flex gap-3 items-center">
           <div className="relative">
@@ -230,29 +265,61 @@ export default function Header() {
         >
           <div className="container py-4 flex flex-col gap-4">
             <Link href="/solutions" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              Solutions
+              {t.navigation.solutions}
             </Link>
             <Link href="/skill-mall" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              Skill Mall
+              {t.navigation.skillMall}
             </Link>
             <Link href="/creator-hub" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              Creator Hub
+              {t.navigation.creatorHub}
             </Link>
             <Link href="/pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              Pricing
+              {t.navigation.pricing}
             </Link>
-            <Link href="/company" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-              Company & Resources
-            </Link>
+            
+            {/* Technology submenu for mobile */}
+            <div className="border-l-2 border-muted pl-4">
+              <div className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">
+                {t.navigation.technology}
+              </div>
+              <Link href="/whitepapers" className="block py-1 text-sm text-muted-foreground" onClick={() => setMobileMenuOpen(false)}>
+                {t.navigation.whitepapers}
+              </Link>
+              <Link href="/docs" className="block py-1 text-sm text-muted-foreground" onClick={() => setMobileMenuOpen(false)}>
+                {t.navigation.docs}
+              </Link>
+              <Link href="/blog" className="block py-1 text-sm text-muted-foreground" onClick={() => setMobileMenuOpen(false)}>
+                {t.navigation.blog}
+              </Link>
+            </div>
+            
+            {/* Company submenu for mobile */}
+            <div className="border-l-2 border-muted pl-4">
+              <div className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">
+                {t.navigation.company}
+              </div>
+              <Link href="/about-us" className="block py-1 text-sm text-muted-foreground" onClick={() => setMobileMenuOpen(false)}>
+                {t.navigation.aboutUs}
+              </Link>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false)
+                  // TODO: Add contact us functionality (email link or modal)
+                }}
+                className="block w-full text-left py-1 text-sm text-muted-foreground"
+              >
+                {t.navigation.contactUs}
+              </button>
+            </div>
             <div className="flex flex-col gap-2 pt-2 border-t">
-              <Button asChild className="rounded-full h-10 px-6 text-sm" variant="outline" onClick={() => setMobileMenuOpen(false)}>
-                <Link href="/invite" prefetch={false}>Invite to Earn</Link>
-              </Button>
               <Button 
-                onClick={() => setWalletModalOpen(true)}
+                onClick={() => {
+                  setWalletModalOpen(true)
+                  setMobileMenuOpen(false)
+                }}
                 className="rounded-full h-10 px-6 text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg"
               >
-                Launch APP
+                {t.buttons.launchApp}
                 <ChevronRight className="ml-1 size-4" />
               </Button>
               <Button 
@@ -260,7 +327,7 @@ export default function Header() {
                 className="rounded-full h-10 px-6 text-sm"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Book a Demo
+                {t.buttons.bookDemo}
               </Button>
             </div>
           </div>
