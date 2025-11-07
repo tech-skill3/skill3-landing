@@ -13,6 +13,11 @@ interface TranslationStructure {
     company: string
     aboutUs: string
     contactUs: string
+    solutionsMenu: {
+      learners: string
+      consultants: string
+      enterprises: string
+    }
   }
   buttons: {
     bookDemo: string
@@ -1116,7 +1121,12 @@ export const translations: Record<Language, TranslationStructure> = {
       blog: 'Blog',
       company: 'Company',
       aboutUs: 'About Us',
-      contactUs: 'Contact Us'
+      contactUs: 'Contact Us',
+      solutionsMenu: {
+        learners: 'Students',
+        consultants: 'Expert Consultants',
+        enterprises: 'Enterprises'
+      }
     },
     buttons: {
       bookDemo: 'Book Demo',
@@ -2331,7 +2341,12 @@ export const translations: Record<Language, TranslationStructure> = {
       blog: '博客',
       company: '公司',
       aboutUs: '关于我们',
-      contactUs: '联系我们'
+      contactUs: '联系我们',
+      solutionsMenu: {
+        learners: '学员',
+        consultants: '专家顾问',
+        enterprises: '企业'
+      }
     },
     buttons: {
       bookDemo: '预约演示',

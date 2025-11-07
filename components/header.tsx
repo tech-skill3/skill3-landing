@@ -77,12 +77,38 @@ export default function Header() {
           </div>
         </Link>
         <nav className="hidden md:flex gap-5 items-center">
-          <Link
-            href="/solutions"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[80px] text-center"
-          >
-            {t.navigation.solutions}
-          </Link>
+          {/* Solutions Dropdown (Hover) */}
+          <div className="relative group">
+            <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[90px] justify-center">
+              {t.navigation.solutions}
+              <ChevronDown className="size-4 transition-transform group-hover:rotate-180" />
+            </button>
+
+            <div
+              className="absolute top-full left-1/2 mt-0 w-40 bg-background/95 backdrop-blur-lg border rounded-lg shadow-lg z-50 opacity-0 -translate-x-1/2 translate-y-2 transition-all duration-200 group-hover:opacity-100 group-hover:translate-y-0"
+            >
+              <div className="py-2">
+                <Link
+                  href="/student"
+                  className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors text-center"
+                >
+                  {t.navigation.solutionsMenu.learners}
+                </Link>
+                <Link
+                  href="/agent-mall"
+                  className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors text-center"
+                >
+                  {t.navigation.solutionsMenu.consultants}
+                </Link>
+                <Link
+                  href="/for-teams"
+                  className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors text-center"
+                >
+                  {t.navigation.solutionsMenu.enterprises}
+                </Link>
+              </div>
+            </div>
+          </div>
           <Link
             href="/skill-mall"
             className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[80px] text-center"
