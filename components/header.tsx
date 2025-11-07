@@ -14,15 +14,26 @@ import {
 import { Button } from "@/components/ui/button"
 import ConnectWalletModal from "@/components/wallet/connect-wallet-modal"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { usePathname } from "next/navigation"
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage()
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [walletModalOpen, setWalletModalOpen] = useState(false)
   const [technologyDropdownOpen, setTechnologyDropdownOpen] = useState(false)
   const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false)
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false)
+
+  // 保证互斥：便捷方法关闭全部下拉
+  // 基于路径的激活态判断
+  const isSolutionsActive = ["/student", "/expert", "/enterprises", "/solutions"].some((p) => pathname?.startsWith(p))
+  const isSkillMallActive = pathname?.startsWith("/skill-mall")
+  const isCreatorHubActive = pathname?.startsWith("/creator-hub")
+  const isPricingActive = pathname?.startsWith("/pricing")
+  const isTechnologyActive = ["/whitepapers", "/docs", "/blog"].some((p) => pathname?.startsWith(p))
+  const isCompanyActive = ["/about-us"].some((p) => pathname?.startsWith(p))
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,7 +90,7 @@ export default function Header() {
         <nav className="hidden md:flex gap-5 items-center">
           {/* Solutions Dropdown (Hover) */}
           <div className="relative group">
-            <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[90px] justify-center">
+            <button className={`flex items-center gap-1 text-sm font-medium transition-colors min-w-[90px] justify-center ${isSolutionsActive ? "text-foreground font-semibold" : "text-muted-foreground"} hover:text-foreground`}>
               {t.navigation.solutions}
               <ChevronDown className="size-4 transition-transform group-hover:rotate-180" />
             </button>
@@ -111,19 +122,22 @@ export default function Header() {
           </div>
           <Link
             href="/skill-mall"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[80px] text-center"
+            className={`text-sm font-medium transition-colors hover:text-foreground min-w-[80px] text-center ${isSkillMallActive ? "text-foreground font-semibold" : "text-muted-foreground"}`}
+            aria-current={isSkillMallActive ? "page" : undefined}
           >
             {t.navigation.skillMall}
           </Link>
           <Link
             href="/creator-hub"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[100px] text-center"
+            className={`text-sm font-medium transition-colors hover:text-foreground min-w-[100px] text-center ${isCreatorHubActive ? "text-foreground font-semibold" : "text-muted-foreground"}`}
+            aria-current={isCreatorHubActive ? "page" : undefined}
           >
             {t.navigation.creatorHub}
           </Link>
           <Link
             href="/pricing"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[60px] text-center"
+            className={`text-sm font-medium transition-colors hover:text-foreground min-w-[60px] text-center ${isPricingActive ? "text-foreground font-semibold" : "text-muted-foreground"}`}
+            aria-current={isPricingActive ? "page" : undefined}
           >
             {t.navigation.pricing}
           </Link>
@@ -131,8 +145,15 @@ export default function Header() {
           {/* Technology Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setTechnologyDropdownOpen(!technologyDropdownOpen)}
-              className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[90px] justify-center"
+              onClick={() => {
+                const next = !technologyDropdownOpen
+                setTechnologyDropdownOpen(next)
+                if (next) {
+                  setCompanyDropdownOpen(false)
+                  setLanguageDropdownOpen(false)
+                }
+              }}
+              className={`flex items-center gap-1 text-sm font-medium transition-colors min-w-[90px] justify-center ${isTechnologyActive ? "text-foreground font-semibold" : "text-muted-foreground"} hover:text-foreground`}
             >
               {t.navigation.technology}
               <ChevronDown className={`size-4 transition-transform ${technologyDropdownOpen ? 'rotate-180' : ''}`} />
@@ -175,8 +196,15 @@ export default function Header() {
           {/* Company Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setCompanyDropdownOpen(!companyDropdownOpen)}
-              className="flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground min-w-[80px] justify-center"
+              onClick={() => {
+                const next = !companyDropdownOpen
+                setCompanyDropdownOpen(next)
+                if (next) {
+                  setTechnologyDropdownOpen(false)
+                  setLanguageDropdownOpen(false)
+                }
+              }}
+              className={`flex items-center gap-1 text-sm font-medium transition-colors min-w-[80px] justify-center ${isCompanyActive ? "text-foreground font-semibold" : "text-muted-foreground"} hover:text-foreground`}
             >
               {t.navigation.company}
               <ChevronDown className={`size-4 transition-transform ${companyDropdownOpen ? 'rotate-180' : ''}`} />
@@ -216,7 +244,14 @@ export default function Header() {
             <Button 
               variant="ghost" 
               size="icon" 
-              onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)} 
+              onClick={() => {
+                const next = !languageDropdownOpen
+                setLanguageDropdownOpen(next)
+                if (next) {
+                  setTechnologyDropdownOpen(false)
+                  setCompanyDropdownOpen(false)
+                }
+              }} 
               className="rounded-full"
             >
               <Globe className="size-[18px]" />
@@ -270,7 +305,14 @@ export default function Header() {
           <Button 
             variant="ghost" 
             size="icon" 
-            onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)} 
+            onClick={() => {
+              const next = !languageDropdownOpen
+              setLanguageDropdownOpen(next)
+              if (next) {
+                setTechnologyDropdownOpen(false)
+                setCompanyDropdownOpen(false)
+              }
+            }} 
             className="rounded-full"
           >
             <Globe className="size-[18px]" />
@@ -290,16 +332,36 @@ export default function Header() {
           className="md:hidden fixed top-16 inset-x-0 z-[60] bg-background/95 backdrop-blur-lg border-b"
         >
           <div className="container py-4 flex flex-col gap-4">
-            <Link href="/solutions" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href="/solutions"
+              className={`py-2 text-sm font-medium ${isSolutionsActive ? "text-foreground" : "text-muted-foreground"}`}
+              aria-current={isSolutionsActive ? "page" : undefined}
+              onClick={() => setMobileMenuOpen(false)}
+            >
               {t.navigation.solutions}
             </Link>
-            <Link href="/skill-mall" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href="/skill-mall"
+              className={`py-2 text-sm font-medium ${isSkillMallActive ? "text-foreground" : "text-muted-foreground"}`}
+              aria-current={isSkillMallActive ? "page" : undefined}
+              onClick={() => setMobileMenuOpen(false)}
+            >
               {t.navigation.skillMall}
             </Link>
-            <Link href="/creator-hub" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href="/creator-hub"
+              className={`py-2 text-sm font-medium ${isCreatorHubActive ? "text-foreground" : "text-muted-foreground"}`}
+              aria-current={isCreatorHubActive ? "page" : undefined}
+              onClick={() => setMobileMenuOpen(false)}
+            >
               {t.navigation.creatorHub}
             </Link>
-            <Link href="/pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
+            <Link
+              href="/pricing"
+              className={`py-2 text-sm font-medium ${isPricingActive ? "text-foreground" : "text-muted-foreground"}`}
+              aria-current={isPricingActive ? "page" : undefined}
+              onClick={() => setMobileMenuOpen(false)}
+            >
               {t.navigation.pricing}
             </Link>
             
@@ -308,13 +370,28 @@ export default function Header() {
               <div className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">
                 {t.navigation.technology}
               </div>
-              <Link href="/whitepapers" className="block py-1 text-sm text-muted-foreground" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/whitepapers"
+                className={`block py-1 text-sm ${pathname?.startsWith("/whitepapers") ? "text-foreground" : "text-muted-foreground"}`}
+                aria-current={pathname?.startsWith("/whitepapers") ? "page" : undefined}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {t.navigation.whitepapers}
               </Link>
-              <Link href="/docs" className="block py-1 text-sm text-muted-foreground" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/docs"
+                className={`block py-1 text-sm ${pathname?.startsWith("/docs") ? "text-foreground" : "text-muted-foreground"}`}
+                aria-current={pathname?.startsWith("/docs") ? "page" : undefined}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {t.navigation.docs}
               </Link>
-              <Link href="/blog" className="block py-1 text-sm text-muted-foreground" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/blog"
+                className={`block py-1 text-sm ${pathname?.startsWith("/blog") ? "text-foreground" : "text-muted-foreground"}`}
+                aria-current={pathname?.startsWith("/blog") ? "page" : undefined}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {t.navigation.blog}
               </Link>
             </div>
@@ -324,7 +401,12 @@ export default function Header() {
               <div className="text-xs font-semibold text-muted-foreground mb-2 uppercase tracking-wide">
                 {t.navigation.company}
               </div>
-              <Link href="/about-us" className="block py-1 text-sm text-muted-foreground" onClick={() => setMobileMenuOpen(false)}>
+              <Link
+                href="/about-us"
+                className={`block py-1 text-sm ${pathname?.startsWith("/about-us") ? "text-foreground" : "text-muted-foreground"}`}
+                aria-current={pathname?.startsWith("/about-us") ? "page" : undefined}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 {t.navigation.aboutUs}
               </Link>
               <button
