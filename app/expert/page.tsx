@@ -1,22 +1,22 @@
 import Image from "next/image"
 
 export const metadata = {
-  title: "学员解决方案 | Skill3",
+  title: "专家顾问解决方案 | Skill3",
   description:
-    "AI驱动个性化学习、真实场景陪练、数据化成长、区块链技能凭证。你的学习即资产。",
+    "AI 智课工具快速上架课程，RWA资产交易让优质内容持续增值，专注创作，其他交给我们。",
 }
 
-export default function StudentSolutionsPage() {
+export default function ExpertSolutionsPage() {
   return (
     <div className="flex-1">
       {/* Hero */}
       <section className="w-full py-20 md:py-28 lg:py-20 overflow-hidden">
         <div className="container px-4 md:px-6 text-center max-w-4xl mx-auto">
           <h1 className="font-hero text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70" style={{ lineHeight: "1.2" }}>
-            你的学习即资产
+            你的专业知识即资产
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-2">
-            AI驱动的个性化学习，真实场景实战训练，区块链技能凭证认证，让你的能力看得见、用得上、信得过。
+            AI 智课工具快速上架课程，RWA资产交易让优质内容持续增值，专注创作，其他交给我们。
           </p>
         </div>
       </section>
@@ -32,29 +32,29 @@ export default function StudentSolutionsPage() {
             {/* 1 左文右图 */}
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3">精准学习，不走弯路</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-3">30分钟从想法到上架课程</h3>
                 <p className="text-muted-foreground">
-                  AI分析你的基础和目标，自动规划最优学习路径，个性化推送内容，让你把时间花在真正需要提升的地方。
+                  智课工具提供 AI 辅助创作，自动生成大纲、拆解知识点、生成习题，零技术门槛，让你专注于最擅长的内容本身。
                 </p>
               </div>
               <div>
                 <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-border/50 shadow-lg bg-muted/20">
-                  <Image src="/images/placeholder.svg" alt="学习路径占位图" fill className="object-contain" />
+                  <Image src="/images/placeholder.svg" alt="AI辅创占位图" fill className="object-contain" />
                 </div>
               </div>
             </div>
 
-            {/* 2 右文左图（通过DOM顺序反转） */}
+            {/* 2 右文左图 */}
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-border/50 shadow-lg bg-muted/20">
-                  <Image src="/images/placeholder.svg" alt="场景陪练占位图" fill className="object-contain" />
+                  <Image src="/images/placeholder.svg" alt="被动收入占位图" fill className="object-contain" />
                 </div>
               </div>
               <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3">模拟真实场景进行陪练</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-3">多重收益模式，持续被动收入</h3>
                 <p className="text-muted-foreground">
-                  行业真实工作场景无限次模拟训练，AI即时反馈纠错，让你在试错中掌握实战能力，上岗即能干活。
+                  课程上架后能够持续售卖，最大化您的课程价值，让您的知识持续变现。
                 </p>
               </div>
             </div>
@@ -62,29 +62,29 @@ export default function StudentSolutionsPage() {
             {/* 3 左文右图 */}
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3">用数据看见你的成长</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-3">区块链确权，内容版权永久保护</h3>
                 <p className="text-muted-foreground">
-                  多维度技能评估生成诊断报告，清晰展示你的能力雷达图和薄弱环节，让提升有的放矢，进步看得见。
+                  你的每一门课程都不只是内容本身，更是你的个人品牌印记。一旦完成区块链确权，就能证明“这个作品属于我”，再也不用担心被任何平台牵制。
                 </p>
               </div>
               <div>
                 <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-border/50 shadow-lg bg-muted/20">
-                  <Image src="/images/placeholder.svg" alt="成长数据占位图" fill className="object-contain" />
+                  <Image src="/images/placeholder.svg" alt="版权保护占位图" fill className="object-contain" />
                 </div>
               </div>
             </div>
 
-            {/* 4 右文左图（通过DOM顺序反转） */}
+            {/* 4 右文左图 */}
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-border/50 shadow-lg bg-muted/20">
-                  <Image src="/images/placeholder.svg" alt="技能凭证占位图" fill className="object-contain" />
+                  <Image src="/images/placeholder.svg" alt="RWA资产占位图" fill className="object-contain" />
                 </div>
               </div>
               <div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3">专属技能凭证</h3>
+                <h3 className="text-xl md:text-2xl font-bold mb-3">课程铸造为RWA，知识资产持续增值</h3>
                 <p className="text-muted-foreground">
-                  完成学习获得技能凭证SBT，永久绑定身份不可伪造，一键分享到求职平台，HR扫码验证你的真实能力，提升求职成功率。
+                  优质课程可铸造为链上 RWA 资产进行交易，课程越受欢迎价值越高，你的知识不仅赚钱，还能像房产一样增值。
                 </p>
               </div>
             </div>
@@ -99,33 +99,33 @@ export default function StudentSolutionsPage() {
             {/* 左侧图片 */}
             <div>
               <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border/50 shadow-lg bg-muted/20">
-                <Image src="/images/placeholder.svg" alt="学员真实故事占位图" fill className="object-cover" />
+                <Image src="/images/placeholder.svg" alt="专家顾问真实故事占位图" fill className="object-cover" />
               </div>
             </div>
 
             {/* 右侧文案 */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">应届生突破就业困境，3个月转行成功</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">资深设计师的知识变现之路</h2>
 
               <div className="mb-6">
                 <div className="text-orange-500 font-semibold">Results</div>
                 <p className="mt-2 text-muted-foreground">
-                  从“投50份简历无人问津”到“收获3个offer”：技能凭证让HR看到真实能力，而不只是一张文凭。
+                  从“偶尔接私单赚外快”到“月入5万的被动收入”：智课工具让15年经验快速变现，优质课程铸造为 RWA 资产增值 30%。
                 </p>
               </div>
 
               <div className="mt-4">
                 <div className="text-orange-500 text-4xl leading-none mb-4">“</div>
                 <blockquote className="text-base md:text-lg text-foreground/90">
-                  我市场营销专业毕业，想转行做产品经理但没有任何经验。传统培训机构给的证书HR根本不认。在平台学完后，我拿到3个SBT技能凭证，里面展示了我完成的15个产品分析案例和AI陪练中的实战项目。把凭证二维码放在简历上后，面试邀约从0变成10个。
-                  最终我拿到3个offer，选择了最心仪的那家，起薪12K。
+                  我做 UI 设计 15 年，身边总有人让我“教教他们”。我试过线下带学生，但太累了——白天上班，晚上答疑，周末还要改作业。后来在其他平台开过课，结果 90% 时间都花在剪视频、做 PPT、回复重复问题上，课程卖了不到 2 万块。加入这个平台后，智课工具让我 1 个周末就把“UI 设计系统化思维”做成了完整技能体，AI 帮我生成了练习题、拆解了知识点。课程上架第一个月就卖了 800 份，收入 4 万多。更惊喜的是，因为每个学员完课后的 SBT 凭证都带着我的署名，很多人拿着凭证找到工作后会专门感谢我，还有企业 HR 直接联系我做内训。
                 </blockquote>
               </div>
 
               <div className="mt-6">
-                <div className="font-medium">张伟</div>
-                <div className="text-sm text-muted-foreground">24岁 | 市场营销专业应届生 → 产品经理</div>
-                <div className="text-sm text-muted-foreground mt-1">学习周期：3个月 | 获得凭证：产品经理核心技能、用户研究方法、数据分析基础</div>
+                <div className="font-medium">陈晨</div>
+                <div className="text-sm text-muted-foreground">38岁 | 15年资深UI设计师 → 全职创作者</div>
+                <div className="text-sm text-muted-foreground mt-1">平台收益：月均5万+ | 累计学员：3200+ | 课程数量：4门</div>
+                <div className="text-sm text-muted-foreground mt-1">RWA资产增值：30% | 学员就业率：92%</div>
               </div>
             </div>
           </div>

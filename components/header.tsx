@@ -95,13 +95,13 @@ export default function Header() {
                   {t.navigation.solutionsMenu.learners}
                 </Link>
                 <Link
-                  href="/agent-mall"
+                  href="/expert"
                   className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors text-center"
                 >
                   {t.navigation.solutionsMenu.consultants}
                 </Link>
                 <Link
-                  href="/for-teams"
+                  href="/enterprises"
                   className="block px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors text-center"
                 >
                   {t.navigation.solutionsMenu.enterprises}
