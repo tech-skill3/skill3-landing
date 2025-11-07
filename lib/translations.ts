@@ -1042,6 +1042,71 @@ interface TranslationStructure {
       }
     }
   }
+  // Solutions pages (Learners, Consultants, Enterprises)
+  learnersSolutionsPage: {
+    hero: { title: string; subtitle: string }
+    core: {
+      title: string
+      items: {
+        item1: { title: string; description: string; imageAlt: string }
+        item2: { title: string; description: string; imageAlt: string }
+        item3: { title: string; description: string; imageAlt: string }
+        item4: { title: string; description: string; imageAlt: string }
+      }
+    }
+    story: {
+      title: string
+      resultsLabel: string
+      resultsSummary: string
+      testimonial: string
+      authorName: string
+      authorBackground: string
+      authorExtras: string
+    }
+  }
+  consultantsSolutionsPage: {
+    hero: { title: string; subtitle: string }
+    core: {
+      title: string
+      items: {
+        item1: { title: string; description: string; imageAlt: string }
+        item2: { title: string; description: string; imageAlt: string }
+        item3: { title: string; description: string; imageAlt: string }
+        item4: { title: string; description: string; imageAlt: string }
+      }
+    }
+    story: {
+      title: string
+      resultsLabel: string
+      resultsSummary: string
+      testimonial: string
+      authorName: string
+      authorBackground: string
+      authorExtras: string
+    }
+  }
+  enterprisesSolutionsPage: {
+    hero: { title: string; subtitle: string }
+    core: {
+      title: string
+      items: {
+        item1: { title: string; description: string; imageAlt: string }
+        item2: { title: string; description: string; imageAlt: string }
+        item3: { title: string; description: string; imageAlt: string }
+        item4: { title: string; description: string; imageAlt: string }
+        item5: { title: string; description: string; imageAlt: string }
+      }
+    }
+    story: {
+      title: string
+      resultsLabel: string
+      resultsSummary: string
+      testimonial: string
+      authorName: string
+      authorBackground: string
+      authorExtras: string
+    }
+  }
   footer: {
     description: string
     navigation: {
@@ -1268,6 +1333,148 @@ export const translations: Record<Language, TranslationStructure> = {
     },
     partnersCarousel: {
       trustedBy: 'Trusted by individuals at'
+    },
+    learnersSolutionsPage: {
+      hero: {
+        title: 'Learner Solutions',
+        subtitle:
+          'AI-personalized learning, real-world practice, data-driven growth, blockchain skill certificates. Your learning becomes an asset.'
+      },
+      core: {
+        title: 'Core Solutions',
+        items: {
+          item1: {
+            title: 'AI Personalized Tutor',
+            description:
+              'Adaptive paths based on your ability; courses evolve into skill bodies with interactive guidance.',
+            imageAlt: 'AI Tutor Interface'
+          },
+          item2: {
+            title: 'Real-World Practice',
+            description: 'High-fidelity scenario tasks with instant feedback; learn by doing with AI coaching.',
+            imageAlt: 'Scenario Practice'
+          },
+          item3: {
+            title: 'Data-Driven Growth',
+            description: 'Explainable progress reports and actionable recommendations based on learning telemetry.',
+            imageAlt: 'Learning Dashboard'
+          },
+          item4: {
+            title: 'Skill Credentials & Rewards',
+            description:
+              'On-chain SBT skill credentials and $SKILL rewards; achievements are verifiable and portable.',
+            imageAlt: 'On-chain Credentials'
+          }
+        }
+      },
+      story: {
+        title: 'Real Story: From Zero to Job Offer in 3 Months',
+        resultsLabel: 'Results',
+        resultsSummary:
+          'Completed 6 scenario projects, passed 2 verifications, landed an AI data role with a 35% salary increase.',
+        testimonial:
+          'The AI mentor made learning efficient and practical. Scenario practice forced me to solve real problems, and the verification reports helped in interviews. The on-chain credential impressed employers.',
+        authorName: 'Zhao Yue',
+        authorBackground: 'Career switcher, now Data Analyst (AI)',
+        authorExtras: 'Former customer service; transitioned via Skill³ in 3 months'
+      }
+    },
+    consultantsSolutionsPage: {
+      hero: {
+        title: 'Consultant Solutions',
+        subtitle:
+          'AI teaching tools launch content fast; RWA assetization keeps great content appreciating. Focus on creation—leave the rest to us.'
+      },
+      core: {
+        title: 'Core Solutions',
+        items: {
+          item1: {
+            title: 'AI Course Builder',
+            description: 'Generate skill bodies and structured courses in hours, not weeks.',
+            imageAlt: 'Course Builder'
+          },
+          item2: {
+            title: 'One-Click Publish & Pricing',
+            description: 'Independent pricing, benefits, and sales rules with effortless configuration.',
+            imageAlt: 'Publishing UI'
+          },
+          item3: {
+            title: 'Growth & Revenue Dashboard',
+            description: 'Track learner performance, conversion, and income in real time.',
+            imageAlt: 'Analytics Dashboard'
+          },
+          item4: {
+            title: 'RWA Assetization',
+            description:
+              'Turn top courses into on-chain assets with secondary trading and perpetual royalties.',
+            imageAlt: 'Asset Trading'
+          }
+        }
+      },
+      story: {
+        title: 'Real Story: Packaging Consulting as Products',
+        resultsLabel: 'Results',
+        resultsSummary:
+          'Cut delivery time by 40%, added ¥80k monthly recurring revenue from packaged modules.',
+        testimonial:
+          'AI tools helped me productize my consulting quickly. The dashboard showed what works, and assetization brought royalties beyond one-time fees.',
+        authorName: 'Lin Hao',
+        authorBackground: 'Independent Consultant, 8 years',
+        authorExtras: 'Specializes in growth strategy and operations'
+      }
+    },
+    enterprisesSolutionsPage: {
+      hero: {
+        title: 'Enterprise Solutions',
+        subtitle:
+          'AI-driven skill transformation and ROI delivery platform. We collaborate to achieve measurable business KPIs and convert training into quantifiable business outcomes.'
+      },
+      core: {
+        title: 'Core Solutions',
+        items: {
+          item1: {
+            title: 'AI Training & Practice Platform',
+            description:
+              'Create–Learn–Practice–Deliver loop with AI Agents: Smart Course Builder, AI Tutors, Practice Coach, Performance Supervisor.',
+            imageAlt: 'AI Skill Platform'
+          },
+          item2: {
+            title: 'Outcome-as-a-Service (OaaS) Engine',
+            description:
+              'Pay-for-results with transparent, tamper-proof, auto-executed settlements powered by smart contracts and oracles.',
+            imageAlt: 'OaaS Engine'
+          },
+          item3: {
+            title: 'Industry Scenarios',
+            description:
+              'High-fidelity scenarios for Sales, Marketing, Customer Success, Finance, Programming, and more.',
+            imageAlt: 'Industry Scenarios'
+          },
+          item4: {
+            title: 'Talent Verification',
+            description:
+              'On-chain skill passports (SBT) with QSV data for precise matching and simplified investigation.',
+            imageAlt: 'Talent Verification'
+          },
+          item5: {
+            title: 'ROI Calculator & Dashboard',
+            description:
+              'Real-time ROI analysis with milestone-based settlement; CFO-ready dashboards for transparent decisions.',
+            imageAlt: 'ROI Dashboard'
+          }
+        }
+      },
+      story: {
+        title: 'Real Story: SaaS Sales Team ROI Leap',
+        resultsLabel: 'Results',
+        resultsSummary:
+          'Lead-to-deal conversion +78%, sales cycle −38%, per-rep performance +12%.',
+        testimonial:
+          'Before, training was “attendance”. Scenario practice created standard plays; AI coaches reinforced skills; the OaaS engine linked delivery to KPIs. We finally paid for outcomes, not hours.',
+        authorName: 'Chen Li',
+        authorBackground: 'Sales Operations Director, 10 years B2B SaaS',
+        authorExtras: 'Rolled out across SDR, AE, and CS teams over 2 quarters'
+      }
     },
     skillMall: {
       hero: {
@@ -2488,6 +2695,138 @@ export const translations: Record<Language, TranslationStructure> = {
     },
     partnersCarousel: {
       trustedBy: 'Trusted by individuals at'
+    },
+    learnersSolutionsPage: {
+      hero: {
+        title: '你的学习即资产',
+        subtitle:
+          'AI驱动的个性化学习，真实场景实战训练，区块链技能凭证认证，让你的能力看得见、用得上、信得过。'
+      },
+      core: {
+        title: '核心解决方案',
+        items: {
+          item1: {
+            title: '精准学习，不走弯路',
+            description: 'AI分析你的基础和目标，自动规划最优学习路径，个性化推送内容，让你把时间花在真正需要提升的地方。',
+            imageAlt: 'AI导师界面'
+          },
+          item2: {
+            title: '模拟真实场景进行陪练',
+            description: '行业真实工作场景无限次模拟训练，AI即时反馈纠错，让你在试错中掌握实战能力，上岗即能干活。',
+            imageAlt: '场景练习'
+          },
+          item3: {
+            title: '数据化成长',
+            description: '多维度技能评估生成诊断报告，清晰展示你的能力雷达图和薄弱环节，让提升有的放矢，进步看得见。',
+            imageAlt: '学习数据看板'
+          },
+          item4: {
+            title: '技能凭证与激励',
+            description: '完成学习获得技能凭证SBT，永久绑定身份不可伪造，一键分享到求职平台，HR扫码验证你的真实能力，提升求职成功率。',
+            imageAlt: '链上技能凭证'
+          }
+        }
+      },
+      story: {
+        title: '应届生突破就业困境，3个月转行成功',
+        resultsLabel: '结果',
+        resultsSummary:
+          '从"投50份简历无人问津"到"收获3个offer"：技能凭证让HR看到真实能力，而不只是一张文凭。',
+        testimonial:
+          '我市场营销专业毕业，想转行做产品经理但没有任何经验。传统培训机构给的证书HR根本不认。在平台学完后，我拿到3个SBT技能凭证，里面展示了我完成的15个产品分析案例和AI陪练中的实战项目。把凭证二维码放在简历上后，面试邀约从0变成10个。最终我拿到3个offer，选择了最心仪的那家，起薪12K。',
+        authorName: '赵越',
+        authorBackground: '市场营销专业应届生 → 产品经理',
+        authorExtras: '曾任客服专员，3个月通过Skill³完成转型'
+      }
+    },
+    consultantsSolutionsPage: {
+      hero: {
+        title: '你的专业知识即资产',
+        subtitle:
+          'AI 智课工具快速上架内容，RWA资产化让优质课程持续增值；专注创作，其余交给我们。'
+      },
+      core: {
+        title: '核心解决方案',
+        items: {
+          item1: {
+            title: '30分钟从想法到上架课程',
+            description: '智课工具提供 AI 辅助创作，自动生成大纲、拆解知识点、生成习题，零技术门槛，让你专注于最擅长的内容本身。',
+            imageAlt: '智课工具界面'
+          },
+          item2: {
+            title: '多重收益模式，持续被动收入',
+            description: '课程上架后能够持续售卖，最大化您的课程价值，让您的知识持续变现。',
+            imageAlt: '上架与定价界面'
+          },
+          item3: {
+            title: '区块链确权，内容版权永久保护',
+            description: '你的每一门课程都不只是内容本身，更是你的个人品牌印记。一旦完成区块链确权 ，就能证明这个作品属于我，再也不用担心被任何平台牵制。',
+            imageAlt: '数据看板'
+          },
+          item4: {
+            title: '课程铸造为RWA，知识资产持续增值',
+            description: '优质课程可铸造为链上RWA资产进行交易，课程越受欢迎价值越高，你的知识不仅赚钱，还能像房产一样增值。',
+            imageAlt: '资产交易界面'
+          }
+        }
+      },
+      story: {
+        title: '资深设计师的知识变现之路',
+        resultsLabel: '结果',
+        resultsSummary: '从"偶尔接私单赚外快"到"月入5万的被动收入"：智课工具让15年经验快速变现，优质课程铸造为RWA资产增值30%。',
+        testimonial:
+          '我做UI设计15年，身边总有人让我教教他们。我试过线下带学生，但太累了——白天上班，晚上答疑，周末还要改作业。后来在其他平台开过课，结果90%时间都花在剪视频、做PPT、回复重复问题上，课程卖了不到2万块。加入这个平台后，智课工具让我1个周末就把UI设计系统化思维做成了完整技能体，AI帮我生成了练习题、拆解了知识点。最关键的是AI陪练替我做了90%的答疑工作——学员在虚拟场景里反复练习，遇到问题AI直接指导，我只需要处理那10%的深度问题。课程上架第一个月就卖了800份，收入4万多。区块链收益记录让我对平台完全放心——每一笔钱从哪来、什么时候到账，清清楚楚。',
+        authorName: '林昊',
+        authorBackground: '15年资深UI设计师 → 全职创作者',
+        authorExtras: '聚焦增长战略与运营体系'
+      }
+    },
+    enterprisesSolutionsPage: {
+      hero: {
+        title: '将培训成本转化为可量化的人才资产',
+        subtitle:
+          '效果付费降低风险，智课工具快速定制内容，数据看板驱动人才决策，技能上链让组织能力可证明、可增值。'
+      },
+      core: {
+        title: '核心解决方案',
+        items: {
+          item1: {
+            title: '成果即服务，只为真实的业务增长买单',
+            description: '“员工技能提升多少、业务指标改善多少，企业就付多少钱。培训费用直接与业务成果挂钩，让HR从"成本部门"变成"增长引擎"',
+            imageAlt: 'AI技能平台'
+          },
+          item2: {
+            title: '企业专属智课工具，快速沉淀组织知识',
+            description: '让业务专家和管理者30分钟创建高质量课程，将老员工经验、内部最佳实践快速转化为标准化培训内容，知识不再流失。',
+            imageAlt: 'OaaS引擎'
+          },
+          item3: {
+            title: '多维度数据看板，让人才决策有据可依',
+            description: '实时看到每个员工、每个部门、每个岗位的技能分布和学习情况，从"感觉谁行"到"数据证明谁行"。',
+            imageAlt: '行业应用场景'
+          },
+          item4: {
+            title: '技能标签体系，让人才发展路径可视化',
+            description: '为每个岗位定义技能标签，员工清楚看到"现在会什么"、"距离晋升还差什么"，HR清楚看到"谁能晋升"、"谁需要培养"。',
+            imageAlt: '人才验证'
+          },
+          item5: {
+            title: '企业专属区块链，构建可信人才资产',
+            description: '企业独立部署企业链，员工技能凭证、培训记录、绩效数据上链存证，打造可证明、可审计、可融资的人才资产。',
+            imageAlt: 'ROI数据看板'
+          }
+        }
+      },
+      story: {
+        title: '销售业绩提升40%才付费，培训投入直接转化为营收增长',
+        resultsLabel: '结果',
+        resultsSummary: '从"培训费打水漂"到"培训即增长引擎"：按销售业绩增长付费，6个月新人销售额提升40%，培训ROI达到1:8。',
+        testimonial:
+          '我们是做企业服务SaaS的，销售团队有120人，但新人从入职到出单平均要6个月，流失率高达35%。我们每年花200万培训费请外部机构做销售培训，结果是——课上听得热血沸腾,回到岗位还是不会打电话、不敢谈价格、被客户一问就懵。我最痛恨的就是培训公司说"我们只负责教,学不学得会是你们的事，钱花了但业绩没起来。这个平台的商务找我时，我直接说："我不要什么完课率数据，我只看业绩增长。如果新人销售额提升不了30%,我一分钱都不给。"他们居然答应了——按业绩增长付费，没达标不收钱。我们让销冠王姐用智课工具，把她7年的销售经验做成了SaaS大客户销售技能体。3个月后数据出来了：参加培训的40名新人，平均客单价从8万提升到12万，成单周期从90天缩短到65天，整体销售额比对照组提升了42%。我们按约定支付了培训费用——虽然单价比传统培训贵,但这钱花得值,因为它直接带来了营收增长。我现在逢人就说：培训不应该是成本,应该是增长投资,而这个平台让我真正做到了。',
+        authorName: '李晨',
+        authorBackground: '销售运营总监，10年B2B SaaS',
+        authorExtras: '两季度分批在SDR、AE、CS团队落地'
+      }
     },
     skillMall: {
       hero: {
