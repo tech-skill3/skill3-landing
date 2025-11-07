@@ -4,7 +4,6 @@
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import HowItWorks from "@/components/how-it-works"
 import AiChallenges from "@/components/ai-challenges"
@@ -37,9 +36,7 @@ export default function LandingPage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-3xl mx-auto mb-12"
             >
-              <Badge className="mb-4 rounded-full px-4 py-1.5 text-sm font-medium" variant="secondary">
-                {t.hero.badge}
-              </Badge>
+              {/* Removed badge (Coming Soon) per request */}
               <h1 className="font-hero text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70" style={{lineHeight: '1.2'}}>
                 {t.hero.title}              
               </h1>

@@ -2563,8 +2563,8 @@ export const translations: Record<Language, TranslationStructure> = {
     },
     hero: {
       badge: '即将推出',
-      title: 'Skill³：AI驱动学习，沉浸式AI测试，技能单元货币化',
-      subtitle: '通过AI驱动的学习掌握新技能，通过真实世界的AI指导测试您的专业知识，发布您的技能单元以获得丰厚奖励。',
+      title: '构建 AI 驱动的技能资产化平台',
+      subtitle: 'Skill³ 利用 AI 学习和模拟实战，通过去中心化协议验证您的能力，并将其铸造为属于您的链上资产 (SBT/NFT)',
       exploreButton: '探索技能商城',
       demoButton: '预约演示'
     },
@@ -2707,7 +2707,7 @@ export const translations: Record<Language, TranslationStructure> = {
         items: {
           item1: {
             title: '精准学习，不走弯路',
-            description: 'AI分析你的基础和目标，自动规划最优学习路径，个性化推送内容，让你把时间花在真正需要提升的地方。',
+            description: 'AI会智能推荐你感兴趣的课程，用个性化的方式让学习变得更有趣。真正让你把知识真正消化吸收，用知识图谱将各种技能连接起来，让学习真正为你量身定制。',
             imageAlt: 'AI导师界面'
           },
           item2: {
