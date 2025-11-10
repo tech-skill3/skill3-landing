@@ -88,6 +88,9 @@ export default function StudentContent() {
       {/* 真实故事 */}
       <section className="w-full py-16 md:py-24">
         <div className="container px-4 md:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold">真实案例</h2>
+          </div>
           <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* 左侧图片 */}
             <div>
