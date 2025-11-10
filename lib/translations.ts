@@ -1055,6 +1055,7 @@ interface TranslationStructure {
       }
     }
     story: {
+      sectionTitle: string
       title: string
       resultsLabel: string
       resultsSummary: string
@@ -1076,6 +1077,7 @@ interface TranslationStructure {
       }
     }
     story: {
+      sectionTitle: string
       title: string
       resultsLabel: string
       resultsSummary: string
@@ -1097,7 +1099,31 @@ interface TranslationStructure {
         item5: { title: string; description: string; imageAlt: string }
       }
     }
+    valueProposition: {
+      title: string
+      subtitle: string
+    }
+    painPoints: {
+      title: string
+      items: string[]
+    }
+    kefCore: {
+      title: string
+      subtitle: string
+      imageAlt: string
+      bullets: string[]
+    }
+    modules: {
+      title: string
+      items: {
+        courseBuilder: { title: string; description: string; imageAlt: string }
+        learning: { title: string; description: string; imageAlt: string }
+        practice: { title: string; description: string; imageAlt: string }
+        qualityCheck: { title: string; description: string; imageAlt: string }
+      }
+    }
     story: {
+      sectionTitle: string
       title: string
       resultsLabel: string
       resultsSummary: string
@@ -1368,6 +1394,7 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       },
       story: {
+        sectionTitle: 'Real Cases',
         title: 'Real Story: From Zero to Job Offer in 3 Months',
         resultsLabel: 'Results',
         resultsSummary:
@@ -1412,6 +1439,7 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       },
       story: {
+        sectionTitle: 'Real Cases',
         title: 'Real Story: Packaging Consulting as Products',
         resultsLabel: 'Results',
         resultsSummary:
@@ -1430,7 +1458,7 @@ export const translations: Record<Language, TranslationStructure> = {
           'AI-driven skill transformation and ROI delivery platform. We collaborate to achieve measurable business KPIs and convert training into quantifiable business outcomes.'
       },
       core: {
-        title: 'Core Solutions',
+        title: 'Platform Core Capabilities',
         items: {
           item1: {
             title: 'AI Training & Practice Platform',
@@ -1464,7 +1492,60 @@ export const translations: Record<Language, TranslationStructure> = {
           }
         }
       },
+      valueProposition: {
+        title: 'Value Proposition',
+        subtitle:
+          'From Knowing → Doing → Delivering — AI-driven skill-training loop'
+      },
+      painPoints: {
+        title: 'Pain Point Insights',
+        items: [
+          'Training needs misaligned with job requirements',
+          'No practical validation after learning; mastery unconfirmed',
+          'Training outcomes untracked; unclear business impact'
+        ]
+      },
+      kefCore: {
+        title: 'Core Solution',
+        subtitle: 'KEF full-dimensional training system',
+        imageAlt: 'KEF training system',
+        bullets: [
+          'Smart Course Builder is the brain: defines role-specific skill bodies',
+          'Smart Learning + Practice Coach: personalized learn-and-practice micro-loop',
+          'Quality Inspection validates real business uplift from training'
+        ]
+      },
+      modules: {
+        title: 'Product Module Details',
+        items: {
+          courseBuilder: {
+            title: 'Smart Course Tools',
+            description:
+              'As the central brain, L&D teams can use AI Course Builder to craft role-based skill bodies matching employee growth paths, down to each skill point for deep learning. Knowledge graphs connect and visualize content, making it easy for general L&D and powerful for expert teams.',
+            imageAlt: 'Smart Course Tools'
+          },
+          learning: {
+            title: 'Smart Learning',
+            description:
+              'A new paradigm of personalized learning in the AI era. Assess mastery of theory, conceptual frameworks, and procedural information, while supporting deep exploration based on learner needs. Managers gain confidence in the learning process; learners love learning and understand more deeply.',
+            imageAlt: 'Smart Learning'
+          },
+          practice: {
+            title: 'Coaching',
+            description:
+              'The core metric is “Can the user perform in simulation?” Evaluate whether learners can execute key behaviors consistently and correctly in high-fidelity business scenarios. Post-training analysis highlights optimization areas and phrasing improvements, ensuring knowledge converts to executable skills.',
+            imageAlt: 'Coaching'
+          },
+          qualityCheck: {
+            title: 'Quality Inspection',
+            description:
+              'The core metric is “Does the user deliver expected results on the job?” Analyze real work data to assess whether learning the skill body led to actual business impact, ensuring the training loop is closed with quantifiable, verifiable outcomes.',
+            imageAlt: 'Quality Inspection'
+          }
+        }
+      },
       story: {
+        sectionTitle: 'Real Cases',
         title: 'Real Story: SaaS Sales Team ROI Leap',
         resultsLabel: 'Results',
         resultsSummary:
@@ -2728,6 +2809,7 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       },
       story: {
+        sectionTitle: '真实案例',
         title: '应届生突破就业困境，3个月转行成功',
         resultsLabel: '结果',
         resultsSummary:
@@ -2771,6 +2853,7 @@ export const translations: Record<Language, TranslationStructure> = {
         }
       },
       story: {
+        sectionTitle: '真实案例',
         title: '资深设计师的知识变现之路',
         resultsLabel: '结果',
         resultsSummary: '从"偶尔接私单赚外快"到"月入5万的被动收入"：智课工具让15年经验快速变现，优质课程铸造为RWA资产增值30%。',
@@ -2783,12 +2866,12 @@ export const translations: Record<Language, TranslationStructure> = {
     },
     enterprisesSolutionsPage: {
       hero: {
-        title: '将培训成本转化为可量化的人才资产',
+        title: 'AI 驱动的技能训战闭环',
         subtitle:
-          '效果付费降低风险，智课工具快速定制内容，数据看板驱动人才决策，技能上链让组织能力可证明、可增值。'
+          '从“知道”到“做到”到“有效”'
       },
       core: {
-        title: '核心解决方案',
+        title: '平台核心能力',
         items: {
           item1: {
             title: '成果即服务，只为真实的业务增长买单',
@@ -2817,7 +2900,59 @@ export const translations: Record<Language, TranslationStructure> = {
           }
         }
       },
+      valueProposition: {
+        title: '价值主张',
+        subtitle: '从“知道”到“做到”到“有效” —— AI 驱动的技能训战闭环'
+      },
+      painPoints: {
+        title: '痛点洞察',
+        items: [
+          '培训需求与岗位需求脱节',
+          '学习完缺乏实战验证，无法确认是否掌握',
+          '培训成果无法追踪，不知道学习是否带来了业务成效'
+        ]
+      },
+      kefCore: {
+        title: '解决方案核心',
+        subtitle: 'KEF全维度训战体系',
+        imageAlt: 'KEF全维度训战体系占位图',
+        bullets: [
+          '智课是大脑，明确什么岗位的员工具体要学习什么技能体',
+          '智学 + 陪练是个性化学习和实战演练的小闭环',
+          '质检作为最后的检验环节，检验培训是否带来了真实的业务数据提升'
+        ]
+      },
+      modules: {
+        title: '产品模块详解',
+        items: {
+          courseBuilder: {
+            title: '智课工具',
+            description:
+              '智课作为中枢，L&D 团队能利用 AI 智课工具根据不同岗位的员工制作符合员工成长路径的技能体，细化到每一个技能点进行深度学习。所有的技能体都会通过知识图谱进行串联，让学习内容可以可视化。智课工具能让普通的 L&D 团队快速上手，专业的L&D团队创造出更有价值的智能体。',
+            imageAlt: '智课工具占位图'
+          },
+          learning: {
+            title: '智学',
+            description:
+              '智学作为 AI 时代个性化学习的新范式。一方面可以考察学员对理论知识、概念框架和程序性信息的掌握程度。一方面，支持学员根据自己需求去进行深度探索。AI 智学让管理者对学习过程更放心，让学员爱上学习，学得更透彻。',
+            imageAlt: '智学占位图'
+          },
+          practice: {
+            title: '陪练',
+            description:
+              '陪练的核心衡量标准是“用户在模拟环境中能否做到？”在高保真的模拟业务场景中评估学员能否稳定、规范地执行关键行为。训练结束后，产出的多维度分析，指出员工在哪些方面还可以优化，哪些话术有待改进。陪练模块确保知识转化为可执行的技能，让知识真正用起来。',
+            imageAlt: '陪练占位图'
+          },
+          qualityCheck: {
+            title: '质检',
+            description:
+              '质检的核心衡量标准是“用户在真实工作中是否产生预期结果？”通过分析真实的工作数据来评估学员的技能体学习是否带来了实际的业务成效。确保整个培训闭环的打通，学习结果可以量化、可验证。',
+            imageAlt: '质检占位图'
+          }
+        }
+      },
       story: {
+        sectionTitle: '真实案例',
         title: '销售业绩提升40%才付费，培训投入直接转化为营收增长',
         resultsLabel: '结果',
         resultsSummary: '从"培训费打水漂"到"培训即增长引擎"：按销售业绩增长付费，6个月新人销售额提升40%，培训ROI达到1:8。',
